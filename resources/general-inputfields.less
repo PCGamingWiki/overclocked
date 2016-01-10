@@ -1,0 +1,170 @@
+.mw-htmlform-field-HTMLTextField,
+.mw-htmlform-field-HTMLIntField,
+.mw-htmlform-field-HTMLSelectOrOtherField {
+	.mw-input input {
+		border: 1px solid #CCC;
+		padding: 5px 4px 6px 8px;
+		vertical-align: middle;
+		border-radius: 2px;
+		transition: border 200ms;
+	}
+}
+
+input[type="text"],
+input[type="number"],
+input.mw-input,
+input.mw-summary,
+#mw-whatlinkshere-target {
+	border: 1px solid #ccc;
+	padding: 5px 4px 6px 5px;
+	border-radius: 2px;
+  font-size: 1.2rem;
+	transition: border-color 200ms;
+
+	&:focus {
+		border-color: #555;
+		outline: none;
+	}
+}
+
+input.mw-summary {
+	width: 100%;
+}
+
+textarea#wpTextbox1 {
+	padding: 2px 1px;
+	border-radius: 2px;
+	line-height: inherit;
+	font-size: 1.2rem;
+}
+
+input[type="submit"] {
+	margin: 0;
+	background: #00af89 none repeat scroll 0% 0%;
+	color: #fff;
+	border: 1px solid #00af89;
+	display: inline-block;
+	padding: 8px 12px;
+	font-size: 1.3rem;
+	border-radius: 2px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: color 200ms, background-color 200ms, border-color 200ms;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+select {
+	border: 1px solid #ccc;
+	padding: 5px 4px 6px 8px;
+  font-size: 1.3rem;
+	border-radius: 2px;
+	background: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTcuNDEgNy44NEwxMiAxMi40Mmw0LjU5LTQuNThMMTggOS4yNWwtNiA2LTYtNnoiLz4gICAgPHBhdGggZD0iTTAtLjc1aDI0djI0SDB6IiBmaWxsPSJub25lIi8+PC9zdmc+") 96% no-repeat #eee;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+#mw-input-wptimecorrection {
+	margin-bottom: 2px;
+}
+
+#mw-input-wpimagesize,
+#mw-input-wpthumbsize,
+#mw-input-wpeditfont {
+	width: 140px;
+}
+
+#mw-input-wpunderline,
+#mw-input-wpstubthreshold,
+#wpLicense {
+	width: 200px;
+}
+
+#mw-input-wpecho-email-frequency {
+	width: 290px;
+}
+
+#namespace {
+	margin-left: 5px;
+}
+
+#wpPreview,
+#wpDiff {
+	background: #fff;
+	border: #cdcdcd 1px solid;
+	color: #555;
+	font-weight: 600;
+
+	&:hover, &:focus {
+		background-color: #eee;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+#wpSave {
+	font-weight: 600;
+
+	&:hover, &:focus {
+		background: #008c6d;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.cancelLink {
+	margin: 0;
+	margin-bottom: 20px;
+	color: #333;
+	opacity: 0.8;
+	font-size: 1.3rem;
+	display: inline-block;
+	padding: 5px 10px;
+	text-align: center;
+	font-weight: 600;
+	text-decoration: none;
+	transition: opacity 200ms;
+
+	a {
+		color: #555;
+		text-decoration: none;
+	}
+
+	&:hover, &:focus {
+		opacity: 1;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+// Custom styling for the "Compare selected revisions" button on History page.
+input.mw-history-compareselectedversions-button {
+	background-color: #fff;
+	border: 1px solid #cdcdcd;
+	color: #555;
+	margin: 10px 0;
+}
+
+#pagehistory {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+// Removes WikiEditor toolbar background
+#wikiEditor-ui-toolbar {
+	background-image: none;
+	background-color: #f9f9f9;
+
+	.sections .section {
+		background-color: transparent;
+	}
+}
