@@ -1,0 +1,344 @@
+/*********
+ * General styles
+ **/
+
+/* By default, browsers will set the box-sizing property to "content-box".
+   This is annoying for a number of reasons, mostly with regards to layout
+   and the way content is sized in this mode. The following forces all
+   elements to utilize border-box for layout. */
+
+/* More information is available at the Mozilla Developer Network:
+	 https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+// Properties applied to the root <body> and <html> elements.
+html, body {
+	/* Light blue background color */
+	background-color: #e5ecf9;
+	margin: 0;
+	padding: 0;
+	/* Default font is Open Sans with fallback to Helvetica Neue as necessary. */
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 400;
+	
+	/* The following should improve legibility of Open Sans for all browsers, but especially Windows users.
+	   Emphasis on should. */
+  text-rendering: optimizeLegibility;
+	-webkit-font-feature-settings: "kern" 1;
+	        font-feature-settings: "kern" 1;
+	font-kerning: normal;
+
+	/* Root font size is 10px. This is the root size used by "rem".
+	   For example, 1.4rem would be equivalent to 14px, 1.8rem to 18px, and so on. */
+	font-size: 10px;
+	height: 100%;
+	max-width: 100vw;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	        flex-flow: row wrap;
+
+	// Don't scroll when the sidebar is open and the "no-scroll" class has been added to the body.
+  &.no-scroll {
+  	overflow-y: hidden;
+  }
+}
+
+// Fix for stupid WebKit stuff.
+ul {
+	-webkit-margin-before: 0;
+	-webkit-padding-start: 0;
+	-webkit-margin-after: 0;
+	list-style-type: disc;
+}
+
+// Fix for WebKit search decorations.
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+// Fix for WebKit input text style.
+input, textarea, keygen, select, button {
+	font: 400 initial 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+// Removes browser-applied margins for WebKit-based browsers (Chrome and Safari).
+h1, h2, h3, h4, h5, p {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	margin: 0;
+	padding: 0;
+}
+
+// Adds padding above header elements.
+h1, h2, h3, h4, h5 {
+	padding-top: 5px;
+}
+
+// Differentiates h4 from h3
+h4 {
+	font-size: 14px;
+}
+
+// Differentiates h5 from h4
+h5 {
+	font-size: 12px;
+}
+
+// Improves readability with spacing between lines
+p {
+	line-height: 21px;
+}
+
+/* MediaWiki style overrides for article content.
+   Spacing between section headers is modified to better differentiate
+   between sections. */
+div#body-content {
+	width: 100%;
+
+	h2 {
+		margin-top: 1.2rem;
+		margin-bottom: .3rem;
+
+		@media all and (max-width: 800px) {
+			margin-top: 2.4rem;
+		}
+	}
+}
+
+// Fixes weird header spacing on Special pages.
+body.ns-special #body-content h2 {
+	margin-bottom: 15px;
+}
+
+/* The masthead is a flexbox element that allows for content to reflow
+   depending on viewport size. */
+#masthead {
+	display: -webkit-flex;
+	display: flex;
+	width: 100%;
+	// Ensure that the height is never less than the viewport, minus the header and the footer.
+	// This is to ensure that the footer will always be aligned to the bottom of the viewport if the page is too short.
+	min-height: ~"calc(100vh - 325px)";
+	-webkit-flex-flow: row nowrap;
+					flex-flow: row nowrap;
+	
+	// Prevents fixed header from covering any content.
+	@media all and (max-width: 800px) {
+		margin-top: 45px;
+	}
+}
+
+/* Prevent display of the body element when the Media Viewer lightbox is open. 
+   This prevents a number of bugs from occurring with Media Viewer. */
+body.mw-mmv-lightbox-open #masthead {
+	display: none;
+}
+
+/* The main column container hosts all article content. The width is equivalent to 
+   the user's viewport, with room allocated for the sidebar. */
+#main-column {
+	width: ~"calc(100vw - 200px)";
+
+	/* On mobile the main column is given the full viewport as the sidebar is hidden. */
+	@media all and (max-width: 800px) {
+		width: 100vw;	
+	}
+}
+
+
+/***********
+ * Sidebar
+ **/
+
+/* Sidebar container element */
+#sidebar {
+	display: block;
+	width: 175px;
+	padding: 15px 15px;
+
+	/* Sidebar is hidden on mobile. */
+	@media all and (max-width: 800px) {
+		display: none;
+	}
+}
+
+/* The PCGamingWiki logo in the sidebar. */
+#pcgw-logo {
+	margin-left: 5px;
+	width: 145px;
+	margin-bottom: 30px;
+
+	img {
+		display: inline-block;
+		width: 145px;
+	}
+}
+
+/* Navigation links are aligned right for stylistic reasons. */
+.sidebar-nav {
+	text-align: right;
+	font-size: 1.2rem;
+	
+	ul {
+		list-style: none;
+	}
+}
+
+/* Highly specific selectors, necessary to forcing the vertical spacing between the sidebar's sections. */
+.sidebar-nav > div > div > ul > li:first-of-type,
+.sidebar-nav > div > div > div > ul > li:first-of-type,
+.sidebar-nav > div > div > div > div > ul > li:first-of-type {
+	font-weight: 600;
+	margin-top: 20px;
+}
+
+
+/**************
+ * Article content
+ **/
+
+/* Main content is a child of the main-column container.
+   All article content should be displayed within this container. */
+#main-content {
+	position: relative;
+	background-color: #fff;
+	width: 100%;
+	margin: 0;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	padding: 5px 15px 0 25px;
+	border-radius: 2px;
+
+	/* On mobile the main content container is given the full width of the page
+	   with 10px margins on either side. */
+	@media all and (max-width: 800px) {
+		width: ~"calc(100vw - 20px)";
+		margin: 15px 10px;
+		padding: 5px 15px 0;
+	}
+}
+
+
+/***********
+ * Article Header
+ **/
+
+/* Container for the article title. */
+.article-header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  width: 100%;
+  border-bottom: 1px solid #aaa;
+
+  /* Remove the border of the <h1> element so the border can be handled by the article header div. */
+  h1 {
+  	border-bottom: 0;
+  }
+}
+
+/* Featured Article indicator to the left of the article title. */
+.mw-indicators {
+	display: inline-block;
+  
+	.mw-indicator {
+	  padding: 12px 5px;
+	}
+}
+
+/* Article title */
+.article-title {
+	font-size: 2.4rem;
+	font-weight: 400;
+	display: inline-block;
+	padding-bottom: 2px;
+	width: 100%;
+	padding-left: 5px;
+}
+
+/* Site slogan, usually. */
+#site-sub {
+	font-style: italic;
+	font-size: 1.2rem;
+	padding: 5px 0;
+}
+
+/* "Redirected from" and other minor MediaWiki-generated text. */
+#sub-sub-title {
+	font-size: 1.1rem;
+	font-style: normal;
+	margin: 4px 5px;
+}
+
+
+/*********
+ * Ad containers
+ **/
+
+/* Header ad container */
+.ad-header-container {
+	height: auto;
+	width: 100%;
+	max-width: 728px;
+	margin: 5px auto -4px;
+
+	/* On mobile the header ad is given only 100px of vertical space and
+	   just under the full width of the viewport. */
+	@media all and (max-width: 800px) {
+		max-height: 100px;
+		max-width: 100%;
+		width: ~"calc(100vw - 30px)";
+		margin: 5px 15px;
+	}
+}
+
+/* Footer ad container */
+.ad-footer-container {
+	max-width: 728px;
+	width: 100%;
+	height: auto;
+	margin: -8px auto 0;
+	padding: 0;
+	padding-bottom: 5px;
+	clear: both;
+
+	/* On mobile the footer ad container is given up to 500px of vertical space and
+	   just under the full width of the viewport. */
+	@media all and (max-width: 800px) {
+		max-height: 500px;
+		max-width: ~"calc(100vw - 30px)";
+		margin: 2px 15px;
+	}
+}
+
+/* The sidebar ad container.
+   No mobile styles because the sidebar isn't displayed for mobile users. */
+.ad-sidebar-container {
+	margin-top: 25px;
+	position: relative;
+	left: -8px;
+}
+
+/* Infobox advertisement */
+#mpu {
+	width: 300px;
+	height: 250px;
+	float: right;
+	margin: 0 0 7px 7px;
+	position: relative;
+	z-index: 25;
+
+	/* Advertisement is moved to take up the full width of the page and is placed
+	   above the infobox, below the article header. */
+	@media all and (max-width: 800px) {
+		width: ~"calc(100% - 20px)";
+		margin: auto;
+		height: auto;
+		float: none;
+	}
+}

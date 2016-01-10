@@ -1,0 +1,649 @@
+@import "variables.less";
+
+
+/* ==============================================
+		Generic PCGW Tables
+	 ============================================== */
+
+// Container for pcgwikitables that allows for scrolling on mobile.
+.container-pcgwikitable {
+	@media all and (max-width: 800px) {
+	  overflow-x: auto;
+		width: ~"calc(100vw - 20px)";
+	  max-width: ~"calc(100vw - 20px)";
+		-webkit-transform: translateX(-15px);
+		transform: translateX(-15px);
+	}
+}
+
+.pcgwikitable {
+	margin: 8px 6px 16px 0;
+	background-color: #fff;
+	border: 0;
+	border-collapse: collapse;
+	color: #333;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+
+	// Fix for Company pages in Firefox
+	clear: left;
+
+	@media all and (max-width: 800px) {
+		width: ~"calc(100vw - 20px)";
+		box-shadow: none;
+		border-bottom: 1px solid rgba(170,170,178,0.3);
+		margin: 12px 0;
+		clear: none;
+	}
+}
+
+
+/* ==============================================
+		Infotables
+	 ============================================== */
+
+.template-infotable {
+	text-align: center;
+	max-width: 850px;
+	height: auto;
+}
+
+.template-infotable-head > th {
+	border-bottom: 2px solid @pcgw-color;
+	padding: 10px 2px;
+	color: #fff;
+	background-color: @pcgw-color;
+	font-weight: 600;
+
+	a {
+		color: #fff;
+		font-weight: 600;
+	}
+}
+
+.template-infotable-doublehead > th {
+	padding: 10px 2px;
+	background-color: darken(@pcgw-color,8%);
+
+	a {
+		color: #fff;
+		font-weight: 600;
+	}
+}
+
+.template-infotable-secondhead > th {
+	background-color: @pcgw-color;
+	color: #fff;
+	padding: 10px 2px;
+	font-weight: 600;
+}
+
+.template-infotable-body > th,
+.template-infotable-body > td {
+	padding: 6px 4px;
+}
+
+.template-infotable-body > td {
+	border-left: 1px solid rgba(170, 170, 178, 0.3);
+}
+
+/* Alternating background colors. */
+.template-infotable-body:nth-of-type(odd) {
+	background-color: darken(#fff,4%);
+}
+
+/* Monospace text in the template infotable, e.g. for game data paths. */
+.template-infotable-monospace {
+	font-family: monospace;
+}
+
+
+/* ==============================================
+		Infobox
+	 ============================================== */
+
+/* The game article infobox. */
+.template-infobox {
+	float: right;
+	clear: right;
+	color: #000;
+	font-size: 1.2rem;
+	width: 300px;
+	padding: 0;
+	padding-bottom: 4px;
+	border-spacing: 0;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+	margin-left: 15px;
+	margin-bottom: 15px;
+
+	@media all and (max-width: 800px) {
+		float: none;
+		clear: none;
+		margin: 15px auto;
+		border-bottom: 1px solid rgba(170,170,178,0.3);
+		width: ~"calc(100vw - 20px)";
+		-webkit-transform: translateX(-15px);
+		transform: translateX(-15px);
+		box-shadow: none;
+	}
+}
+
+/* Game article infobox title */
+.template-infobox-title {
+	padding-bottom: 8px;
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+	font-weight: bold;
+
+	/* Usually repetitive of the article title and therefore not shown on mobile. */
+	@media all and (max-width: 800px) {
+		display: none;
+	}
+}
+
+/* Game cover in the infobox template. */
+.template-infobox-cover {
+	text-align: center;
+	padding: 0;
+	padding-bottom: 8px;
+
+	img {
+		width: 100%;
+		height: auto;
+
+		@media all and (max-width: 800px) {
+			max-width: 300px;
+		}
+	}
+}
+
+/* Infobox section header, e.g. Publishers, Developers, Engines, etc. */
+.template-infobox-header {
+	font-weight: 600;
+	text-align: left;
+	padding: 6px 4px 0 10px;
+}
+
+/* Smaller, left-aligned info for infobox, e.g. the Windows/OS X/Linux superscript. */
+.template-infobox-type {
+	font-size: 1.1rem;
+	padding-left: 24px;
+	text-align: left;
+	vertical-align: bottom;
+}
+
+/* Infobox info (e.g. the Developer(s) names, Engine title, etc.) and infobox
+   icons utilize the same styles for consistency. */
+.template-infobox-info,
+.template-infobox-icons {
+	padding-right: 10px;
+	text-align: right;
+}
+
+/* Infobox icons container */
+.template-infobox-icons {
+	padding-top: 8px;
+	// 36px for the height of the infobox icons plus some padding.
+	height: 36px;
+	vertical-align: bottom;
+
+	@media all and (max-width: 800px) {
+		height: 40px;
+
+		> .template-infobox-icon {
+			height: 24px;
+			width: 24px;
+		}
+	}
+}
+
+/* Infobox icons, e.g. SteamDB, Steam Charts, Wikipedia, etc. */
+.template-infobox-icon {
+	display: inline;
+	padding-left: 2px;
+}
+
+
+/* ==============================================
+		Seriesbox
+	 ============================================== */
+
+/* Seriesbox template, floated right to align with the article infobox. */
+table.template-seriesbox {
+	float: right;
+	clear: right;
+	color: #333;
+	width: 300px;
+	margin: 0;
+	margin-bottom: 15px;
+	margin-left: 15px;
+	background-color: #fff;
+	font-size: 1.2rem;
+	border-top: 4px solid #fff;
+	border-bottom: 7px solid #fff;
+
+	tr {
+		height: 24px;
+	}
+
+	tbody {
+		background-color: #fff;
+
+		a:visited {
+			color: #0645ad;
+		}
+	}
+
+	@media all and (max-width: 800px) {
+		margin: 15px auto;
+		padding-bottom: 8px;
+		float: none;
+		clear: none;
+		border-bottom: 1px solid rgba(170,170,178,0.3);
+		width: ~"calc(100vw - 20px)";
+		-webkit-transform: translateX(-15px);
+		transform: translateX(-15px);
+
+		tr:last-of-type {
+			height: 32px;
+			vertical-align: top;
+			-webkit-transform: translateY(3px);
+							transform: translateY(3px);
+		}
+	}
+}
+
+/* Title/header for the seriesbox template. */
+.template-seriesbox-title {
+	background-color: @pcgw-color;
+	padding: 5px;
+	font-size: 1.4rem;
+	font-weight: 600;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+
+	a {
+		color: #fff;
+	}
+}
+
+/* Game title in each seriesbox row */
+.template-seriesbox-game {
+	text-align: left;
+	padding-left: 9px;
+}
+
+/* Game release date in each seriesbox row */
+.template-seriesbox-date {
+	text-align: right;
+	padding-right: 9px;
+}
+
+/* Seriesbox DLC row */
+.template-seriesbox-dlc {
+	text-align: left;
+	padding-left: 18px;
+}
+
+
+/* ==============================================
+		Fixbox
+	 ============================================== */
+
+/* Fixbox template */
+.fixbox {
+	.fixbox-icon {
+		margin-right: 6px;
+	}
+
+	p {
+		padding-top: 12px;
+		padding-left: 21px;
+	}
+
+	.fixbox-title {
+		padding: 12px 12px 6px;
+		font-weight: 600;
+	}
+
+	td {
+		padding: 0 0 10px;
+	}
+
+	/* <pre> tags spacing in fixboxes. */
+	pre {
+		margin: 5px 20px;
+	}
+
+	/* If <pre> or <code> tags overflow horizontally in a fixbox, they gain
+	scroll bars. This enables their use for smaller screens, e.g. mobile users. */
+	pre,
+	code {
+		overflow-x: auto;
+	}
+
+	/* Spacing fix only for fixboxes. */
+	ul {
+		margin-left: 42px;
+	}
+
+	/* Vertical list item spacing. */
+	li {
+		padding: 3px 0;
+	}
+
+	/* Styles specific to mobile devices */
+	@media all and (max-width: 800px) {
+		border-top: 1px solid rgba(170,170,178,0.3);
+		background-color: #f5f5f5;
+		overflow-wrap: break-word;
+		-webkit-transform: translateX(-15px);
+		transform: translateX(-15px);
+
+		li {
+			max-width: ~"calc(100vw - 75px)";
+		}
+
+		pre {
+			max-width: ~"calc(100vw - 60px)";
+		}
+	}
+}
+
+
+/* ==============================================
+		Code
+	 ============================================== */
+
+/* Styles for code tags */
+code {
+	background: #d6e1ed;
+	color: #133562;
+	border: 1px solid #a4bfd6;
+	border-radius: 1px;
+	padding: 1px;
+}
+
+
+/* ==============================================
+		Keyboard key
+	 ============================================== */
+
+kbd {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 1px 3px;
+
+  abbr {
+  	display: inline-block;
+  }
+}
+
+
+/* ==============================================
+		Notices
+	 ============================================== */
+
+/* Styling for notices, e.g. alpha, beta, in-development, stub, etc. */
+.notice {
+	display: block;
+	position: relative;
+	min-height: 50px;
+	// 350px right padding to ensure that the text wraps before hitting the infobox ad container.
+	padding: 8px 350px 8px 15px;
+	width: ~"calc(100% + 40px)";
+	margin-left: -25px;
+	margin-bottom: 1px;
+	background-color: @pcgw-color;
+	color: #fff;
+	margin-bottom: 20px;
+
+	/* Removes margins between sibling notice tags. */
+	~ .notice {
+		margin-top: -19px;
+	}
+
+	/* Fixes an odd bug with a <p> element creating unnecessary padding after the notice tags. */
+	+ p:empty {
+		line-height: 0;
+	}
+
+	@media all and (max-width: 800px) {
+		padding-right: 5px;
+		width: ~"calc(100% + 30px)";
+		margin-left: 0;
+		-webkit-transform: translateX(-15px);
+						transform: translateX(-15px);
+	}
+
+	/* Section-specific notices are smaller, don't fit the full page width (except on mobile). */
+	&.notice-section {
+		// Mostly the same margins as tables
+		margin: 16px 6px 16px 0;
+		width: auto;
+		max-width: 820px;
+		background-color: #fff;
+		box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+		color: #333;
+		padding: 8px 15px;
+
+		@media all and (max-width: 800px) {
+			-webkit-transform: translateX(0);
+							transform: translateX(0);
+		}
+
+		/* Ensure consistency amongst variations of the link tag */
+		.notice-text a,
+		.notice-text a:visited,
+		.notice-text a.external,
+		.notice-text a.external:visited,
+		.notice-text a.new,
+		.notice-text a.new:visited {
+			color: #333;
+		}
+	}
+}
+
+/* Proper alignment for text and icon. */
+.notice-icon,
+.notice-text {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+
+/* Spacing between icon and text. */
+.notice-text {
+	padding: 8px 12px;
+	width: ~"calc(100% - 40px)";
+
+	/* Styling links to match other text. */
+	a,
+	> span > a,
+	> span > a.external,
+	> span > a.external:visited,
+	a.external,
+	a.external:visited,
+	a.new,
+	a.new:visited {
+		color: #fff !important;
+		font-weight: 600;
+	}
+}
+
+.mw-collapsible-toggle {
+	padding-right: 10px;
+}
+
+
+/* ==============================================
+		Article image
+	 ============================================== */
+
+/* Images in articles, usually settings screenshots, or screenshots relevant
+	 to game fixes. Floated to the right on desktop. */
+.article-image {
+	display: inline-block;
+	float: right;
+	clear: both;
+	background-color: #fff;
+	border: none;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+	padding: 0;
+	margin: 5px 0 20px 12px;
+	max-width: 300px;
+
+	/* Display inline and centered for mobile users. */
+	@media all and (max-width: 800px) {
+		float: none;
+		margin: 10px auto 20px;
+		text-align: center;
+		display: block;
+		max-width: 300px;
+		box-shadow: none;
+		width: 100%;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+/* Article image's associated captions */
+.article-image-text {
+	padding: 10px;
+	font-size: 1.1rem;
+
+	@media all and (max-width: 800px) {
+		font-size: 1.2rem;
+		padding: 12px;
+	}
+}
+
+
+/* ==============================================
+		Project page intro
+	 ============================================== */
+
+/* Explanatory "card" for Project pages. */
+.project-intro {
+	text-align: left;
+	width: 750px;
+	margin: auto;
+	font-size: 1.4rem;
+	background-color: #fff;
+	color: #333;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+	padding: 30px;
+	border: 1px solid rgba(0,0,0,0.12);
+	border-radius: 1px;
+	margin-bottom: 10px;
+
+	p:not(:first-of-type) {
+		margin-top: 20px;
+	}
+
+	@media all and (max-width: 800px) {
+		width: ~"calc(100% - 10px)";
+		margin: auto 5px 15px;
+	}
+}
+
+/* ==============================================
+		Category pages
+	 ============================================== */
+
+.category-box {
+	text-align: center;
+	width: 750px;
+	margin: auto;
+	font-size: 1.4rem;
+	background-color: #fff;
+	color: #333;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+	padding: 30px;
+	border: 1px solid rgba(0,0,0,0.12);
+	border-radius: 1px;
+	margin-bottom: 10px;
+
+	p {
+		margin-top: 10px;
+	}
+
+	@media all and (max-width: 800px) {
+		width: ~"calc(100% - 10px)";
+		margin: auto 5px 15px;
+	}
+}
+
+.category-button {
+	padding: 0;
+	display: inline-block;
+	margin-top: 15px;
+	border: 1px solid #cdcdcd;
+	border-radius: 2px;
+	background-color: #fff;
+	transition: background-color 200ms;
+
+	&:hover {
+		background-color: #eee;
+	}
+
+	a {
+		color: #555;
+		font-weight: bold;
+		display: block;
+		text-decoration: none;
+		padding: 8px 12px;
+	}
+}
+
+
+/* ==============================================
+		Navigation sidebar
+	 ============================================== */
+
+/* Navigational sidebar for certain related pages. */
+.guide-nav-wrapper {
+	width: auto;
+	float: right;
+	clear: right;
+  margin-left: 12px;
+	padding: 16px;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+	
+	ul {
+		list-style: none;
+		margin-left: 10px;
+		margin-top: 0;
+	}
+
+	.guide-nav > p {
+		margin-top: 8px;
+		font-weight: 600;
+	}
+
+	.guide-nav-header {
+		font-size: 1.6rem;
+		text-align: center;
+		font-weight: 600;
+		padding-bottom: 5px;
+		border-bottom: 1px solid #aaaab2;
+	}
+}
+
+
+/* ==============================================
+		Miscellaneous
+	 ============================================== */
+
+/* IE10+ CSS hacks because Microsoft. */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	table.fixbox,
+	table.pcgwikitable {
+		border-collapse: separate;
+	}
+}

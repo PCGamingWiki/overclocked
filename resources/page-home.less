@@ -1,0 +1,830 @@
+@import "variables.less";
+
+// Ensures that only the page named "Home" is effected by these styles.
+.page-Home {
+	// Prevents display of the "Edit", "Discussion", etc. tabs as well
+	// as the "Home" header text and site-sub on the home page.
+	#site-sub, .article-header, #mw-head {
+		display: none;
+	}
+
+	// Allows the home page content to take up the full width of the page.
+	#main-content {
+		padding: 0;
+		overflow: hidden;
+	}
+
+	// Ditto "#main-content"
+	div#body-content {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		position: relative;
+
+		// The "focal point" search element used in the header on the home page.
+		input[type="search"] {
+			width: 600px;
+			height: 50px;
+			font-size: 2.1rem;
+			font-weight: 300;
+			border: none;
+			margin: auto;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			border-radius: 5px;
+			box-shadow: 0 2px 6px 0 rgba(0,0,0,0.4);
+			background-color: #fff;
+			position: absolute;
+			top: 60px;
+			left: ~"calc((100vw - 200px - 600px) / 2 )";
+			display: inline-block;
+			padding: 5px 12px;
+
+			&:focus {
+				outline: none;
+			}
+
+			&:-webkit-input-placeholder, &::-moz-placeholder, &:-moz-placeholder {
+				font-weight: 100;
+			}
+
+			// The position of the input element is modified to allow the
+			// PCGamingWiki "motto" text to reflow on mobile devices.
+			// The width of the search input is also modified.
+			@media all and (max-width: 800px) {
+				width: ~"calc(100vw - 60px)";
+				left: 20px;
+				font-size: 1.8rem;
+				height: 40px;
+				top: 85px;
+			}
+		}
+	}
+
+	// MediaWiki usually includes an arrow in order to differentiate
+	// external from internal links. For this page, this image is removed,
+	// as it's probably unnecessary and would clash with the page's
+	// aesthetic.
+	.mw-body a.external {
+		background-image: none;
+		padding-right: 0;
+	}
+
+	// The header is the top-most element on the home page, and contains
+	// the PCGamingWiki "motto", as well as a search box and search
+	// suggestions.
+	.pcgw-home-header {
+		background-color: @pcgw-color;
+		color: #fff;
+		width: 100%;
+		height: 180px;
+		display: block;
+		text-align: center;
+		padding-top: 28px;
+
+		ul {
+			list-style: none;
+			margin: 0;
+		}
+
+		@media all and (max-width: 800px) {
+			height: 230px;
+		}
+
+		@media all and (max-width: 400px) {
+			height: 300px;
+		}
+		
+		// Container for the searchbox on the home page.
+		// Due to limitations with MediaWiki, we include the search input
+		// itself outside of the header container, and position it absolutely.
+		// This container is used to customize the styling problems
+		// caused by the MediaWiki search hack we use.
+		.home-search-container {
+			pre {
+				background-color: transparent;
+				border: none;
+			}
+
+			> p {
+				font-size: 1.4rem;
+				font-weight: 100;
+				padding: 0 10px;
+
+				a {
+					color: #fff;
+					font-weight: 600;
+				}
+			}
+		}
+
+		// Suggested search terms below the search input.
+		.home-search-examples {
+			width: 100%;
+			display: block;
+			position: absolute;
+
+			// A "magic number" for the space between the top of the wiki page to the
+			// bottom of the Search box, with some extra padding for good measure.
+			top: 120px;
+			
+			p, ul, li, a {
+				color: #fff;
+				display: inline;
+				padding: 0 5px;
+			}
+
+			// Bolded "For example..." text
+			p {
+				font-weight: 600;
+			}
+
+			// Suggested search links.
+			a {
+				color: rgba(255,255,255,0.8);
+				transition: 300ms color;
+
+				&:hover {
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+
+			// On smaller devices, the search box changes size and the motto is
+			// squished and made two lines, causing everything below to move
+			// further downward.
+			@media all and (max-width: 800px) {
+				top: 145px;
+				padding: 0 10px;
+				line-height: 21px;
+
+				p {
+					display: block;
+					width: 100%;
+				}
+			}
+
+			@media all and (max-width: 400px) {
+				ul {
+					display: block;
+				}
+
+				li {
+					display: block;
+					padding-top: 6px;
+				}
+			}
+		}
+	}
+
+	// The home subheader is a container element for the subheader
+	// buttons, expanded upon below.
+	.home-subheader {
+		width: 100%;
+		background-color: #fff;
+		box-shadow: 0 4px 5px 0 rgba(0,0,0,0.15);
+		height: 56px;
+		text-align: center;
+		padding: 9px;
+
+		// The height is modified to allow all three buttons enough
+		// room when each is made as wide as the page.
+		@media all and (max-width: 1000px) {
+			height: 182px;
+		}
+	}
+
+	// Subheader buttons are shown in the subheader (what a surprise!) 
+	// and are used to bring the user's attention to the most important
+	// links on the page.
+	.subheader-button {
+		width: 250px;
+		height: 38px;
+		display: inline-block;
+		border-radius: 4px;
+		font-size: 1.6rem;
+		margin: 0 5px;
+		padding: 2px;
+		text-align: center;
+
+		transition: 300ms background-color;
+
+		a, a.external, a:hover {
+			color: #fff;
+			text-decoration: none;
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding: 6px;
+			text-align: center;
+		}
+
+		// On smaller devices (e.g. smartphones), the buttons are made full-width.
+		@media all and (max-width: 1000px) {
+			margin: 8px 10px;
+			width: ~"calc(100% - 20px)";
+		}
+	}
+
+	// "Editing Guide", links to the wiki's editing guide.
+	#subheader-editing-guide-button {
+		background-color: #00af89;
+
+		&:hover {
+			background-color: darken(#00af89, 8%);
+		}
+	}
+
+	// "Support us on Patreon", links to Patreon, as you would expect.
+	#subheader-patreon-button {
+		background-color: #ff5902;
+
+		&:hover {
+			background-color: darken(#ff5902, 8%);
+		}
+	}
+
+	// "What is PCGamingWiki?", links to YouTube video.
+	#subheader-what-is-button {
+		background-color: @pcgw-color;
+
+		&:hover {
+			background-color: darken(@pcgw-color, 8%);
+		}
+	}
+
+	// All content on the home page below the header/subheader is
+	// considered "home information" and contained in this element.
+	// This element is a flexbox, meaning that it's flexible and
+	// will reorganize itself depending on the browser/device size.
+	.home-information {
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-flow: row wrap;
+						flex-flow: row wrap;
+		width: ~"calc(100% - 60px)";
+		margin: auto;
+		-webkit-justify-content: center;
+						justify-content: center;
+
+		// Larger width for mobile devices
+		@media all and (max-width: 1000px) {
+			width: 100%;
+
+			// Hacky spacing fix
+			margin-bottom: -15px;
+		}
+	}
+
+	// The "column" CSS Module isn't supported by the main stable
+	// browsers as of the writing of this comment. As such, we're
+	// unable to use that feature, and have to rely on something
+	// less convenient to get this working. Regardless of height, 
+	// the columns will always have the same "cards" in them.
+	.home-information-column {
+		display: block;
+		padding-top: 40px;
+		padding-bottom: 0;
+		width: 45%;
+		min-width: 350px;
+		max-width: 480px;
+		margin: 0 15px;
+
+		@media all and (max-width: 1000px) {
+			width: ~"calc(100% - 30px)";
+			margin: auto;
+			min-width: 0;
+			padding-top: 0;
+
+			&:first-of-type {
+				padding-top: 32px;
+			}
+		}
+	}
+
+	// Each section of the "home-information" on the home page is
+	// called a "card" due to their appearance of three-dimensionality
+	// and inspired by Google's "card" metaphor in user interface design.
+	.home-card {
+		min-width: 350px;
+		max-width: 480px;
+		width: 100%;
+		text-align: left;
+		margin: auto;
+		margin-bottom: 30px;
+		background-color: #fff;
+		color: #333;
+		box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+		padding: 20px 25px;
+		border: 1px solid rgba(0,0,0,0.12);
+		border-radius: 1px;
+
+		@media all and (max-width: 1000px) {
+			width: 100%;
+			min-width: 0;
+		}
+	}
+
+	// Each card has a section title
+	// Section titles are larger than other text in the cards, and should
+	// always be placed at the top of the card with padding between it and
+	// the card content.
+	.section-title {
+		font-size: 1.8rem;
+		font-weight: 500;
+		padding-bottom: 15px;
+		text-align: left;
+	}
+
+	// The Statistics card
+	.stats {
+		text-align: center;
+
+		.section-title a {
+			color: #333;
+		}
+
+		ul {
+			display: inline-block;
+			padding: 0;
+			margin: 20px 0 10px;
+			text-align: left;
+		}
+
+		ul > li > a {
+			text-decoration: none;
+			display: inline-block;
+			color: #333;
+		}
+
+		li {
+			text-align: left;
+			color: #333;
+			display: inline-block;
+			font-size: 1.5rem;
+			font-weight: 800;
+			line-height: 1.1em;
+			border-right: 1px solid #aaaab2;
+			padding: 0 15px;
+
+			&:first-of-type {
+				padding-left: 0;
+			}
+
+			&:last-of-type {
+				border-right: 0;
+				padding-right: 0;
+			}
+		}
+
+		span {
+			color: #333;
+			opacity: 0.8;
+			display: block;
+			font-size: 1.3rem;
+			font-weight: normal;
+			padding-top: 2px;
+		}
+
+		@media all and (max-width: 1000px) {
+			li {
+				font-size: 1.4rem;
+			}
+
+			span {
+				font-size: 1.2rem;
+			}
+		}
+
+		@media all and (max-width: 800px) {
+			ul {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-flow: row wrap;
+				        flex-flow: row wrap;
+
+				li {
+					-webkit-flex: 1 auto;
+					        flex: 1 auto;
+	        border-right: 0;
+	        text-align: center;
+	        padding-top: 10px;
+					width: 50%;
+
+	        &:first-of-type {
+	        	padding-left: 15px;
+	        }
+
+	        &:last-of-type {
+	        	padding-right: 15px;
+	        }
+				}
+			}
+		}
+	}
+
+	// The Projects card
+	.projects {
+		padding-bottom: 15px;
+
+		// Container for each project list item
+		.project-container {
+			display: -webkit-flex;
+			display: flex;
+			border-top: 1px solid #aaaab2;
+			padding: 20px 0;
+
+			// Project icon
+			.project-icon {
+				width: 75px;
+				height: 75px;
+				background-size: 100%;
+				background-repeat: no-repeat;
+
+				p, a {
+					opacity: 0;
+					width: 100%;
+					height: 100%;
+					display: block;
+				}
+
+				@media all and (max-width: 800px) {
+					margin: auto;
+					margin-bottom: 10px;
+				}
+			}
+
+			// Project title and description
+			.project-info {
+				// The width is set to be the full width, minus the size of 
+				// the project icon, with some extra room for caution's sake.
+				width: ~"calc(100% - 90px)";
+				
+				// Ensures that the text and icon don't touch each other.
+				margin-left: 20px;
+				padding-top: 5px;
+
+				a {
+					color: #333;
+				}
+
+				@media all and (max-width: 800px) {
+					padding-top: 0;
+					text-align: center;
+					width: 100%;
+					margin: 0;
+				}
+			}
+
+			@media all and (max-width: 800px) {
+				flex-flow: column wrap;
+			}
+		}
+	}
+
+	// The Upcoming Releases card
+	.upcoming-releases {
+		.month {
+			width: 100%;
+			height: 25px;
+			font-weight: 500;
+			border-bottom: 1px solid #aaaab2;
+			margin-bottom: 4px;
+		}
+
+		.month-container {
+			margin: 20px 0 30px;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.ur-row {
+			height: 50px;
+			padding: 10px 0;
+			position: relative;
+		}
+
+		.ur-row-day,
+		.ur-row-game {
+			display: inline-block;
+		}
+
+		.ur-row-day {
+			border-radius: 50%;
+			background-color: #83D0E7;
+			color: #fff;
+			width: 36px;
+			height: 36px;
+			padding: 9px;
+			text-align: center;
+			font-weight: 500;
+		}
+
+		.ur-row-game {
+			top: 20px;
+			left: 50px;
+			position: absolute;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			width: ~"calc(100% - 45px)";
+		}
+	}
+
+	.blog-posts {
+		min-height: 640px;
+
+		@media all and (max-width: 1400px) {
+			min-height: 640px;
+		}
+
+		@media all and (min-width: 1000px) and (max-width: 1200px) {
+			min-height: 550px;
+		}
+
+		@media all and (min-width: 500px) and (max-width: 1000px) {
+			min-height: 700px;
+		}
+
+		@media all and (max-width: 500px) {
+			min-height: 550px;
+		}
+
+		ul {
+			display: block;
+			list-style: none;
+			margin: 0;
+			margin-bottom: 15px;
+
+			li {
+				display: block;
+				padding: 0;
+				margin-bottom: 2px;
+				overflow: hidden;
+
+				&:first-child {
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+				}
+
+				&:last-child {
+					border-bottom-left-radius: 3px;
+					border-bottom-right-radius: 3px;
+				}
+
+				.blog-post-container {
+					padding: 0;
+					position: relative;
+					width: 100%;
+					height: 210px;
+					background-size: cover;
+					background-repeat: no-repeat;
+
+					.blog-post-info {
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 100%;
+						width: 100%;
+						background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 75%);
+						background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 75%);
+						opacity: 0.8;
+						transition: opacity 250ms;
+
+						&:hover {
+							opacity: 1;
+						}
+					}
+
+					a {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+					}
+
+					p {
+						position: absolute;
+						bottom: 20px;
+						padding: 10px;
+						color: #fff;
+						font-weight: 600;
+						font-size: 1.4rem;
+					}
+
+					span {
+						position: absolute;
+						bottom: 0;
+						padding: 10px;
+						display: block;
+						color: #fff;
+						opacity: 0.8;
+					}
+
+					@media all and (max-width: 1400px) {
+						height: 180px;
+					}
+
+					@media all and (min-width: 1000px) and (max-width: 1200px) {
+						height: 150px;
+					}
+
+					@media all and (min-width: 500px) and (max-width: 1000px) {
+						height: 200px;
+					}
+
+					@media all and (max-width: 500px) {
+						height: 150px;
+					}
+				}
+			}
+		}
+	}
+
+	.forum-posts {
+		min-height: 420px;
+
+		ul {
+			display: block;
+			list-style: none;
+			margin: 0;
+
+			li {
+				display: block;
+		    border-top: 1px solid #aaaab2;
+				padding: 10px 0;
+
+				a {
+					color: #333;
+					font-weight: 600;
+					font-size: 1.4rem;
+				}
+
+				p {
+					display: block;
+
+					a {
+						font-weight: 400;
+					}
+				}
+
+				span {
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+
+	.featured-article {
+		position: relative;
+		height: 240px;
+		padding: 25px 0 0 190px;
+		overflow: hidden;
+
+		.section-title {
+			padding-bottom: 1px;
+			font-size: 1.2rem;
+		}
+
+		.game-cover {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.game-title {
+			font-size: 1.8rem;
+			font-weight: 600;
+			padding-bottom: 5px;
+			padding-right: 5px;
+
+			a {
+				color: #333;
+			}
+		}
+
+		.key-points {
+			margin-left: -20px;
+			padding-right: 10px;
+		}
+
+		@media all and (max-width: 1200px) {
+			height: auto;
+			padding: 0;
+
+			.featured-article-header-container {
+			  height: 120px;
+			  display: -webkit-inline-flex;
+			  display: inline-flex;
+			  -webkit-flex-flow: column wrap;
+			          flex-flow: column wrap;
+			  -webkit-align-content: flex-start;
+			          align-content: flex-start;
+			  width: 100%;
+			  background-color: #f5f5f5;
+
+			  .section-title {
+			  	margin-top: 20px;
+			  }
+
+			  .game-cover {
+			  	position: relative;
+			  	height: 120px;
+			  	padding-right: 10px;
+
+			  	img {
+			  		height: 120px;
+			  		width: auto;
+			  	}
+			  }
+			}
+
+			.key-points {
+				padding: 15px 15px 20px;
+				margin-left: 0;
+			}
+		}
+	}
+
+	.mw-body.mw-body-with-ads {
+		@media all and (max-width: 400px) {
+			#mpu {
+				top: 510px;
+			}
+		}
+
+		@media all and (max-width: 500px) {
+			#mpu {
+				width: 100%;
+				left: 0;
+			}
+		}
+
+		@media all and (min-width: 500px) and (max-width: 800px) {
+			#mpu {
+				width: 300px;
+				left: ~"calc(50% - 150px)";
+			}
+		}
+
+		// Only applies to mobile devices.
+		@media all and (max-width: 1000px) {
+			.home-information-column:first-of-type {
+				padding-top: 320px;
+			}
+		}
+
+		@media all and (min-width: 400px) and (max-width: 1000px) {
+			#mpu {
+				top: 430px;
+			}
+		}
+
+		@media all and (min-width: 800px) and (max-width: 1000px) {
+			#mpu {
+				left: ~"calc((100% - 300px)/2)";
+			}
+		}
+
+		// Only applies to larger, non-mobile devices.
+		@media all and (min-width: 1000px) {
+			.home-information-column:nth-of-type(2) {
+				padding-top: 320px;
+			}
+
+			#mpu {
+				top: 277px;
+			}
+		}
+
+		@media all and (min-width: 1000px) and (max-width: 1350px) {
+			// From 1000px until 1350px, the columns are each 45% of the page container.
+			// This cuts the page in half, then takes 45% (size of column) minus 300px 
+			// (size of ad), divided by two, and then sets the left offset using the 
+			// resulting width.
+			#mpu {
+				left: ~"calc(50% + ((45% - 300px)/2))";
+			}
+		}
+
+		// Above 1350px, the columns hit their max-width of 480px.
+		// The ad is about 300px wide, and there's 30px of margin between the columns.
+		// After taking off 50% of the width of the page, the second column is 15px from
+		// the edge, and there's 90px on either side of the ad if it's centered inside
+		// the second column. 90px plus 15px equals 105px.
+		@media all and (min-width: 1350px) {
+			#mpu {
+				left: ~"calc(50% + 105px)";
+			}
+		}
+
+		#mpu {
+			position: absolute;
+			float: none;
+			margin: 0;
+		}
+	}
+}

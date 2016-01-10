@@ -1,0 +1,215 @@
+@import "variables.less";
+@import "mediawiki.mixins";
+
+.background-icon(@name) {
+	.background-image("icons/editing-guide-@{name}.svg");
+}
+
+// Custom section subheader styling and 
+.page-PCGamingWiki_Editing_guide {
+	.mw-linkhere, .mw-editsection {
+		display: none;
+	}
+
+	h2, h3 {
+		text-align: center;
+		width: 100%;
+		display: block;
+		margin: 45px auto 25px;
+	}
+}
+
+// Center the text directly below the Editing Guide intro
+.editing-guide-intro + p {
+	text-align: center;
+}
+
+.editing-guide-section-list {
+	width: ~"calc(100% - 20px)";
+	margin: auto;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+	-webkit-justify-content: flex-start;
+			justify-content: flex-start;
+}
+
+.editing-guide-list-item-wrapper {
+	width: 100%;
+	max-width: ~"calc((100vw - 280px)/2)";
+	padding: 5px;
+
+	&:only-child {
+		margin: auto;
+	}
+
+	@media all and (max-width: 800px) {
+		max-width: 100%;
+	}
+}
+
+.editing-guide-pagination {
+	display: -webkit-flex;
+	display: flex;
+	width: 100%;
+	margin: auto;
+	position: relative;
+	margin-top: 40px;
+	-webkit-flex-flow: row wrap;
+	        flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+
+  > p {
+  	text-align: center;
+  	display: block;
+  	width: 100%;
+  	font-size: 2.1rem;
+  	margin-bottom: 10px;
+  	
+  	a {
+  		display: inline-block;
+  		color: #333;
+  	}
+  }
+
+  &.editing-guide-pagination-next-only {
+  	-webkit-justify-content: flex-end;
+  	        justify-content: flex-end;
+  }
+
+  &.editing-guide-pagination-previous-only {
+  	-webkit-justify-content: flex-start;
+  	        justify-content: flex-start;
+  }
+}
+
+.editing-guide-list-item {
+	-webkit-flex: 1 auto;
+			flex: 1 auto;
+	width: 100%;
+	-webkit-flex-basis: 450px;
+	        flex-basis: 450px;
+	position: relative;
+	height: 100px;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+	border: 1px solid rgba(0,0,0,0.12);
+	text-align: left;
+	font-size: 2.1rem;
+	transition: box-shadow 200ms;
+
+	.editing-guide-icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+		width: 100px;
+		height: 100%;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-justify-content: center;
+				justify-content: center;
+		-webkit-align-items: center;
+				align-items: center;
+		background-color: rgba(85,109,179,0.1);
+		transition: background-color 200ms;
+		background-size: 150px 150px;
+		
+		a, a.new, a.new:visited {
+			padding: 0;
+		}
+
+		img {
+			width: 100px;
+			height: auto;
+		}
+	}
+
+	&:hover, &:focus {
+		background-color: #fff;
+		cursor: pointer;
+		box-shadow: 0 2px 6px 0 rgba(0,0,0,0.3);
+
+		.editing-guide-icon {
+			background-color: rgba(85,109,179,0.2);
+		}
+	}
+
+	> p, a, a.new, a.new:visited {
+		height: 100%;
+	}
+
+	a, a.new, a.new:visited {
+		color: #333;
+		padding: 20px 20px 10px 115px;
+		display: block;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&.editing-guide-previous,
+	&.editing-guide-next {
+		margin: 10px;
+		max-width: 600px;
+
+		> p {
+			padding-top: 20px;
+
+			&:before {
+				font-size: 1.2rem;
+				display: block;
+				position: absolute;
+				top: 17px;
+				font-weight: 600;
+				opacity: 0.6;
+				transition: opacity 250ms;
+			}
+		}
+
+		&:hover > p::before {
+			opacity: 1;
+		}
+
+		@media all and (max-width: 1150px) {
+			margin: 10px auto;
+		}
+	}
+
+	&.editing-guide-previous {
+		> p::before {
+			content: 'PREVIOUS';
+			left: 115px;
+		}
+	}
+
+	&.editing-guide-next {
+		text-align: right;
+
+		> p::before {
+			content: 'NEXT';
+			right: 115px;
+		}
+
+		.editing-guide-icon {
+			right: 0;
+			left: auto;
+
+			a, a.new, a.new:visited {
+				padding: 0;
+			}
+		}
+
+		a, a.new, a.new:visited {
+			padding: 20px 115px 10px 20px;
+		}
+	}
+
+	@media all and (max-width: 1200px) {
+		max-width: 100%;
+	}
+}

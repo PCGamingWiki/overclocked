@@ -1,0 +1,255 @@
+@import "variables.less";
+@import "mediawiki.mixins";
+
+.background-icon(@name) {
+	.background-image("icons/@{name}.svg");
+}
+
+/* ==============================================
+		Footer
+	 ============================================== */
+
+.pcgw-footer {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	position: relative;
+	background-color: @pcgw-alt-color;
+	width: 100%;
+	height: auto;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: 300;
+	padding: 10px;
+	text-align: center;
+	margin: auto;
+	
+	ul {
+		list-style: none;
+	}
+
+	@media all and (max-width: 800px) {
+		-webkit-flex-flow: column nowrap;
+		flex-flow: column nowrap;
+	}
+}
+
+.pcgw-footer-column:last-of-type {
+	width: 50%;
+	min-width: 700px;
+	height: 100%;
+	
+	@media all and (max-width: 800px) {
+		min-width: 0;
+		width: 100%;
+		height: auto;
+	}
+}
+
+#footer-links-container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	width: auto;
+	margin: 10px auto;
+
+	a {
+		color: #fff;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	@media all and (max-width: 800px) {
+		display: block;
+	}
+
+	ul {
+		display: block;
+		text-align: left;
+		list-style: none;
+		height: 100%;
+		min-width: 100px;
+		width: auto;
+		margin: 0 50px;
+		white-space: nowrap;
+
+		@media all and (max-width: 800px) {
+			margin: 15px 20px;
+			height: auto;
+			text-align: center;
+		}
+		
+		li {
+			color: #fff;
+			font-size: 1.2rem;
+			line-height: 2.1rem;
+			font-weight: 200;
+
+			@media all and (max-width: 800px) {
+				font-size: 1.6rem;
+				line-height: 3.2rem;
+			}
+
+			&:first-of-type {
+				font-weight: 400;
+				margin-top: 30px;
+			}
+
+			a {
+				color: #fff;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+#footer-info-copyright,
+#footer-info-disclaimer {
+	color: #fff;
+	font-size: 1.2rem;
+
+	a {
+		color: #fff;
+		text-decoration: none;
+		font-weight: 500;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+#footer-info-lastmod {
+	margin-top: 20px;
+	font-size: 1.2rem;
+}
+
+/* Aligns the copyright notice closer to the bottom of the footer. */
+#footer-info-copyright {
+	margin: 5px 0;
+	font-size: 1.2rem;
+}
+
+@media all and (max-width: 800px) {
+	div#footer-info-lastmod {
+		margin-top: 40px;
+	}
+
+	div#footer-info-copyright,
+	div#footer-info-disclaimer {
+		margin-top: 15px;
+	}
+}
+
+
+/* Social icons
+	 ============================================== */
+
+#footer-social-links {
+	height: 100%;
+	width: 60px;
+	margin-top: 35px;
+	padding: 5px 10px;
+
+	@media all and (max-width: 800px) {
+		width: 100%;
+	}
+}
+
+/* Container for each respective icon. */
+.icon-container {
+	height: 40px;
+	width: 40px;
+	margin: 0 3px;
+	padding: 2px;
+	display: inline-block;
+	background-color: transparent;
+	transition: fill 200ms ease;
+	fill: rgba(255, 255, 255, 0.8);
+	position: relative;
+}
+
+.icon-container::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -25px 0 0 -25px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 0);
+	pointer-events: none;
+}
+
+/* Styling for the icons. */
+.icon {
+	transition: all 200ms ease-in-out;
+	opacity: 0.8;
+	
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.footer-facebook {
+	.background-icon("social-facebook");
+}
+
+.footer-google {
+	.background-icon("social-google");
+}
+
+.footer-twitter {
+	.background-icon("social-twitter");
+}
+
+.footer-youtube {
+	.background-icon("social-youtube");
+}
+
+.footer-steam {
+	.background-icon("social-steam");
+}
+
+.icon-container::after {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.icon-container.click::after {
+	animation: social-icon-click-anim 1s ease-out forwards;
+}
+
+@keyframes social-icon-click-anim {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale3d(0.5, 0.5, 1);
+		transform: scale3d(0.5, 0.5, 1);
+	}
+	
+	25% {
+		opacity: 1;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}

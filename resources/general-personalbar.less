@@ -1,0 +1,258 @@
+@import "mediawiki.mixins";
+@import "variables.less";
+
+.background-icon(@name) {
+	.background-image("images/@{name}.svg");
+
+	&:hover {
+		.background-image('images/@{name}Hover.svg');
+	}
+}
+ 
+#p-personal {
+	list-style: none;
+	right: 25px;
+	position: absolute;
+  top: 0;
+	z-index: 101;
+	margin: 0;
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		padding-top: 3px;
+		display: inline-block;
+
+		@media all and (max-width: 800px) {
+			display: block;
+			padding-top: 0;
+		}
+	}
+
+	@media all and (min-width: 800px) {
+		> li {
+			padding-top: 12px;
+		}
+	}
+
+	> div > ul > li {
+		vertical-align: top;
+		display: inline-block;
+		float: none;
+		line-height: 32px; /* same as the images, important for ul's */
+	}
+
+	#personal-bar-flyout {
+		line-height: 1.125rem;
+		min-width: 200px;
+		background-color: transparent;
+		border-radius: 3px;
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 6px;
+		opacity: 0.8;
+
+		.transition(background-color 200ms 100ms, opacity 200ms 100ms;);
+
+		@media all and (min-width: 800px) {
+			&:hover {
+				background-color: #fff;
+				opacity: 1;
+
+				div > a {
+					background-position: left;
+					.background-image("images/userHover.svg");
+				}
+			}
+		}
+	}
+
+	#personal-bar-flyout > div {
+		padding: 0 .2rem;
+
+		.transition(border-color 200ms 100ms;);
+
+		a {
+			display: block;
+			padding: 9px 26px;
+			border-radius: 2px;
+			color: #333;
+			text-decoration: none;
+			background-size: 24px 24px;
+			background-repeat: no-repeat;
+
+			@media all and (max-width: 800px) {
+				color: #fff;
+			}
+		}
+
+		li {
+			float: none;
+			font-size: 1.4rem;
+			margin: 0;
+			padding: 0;
+			background: none;
+			display: block;
+			width: 100%;
+
+			&.group-start {
+				border-top: 1px solid #ededed;
+				
+				@media all and (max-width: 800px) {
+					border-top: 0;
+				}
+			}
+
+			a {
+				margin: 2px 0;
+				background-position: left;
+
+				span {
+					display: inline-block;
+					float: right;
+					width: 1.6rem;
+					padding: .3rem 0;
+					margin: -.3rem -1.6rem 0 0;
+					text-align: center;
+					font-weight: bold;
+					color: #aaa;
+					border-radius: 3px;
+				}
+			}
+		}
+
+		// Only modify personal-bar <ul> on desktop.
+		@media all and (min-width: 800px) {
+			background: right 10px top 5px no-repeat;
+			background-size: auto 12px;
+			.background-image("images/carat1.svg");
+
+			&:hover {
+				.background-image("images/caratHover.svg");
+			}
+
+			border: 1px solid #ccc;
+			border-radius: 3px;
+
+			ul {
+				list-style: none;
+				/* Can't use display: none because it's not animatable */
+				max-height: 0;
+				opacity: 0;
+				overflow: hidden;
+				width: auto;
+
+				.transition(max-height 0s 100ms, opacity 200ms 100ms;);
+			}
+
+			&:hover ul {
+				max-height: 9999px;
+				opacity: 1;
+			}
+
+			&:hover > a {
+				color: #333;
+			}
+
+			> a {
+				color: #fff;
+				padding: 6px 24px;
+
+				.transition(color 200ms 100ms;);
+			}
+
+			li a:hover {
+				background-color: @pcgw-selected-color;
+				color: #fff;
+
+				span {
+					background: @pcgw-selected-color;
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	@media all and (max-width: 800px) {
+		position: relative;
+		padding: 0;
+		margin: 0;
+		right: auto;
+
+		#pt-anonuserpage,
+		#pt-anontalk {
+			display: none;
+		}
+	}
+}
+
+#p-personal-logged-in {
+	margin-top: 1px;
+}
+ 
+#pt-watchlist a, #pt-mytalk a {
+	background-color: transparent !important;
+	padding: 0 !important;
+
+	display: block;
+	text-indent: -9999px;
+	overflow: hidden;
+	width: 32px;
+	height: 32px;
+	background-size: 32px 32px;
+
+	@media all and (max-width: 800px) {
+		display: none;
+	}
+}
+ 
+li#pt-notifications {
+	// Overrides for weird echo badge styling
+	margin: 7px 18px 0 16px;
+	vertical-align: top;
+	font-size: 1.2rem;
+
+	@media all and (max-width: 800px) {
+		display: none;
+	}
+}
+ 
+#pt-watchlist a {
+	.background-image("images/watchlist.svg");
+}
+ 
+#pt-mytalk a {
+	.background-image("images/talk.svg");
+}
+ 
+#personal-bar-flyout div > a {
+	font-size: 1.2rem;
+	background-position: left;
+	.background-image("images/user.svg");
+
+	.transition(background-image 200ms 100ms;);
+}
+ 
+#pt-mycontris-flyout a {
+	.background-icon("contributions");
+}
+ 
+#pt-newmessages-flyout a,
+#pt-mytalk-flyout a {
+	.background-icon("talk");
+}
+ 
+#pt-watchlist-flyout a {
+	.background-icon("watchlist");
+}
+ 
+#pt-preferences a {
+	.background-icon("preferences");
+}
+ 
+#pt-betafeatures-flyout a {
+	.background-icon("beta");
+}

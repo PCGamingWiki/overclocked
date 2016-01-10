@@ -1,0 +1,659 @@
+@import "mediawiki.mixins";
+@import "variables.less";
+
+.background-icon(@name) {
+	.background-image("images/@{name}.svg");
+}
+
+/* ==============================================
+		MediaWiki overrides
+	 ============================================== */
+
+#body-content {
+	/* Fixes some of the font issues. */
+	font-size: 1.3rem;
+
+	/* Fixes bugs with shorter pages. */
+	min-height: 350px;
+
+	/* Space out from the header. */
+	padding-top: 10px;
+
+	/* Fix some pages flowing outside the main content area. */
+	display: inline-block;
+	width: 100%;
+}
+
+/* Fixes shorter pages not rendering correctly, except with certain exceptions. */
+.mw-content-ltr:not(.lqt_post):not(.mw-warning-with-logexcerpt):not(#mw-imagepage-content) {
+	min-height: 275px;
+}
+
+/* Vertical spacing between {{++}}, {{ii}}, {{mm}}, etc. */
+dd {
+	line-height: 1.6rem;
+	margin-bottom: 6px;
+	margin-top: 8px;
+
+	/* When directly following another dd element, the margin-top is removed. */
+	+ dd {
+		margin-top: 0;
+	}
+}
+
+/* For mobile, when <pre> or code blocks overflow outside of their container.
+ * Wrapping of lines to make sure the tags don't exceed the size of their container.
+ */
+pre, .mw-code {
+	overflow: auto;
+	white-space: pre-wrap;
+}
+
+/* Makes the "Link" next to section titles smaller. */
+span.mw-linkhere {
+	font-size: 1.1rem;
+	font-weight: 400;
+
+	@media all and (max-width: 800px) {
+		display: none;
+	}
+}
+
+/* Force the font-family for the editor to use a monospaced font. */
+textarea#wpTextbox1 {
+	font-family: monospace;
+	padding: 1px;
+}
+
+/* Force centered text in tables. */
+table.wikitable > tr > th,
+table.wikitable > tr > td,
+table.wikitable > * > tr > th,
+table.wikitable > * > tr > td {
+	text-align: center;
+	padding: 3px;
+}
+
+/* External link icon. */
+.mw-body a.external {
+	background: center right no-repeat;
+	.background-icon("external-link-icon");
+
+	padding-right: 15px;
+}
+
+/* Wikipedia link */
+.mw-body a.extiw {
+	padding: 2px 0 3px 21px !important;
+	background: transparent url("icons/infobox-wikipedia.svg") no-repeat scroll 0 ~"2px / 18px";
+}
+
+/* Hide MediaWiki help links on Category pages, etc. */
+#mw-indicator-mw-helplink {
+  display: none;
+}
+
+
+/* Image thumbnails
+	 ============================================== */
+
+/* Overrides MediaWiki margins so smaller screens don't freak out as hard. */
+div.tright {
+	margin: 5px 0 20px 12px;
+
+	/* Removes border and background styling from the image thumbnails. */
+	.thumbinner {
+		background-color: #fff;
+		border: none;
+		box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
+		padding: 0;
+		border: none;
+
+		.thumbcaption {
+			padding: 10px;
+			font-size: 1.1rem;
+		}
+	}
+}
+
+/* Disables display of the "magnify" button, which is old and useless. */
+.magnify {
+	display: none;
+}
+
+/* Forces small icons down 2px, since they're aligned to the top of the div by the template. */
+/* This makes them align vertically with the text. */
+.iconcontent > img {
+	-webkit-transform: translateY(2px);
+					transform: translateY(2px);
+}
+
+
+/* Site notice
+	 ============================================== */
+
+/* MediaWiki built-in site notice. */
+#site-notice {
+	/* Removes the main content's 10px margin-top, so they appear to be connected. */
+	margin-bottom: -10px;
+	margin-top: 10px;	
+	text-align: center;
+	font-size: 1.3rem;
+	padding: 12px;
+	background-color: #ff8e02;
+	color: #fff;
+	
+	a {
+		color: #fff;
+		font-weight: 600;
+	}
+
+	@media all and (max-width: 800px) {
+		margin-top: 5px;
+	}
+}
+
+/* MW style override. */
+#localNotice {
+	margin-bottom: 0;
+}
+
+
+/* Categories bar
+	 ============================================== */
+
+/* Hides the categories bar when on pages without categories. */
+/* Min-height and padding are modified to create padding on certain special */
+/* pages, most notably the RecentChanges page. */
+#catlinks.catlinks-allhidden {
+	opacity: 0;
+	min-height: 10px;
+	padding: 0;
+}
+
+/* Special styling for the categories bar. */
+#catlinks {
+	width: ~"calc(100% + 40px)";
+	min-height: 40px;
+	background-color: #f9f9f9;
+	font-size: 1.4rem;
+	padding: 9px 20px;
+	margin-top: 15px;
+	margin-left: -25px;
+	border: none;
+	display: inline-block;
+
+	ul li {
+		display: inline;
+
+		@media all and (max-width: 800px) {
+			display: block;
+			margin: 15px 0;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	@media all and (max-width: 800px) {
+		width: ~"calc(100% + 40px)";
+		-webkit-transform: translateX(10px);
+		transform: translateX(10px);
+
+		> div {
+			margin-top: 5px;
+
+			// This rule only effects the "Categories:" text.
+			> a {
+				font-weight: 600;
+			}
+		}
+
+		.mw-normal-catlinks > ul {
+			margin: 0;
+			margin-top: 10px;
+
+			> li {
+				border-left: 0;
+				padding: 0;
+				padding-right: 10px;
+			}
+		}
+	}
+}
+
+
+/* Header notifications
+	 ============================================== */
+
+#pt-notifications .mw-echo-notifications-badge {
+	background-color: rgba(255,255,255,0.5);
+	padding: 3px 5px 3px 5px;
+	font-weight: 300;
+
+	.transition(background-color 200ms 0);
+}
+
+.mw-echo-overlay {
+	text-align: left;
+	top: 44px;
+}
+
+#mw-echo-overlay-link {
+	white-space: nowrap !important;
+	width: 45%;
+}
+
+#mw-echo-overlay-footer {
+	width: 100%;
+	
+	a {
+		float: left;
+		display: inline-block;
+	}
+}
+
+.mw-echo-grey-link {
+	color: #666 !important;
+}
+
+
+/* Watchlist
+	 ============================================== */
+
+// Watchlist button
+#ca-watch, #ca-unwatch {
+	margin: 0 4px !important;
+
+	a {
+		padding: 0;
+		display: block;
+		width: 32px;
+		padding-top: 24px;
+		margin: 0 2px 0 8px;
+		height: 0;
+		overflow: hidden;
+		background-position: 0 -5px;
+		background-size: 32px 32px;
+	}
+
+	&:focus {
+		outline: transparent;
+	}
+}
+
+// Watchlist icon initial state
+#ca-watch a {
+	.background-icon("watchlist-watch");
+}
+
+// Watchlist icon when the user has already watched the page
+#ca-unwatch a {
+	.background-icon("watchlist-unwatch");
+}
+
+
+/* Gallery
+	 ============================================== */
+
+.gallerybox {
+	.thumb {
+		background: none !important;
+		border: none !important;
+		border-bottom: 1px solid rgb(204, 204, 204) !important;
+	}
+
+	.gallerytext {
+		text-align: center;
+	}
+}
+
+
+/* Header login/user bar
+	 ============================================== */
+
+#pt-anonuserpage,
+#pt-anontalk,
+#pt-login,
+#pt-createaccount {
+	margin: -1px 10px 0 10px;
+	padding: 13px 0;
+
+	> a {
+		font-size: 1.2rem;
+		font-weight: 300;
+		text-decoration: none;
+		transition: color 200ms ease-in-out;
+
+		&:hover {
+			color: #fff !important;
+		}
+	}
+}
+
+#pt-anonuserpage > a,
+#pt-anontalk > a,
+#pt-createaccount > a {
+	color: #aaaab2 !important;
+}
+
+#pt-login > a {
+	@media all and (min-width: 800px) {
+		color: #fff !important;
+	}
+}
+
+
+/* ==============================================
+		Special pages
+	 ============================================== */
+
+.mw-ui-input {
+	padding: 5px 4px 6px 8px;
+}
+
+/* Fixes weird styling bug with the checkboxes. */
+.mw-ui-checkbox:not(#noop) input[type="checkbox"]:active + label::after,
+.mw-ui-checkbox:not(#noop) input[type="checkbox"]:focus + label::after {
+	left: 0;
+	border-bottom: solid 3px lightgrey;
+	bottom: 6px;
+	z-index: 1;
+}
+
+.mw-ui-checkbox:not(#noop) input[type="checkbox"] + label::before {
+	background-color: transparent;
+	z-index: 2;
+}
+
+.mw-ui-checkbox:not(#noop) input[type="checkbox"]:checked + label::before {
+	background-position: center 30%;
+}
+
+/* Fixes the create account/log-in pages not stretching the background properly. */
+.mw-ui-container #userloginForm {
+	float: none;
+	display: inline-block;
+	vertical-align: top;
+}
+
+div.mw-createacct-benefits-container {
+	float: none;
+	display: inline-block;
+}
+
+/* Lazy subcategories hack for Categories page */
+div#mw-subcategories > div.mw-content-ltr {
+	min-height: 0 !important;
+}
+
+// Improved vertical spacing for Recent Changes page.
+.mw-changeslist {
+  line-height: 1.8;
+}
+
+// Align icons with text on Recent changes page.
+table.mw-enhanced-rc td {
+  vertical-align: middle;
+}
+
+
+/* ==============================================
+		WikiEditor
+	 ============================================== */
+
+/* Forces the wikiEditor icons to work even with the "box-sizing: border-box" declaration, which messes with the way padding works. */
+a.wikiEditor-toolbar-spritedButton {
+	width: 24px;
+	height: 24px;
+}
+
+
+/* ==============================================
+		User message dialog
+	 ============================================== */
+
+.user-message {
+	position: absolute;
+	background-color: #ffb03b;
+	box-shadow: 0 1px 6px 0 rgba(0,0,0,0.4);
+	width: 300px;
+	font-size: 1.4rem;
+	padding: 12px;
+	top: 70px;
+	right: 18px;
+	z-index: 1;
+	color: #fff;
+
+	a {
+		color: #fff;
+	}
+}
+
+dl {
+	@media all and (max-width: 800px) {
+		margin-left: -1em;	
+	}
+}
+
+
+/* ==============================================
+		References
+	 ============================================== */
+
+// Fixes references sometimes causing horizontal scrolling on mobile devices.
+ol.references {
+	overflow-x: hidden;
+	margin-left: 0;
+  padding-left: 45px;
+
+	li {
+		margin: 5px 0;
+		list-style-type: decimal;
+	}
+
+  .mw-cite-backlink {
+	  position: relative;
+	}
+}
+
+
+/* ==============================================
+		Category pages
+	 ============================================== */
+
+// Wrapper for category pages.
+.mw-category {
+	ul {
+		list-style: none;
+		margin: 0;
+
+		li {
+			// Vertical spacing
+			margin: 12px 0;
+		}
+	}
+
+	// Only provide extra margin on mobile.
+	@media all and (max-width: 800px) {
+		margin-left: 5px;
+	}
+}
+
+
+
+/* ==============================================
+		MediaWiki Header
+	 ============================================== */
+
+#mw-head {
+	width: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	height: 40px;
+	margin-bottom: 10px;
+
+	ul {
+		list-style: none;
+		font-size: 1.4rem;
+		padding: 0;
+		margin: 0;
+
+		li {
+			display: inline-block;
+			vertical-align: top;
+
+			a {
+				text-decoration: none;
+
+				&:visited {
+					color: #0645ad;
+				}
+			}
+
+			/* Makes the currently selected mw-head item bold. */
+			&.selected {
+				font-weight: 600;
+			}
+		}
+	}
+}
+
+#mw-head-left {
+	position: absolute;
+	left: 0;
+
+	> li {
+		margin-right: 20px;
+	}
+}
+
+// Talk page link in mw-head.
+#ca-talk.new a,
+#ca-talk.new a:visited,
+#ca-nstab-main.new a,
+#ca-nstab-main.new a:visited {
+	color: #ba0000 !important;
+}
+
+#mw-head-right {
+	position: absolute;
+	right: 0;
+	list-style: none;
+
+	ul {
+		padding: 0;
+	}
+
+	li {
+		margin-top: 0;
+		display: inline-block;
+		margin-left: 20px;
+	}
+
+	#mw-head-more {
+		background-color: #fff;
+		border-radius: 3px;
+		display: inline-block;
+		vertical-align: top;
+		margin-top: -5px;
+		min-width: 100px;
+		position: relative;
+		z-index: 50;
+
+		&:focus {
+			outline: transparent;
+		}
+	}
+
+	#mw-head-more > div {
+		padding: 0 2px;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+
+		background: right 10px top 8px no-repeat;
+		background-size: auto 12px;
+		.background-image("images/carat2.svg");
+
+		.transition(background-color 200ms 100ms, border-color 200ms 100ms;);
+
+		&:hover {
+			.background-image("images/caratHover.svg");
+			border-color: #aaa;
+			background-color: #fff;
+		}
+
+		> a {
+			height: 30px;
+		}
+
+		ul {
+			/* Can't use display: none because it's not animatable */
+			max-height: 0;
+			opacity: 0;
+			overflow: hidden;
+			list-style: none;
+			display: block;
+			border-top: 1px solid #ededed;
+
+			.transition(max-height 0s 100ms, opacity 200ms 100ms;);
+		}
+
+		&:hover ul {
+			max-height: 9999px;
+			opacity: 1;
+		}
+
+		a {
+			display: block;
+			padding: 4px 6px;
+			border-radius: 2px;
+			color: #000;
+			text-decoration: none;
+		}
+
+		li {
+			float: none;
+			font-size: 1.4rem;
+			margin: 0;
+			padding: 0;
+			background: none;
+			display: block;
+
+			a {
+				margin: 2px 0;
+			}
+
+			a:hover {
+				background-color: @pcgw-selected-color;
+				color: #fff;
+			}
+		}
+	}
+}
+
+/* Mobile styles */
+@media all and (max-width: 800px) {
+	/* Hide all of mw-head-right except for the watch star. */
+	#mw-head-right {
+		#ca-view,
+		#ca-edit,
+		#ca-history,
+		#ca-viewsource,
+		#mw-head-more {
+			display: none;
+		}
+	}
+
+	/* Hide section edit links on mobile. */
+	.mw-editsection {
+		display: none;
+	}
+}

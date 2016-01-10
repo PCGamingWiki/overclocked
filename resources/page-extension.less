@@ -1,0 +1,54 @@
+@import "mediawiki.mixins";
+
+/* Prevents display of the "Edit", "Discussion", etc. tabs as well as the "PCGamingWiki: Extension" header text and site-sub on the Extension page. */
+.page-PCGamingWiki_Extension {
+	#site-sub, .article-header, .catlinks, #mw-head {
+		display: none;
+	}
+}
+
+.browser-extension-header {
+	text-align: center;
+	margin: auto;
+	margin-top: 40px;
+	width: 600px;
+
+	> p {
+		font-size: 2.8rem;
+		font-weight: 600;
+		padding-bottom: 15px;
+	}
+
+	img {
+		opacity: 0.75;
+		transition: opacity 400ms;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.browser-icon {
+	margin: 10px 30px 30px;
+	width: auto;
+	display: inline-block;
+
+	> p {
+		text-align: center;
+		font-size: 1.6rem;
+		padding: 5px;
+	}
+}
+
+.browser-extension-features-list {
+	margin: auto;
+	width: 500px;
+	font-size: 1.4rem;
+
+	b {
+		font-size: 2.1rem;
+		font-weight: 400;
+		padding-bottom: 8px;
+	}
+}

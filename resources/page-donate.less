@@ -1,0 +1,122 @@
+@import "variables.less";
+
+.page-PCGamingWiki_Donate {
+	/* Force all content on the page to be centered. */
+	#body-content {
+		text-align: center;
+		padding: 0 120px;
+	  padding-bottom: 25px;
+
+	  @media all and (max-width: 1200px) {
+	  	padding: 0 40px;
+		  padding-bottom: 25px;
+	  }
+
+	  @media all and (max-width: 1000px) {
+	  	padding: 0 20px;
+		  padding-bottom: 25px;
+	  }
+
+	  @media all and (max-width: 800px) {
+	  	padding: 0;
+		  padding-bottom: 25px;
+	  }
+	}
+
+	h2 {
+		border-bottom: none;
+		font-weight: 600;
+
+		.mw-linkhere {
+			display: none;
+		}
+	}
+
+	.pcgw-logo-header {
+		margin: 80px auto 50px;
+
+		img {
+			padding: 10px;
+		}
+		
+		> p {
+			padding: 2px 0;
+			font-size: 1.4rem;
+
+			&:nth-of-type(2) {
+				font-weight: 600;
+				font-size: 1.5rem;
+			}
+
+			@media all and (max-width: 800px) {
+				padding: 10px 0;
+			}
+		}
+
+		@media all and (max-width: 800px) {
+			margin: 30px auto;
+		}
+	}
+
+	/* Prevents display of the "Edit", "Discussion", etc. tabs as well as the "PCGamingWiki: Extension" header text and site-sub on the Donate page. */
+	#site-sub, .article-header, #catlinks, #mw-head {
+		display: none;
+	}
+}
+
+.buttons-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+	width: 100%;
+	margin: 20px 0 150px 0;
+
+	@media all and (max-width: 1000px) {
+		display: block;
+		margin-bottom: 30px;
+	}
+}
+
+.button {
+	flex: 1;
+	height: 57px;
+	border-radius: 4px;
+	font-size: 1.6rem;
+	margin: 0 5px;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+	background-color: @pcgw-color;
+	border: 1px solid lighten(@pcgw-color,15%);
+	transition: 300ms box-shadow;
+	box-shadow: 0 0 rgba(0,0,0,0.1),inset 0 0 rgba(0,0,0,0.25);
+
+	&:hover {
+		box-shadow: 0 1px rgba(0,0,0,0.1),inset 0 -5px rgba(0,0,0,0.25);
+	}
+
+	&.button-with-image {
+		a, a:hover {
+			padding: 12px;
+		}
+	}
+
+	> p > a, a.external, a.external:visited, a:hover {
+		color: #fff;
+		text-decoration: none;
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 16px;
+		text-align: center;
+		background-image: none;
+	}
+
+	// On smaller devices (e.g. smartphones), the buttons are made full-width.
+	@media all and (max-width: 1000px) {
+		margin: 8px 10px;
+		width: ~"calc(100% - 20px)";
+	}
+}
+

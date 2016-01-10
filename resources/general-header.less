@@ -1,0 +1,354 @@
+@import "variables.less";
+@import "mediawiki.mixins";
+
+.background-icon(@name) {
+	.background-image("icons/@{name}.svg");
+}
+
+/******
+ * Header
+ **/
+
+/* Universal black PCGamingWiki header */
+#pcgw-header {
+	height: 40px;
+	width: 100%;
+	background-color: #333;
+	display: -webkit-flex;
+	display: flex;
+	position: relative;
+	z-index: 100;
+	white-space: nowrap;
+
+	/* Allows the header to scroll horizontally on mobile. */
+	@media all and (max-width: 800px) {
+		height: 45px;
+		-webkit-flex-flow: column wrap;
+		        flex-flow: column wrap;
+	  -webkit-align-content: flex-start;
+	          align-content: flex-start;
+		position: fixed;
+	}
+}
+
+#pcgw-header-sidebar-toggle {
+	margin-left: 5px;
+	background-size: 30px;
+	background-position: 8px 8px;
+	background-repeat: no-repeat;
+	.background-icon("menu-icon");
+	opacity: 0.75;
+	transition: opacity 300ms;
+
+	width: 45px;
+	height: 45px;
+
+	&.active {
+		opacity: 1;
+	}
+
+	@media all and (min-width: 800px) {
+		display: none;
+	}
+}
+
+#pcgw-header-sidebar {
+	@media all and (max-width: 800px) {
+		display: block;
+		position: fixed;
+		height: ~"calc(100vh - 45px)";
+		width: 75vw;
+		min-width: 250px;
+		max-width: 350px;
+		background-color: #333;
+		-webkit-transform: translateX(-100%);
+		        transform: translateX(-100%);
+		top: 45px;
+		transition: -webkit-transform 300ms;
+		transition: transform 300ms;
+		box-shadow: inset 0 7px 16px -7px rgba(0,0,0,0.6);
+		overflow-y: auto;
+
+		&.active {
+			-webkit-transform: translateX(0);
+			        transform: translateX(0);
+		}
+	}
+}
+
+/* Left-aligned header item container, contains main navigational items. */
+.header-item-left-container {
+	position: relative;
+	text-align: left;
+	margin-left: 25px;
+	margin-top: 0;
+	list-style: none;
+	padding: 13px 10px;
+
+	@media all and (max-width: 800px) {
+		margin-left: 0;
+		padding: 13px 0 0;
+	}
+}
+
+/* Generic header item class for the black PCGamingWiki header. */
+.header-item {
+	color: #aaaab2;
+	font-size: 1.2rem;
+	font-weight: 400;
+	margin: 0 10px;
+	display: inline-block;
+	position: relative;
+	transition: color 200ms ease-in-out;
+
+	@media all and (max-width: 800px) {
+		font-size: 1.6rem;
+		display: block;
+		margin: 0;
+	}
+
+	/* Links in the header are gray and become white on hover. */
+	a {
+		color: #aaaab2;
+		font-size: 1.2rem;
+		font-weight: 400;
+		text-decoration: none;
+		transition: color 200ms ease-in-out;
+
+		&:hover {
+			color: #fff;
+		}
+
+		@media all and (max-width: 800px) {
+			font-size: 1.6rem;
+			padding: 10px 18px;
+			display: block;
+		}
+	}
+
+	/* Emphasizes the current header item by using a thicker font weight. */
+	&.current a {
+		font-weight: 500;
+		color: #fff;
+	}
+
+	@media all and (max-width: 800px) {
+		&.no-mobile {
+			display: none;	
+		}
+	}
+	
+	@media all and (min-width: 800px) {
+		&.mobile-only {
+			display: none;
+		}
+	}
+
+	/* Pseudo-selector for the header-items that adds a "NEW" label directly above
+	   when the "new" class is present. */ 
+	&.new::after {
+		content: 'NEW';
+		position: absolute;
+		top: -15px;
+		font-size: 10px;
+		left: -2px;
+		height: 13px;
+		display: inline-block;
+		background-color: #e74c3c;
+		padding: 0 5px;
+		text-align: center;
+		color: #fff;
+		width: calc(100% + 8px);
+
+		@media all and (max-width: 800px) {
+			display: none;
+		}
+	}
+}
+
+
+/* Header search
+	 ============================================== */
+		
+#header-search input[type="search"] {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+#pcgw-header-search-toggle {
+	@media all and (max-width: 800px) {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 45px;
+		width: 40px;
+
+		background-size: 21px;
+		background-position: 10px;
+		background-repeat: no-repeat;
+		.background-icon("search-icon-hover");
+
+		opacity: 0.75;
+		transition: opacity 300ms;
+
+		&.active {
+			opacity: 1;
+		}
+	}
+
+	@media all and (min-width: 800px) {
+		display: none;
+	}
+}
+
+@media all and (min-width: 800px) {
+	#header-search {
+		display: inline-block;
+		margin-left: 20px;
+		margin-top: 5px;
+	  position: absolute;
+	  left: 420px;
+
+		input[type="search"] {
+			background-color: transparent;
+			width: 250px;
+			height: 30px;
+			border: 1px solid rgba(255,255,255,0.6);
+			padding: 4px 7px 4px 24px;
+			font-size: 1.2rem;
+			font-weight: 300;
+			color: #fff;
+			background: ~"6px / 14px" no-repeat;
+
+			.background-icon("search-icon");
+			transition: border 200ms;
+
+			&:focus {
+				border: 1px solid #fff;
+				outline: transparent;
+				.background-icon("search-icon-hover");
+			}
+		}
+	}
+}
+
+@media all and (max-width: 800px) {
+	#header-search {
+		position: fixed;
+		top: 45px;
+		left: 0;
+		height: 36px;
+		width: 100vw;
+		border: 0;
+		background-color: #fff;
+		color: #333;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 300ms;
+
+		input[type="search"] {
+			background-color: transparent;
+			border: 0;
+			width: 100%;
+			height: 100%;
+			font-size: 1.4rem;
+			padding: 10px 15px;
+		}
+
+		&.active {
+			max-height: 36px;
+			border-bottom: 1px solid #aaaab2;
+		}
+	}
+
+	// Make search suggestions easier to click on mobile.
+	div.suggestions-result {
+		line-height: 2.5em;
+		padding-left: 15px;
+	}
+
+	// Style "Log in" to match other header sidebar items.
+	#p-personal {
+		div#personal-bar-flyout {
+			font-weight: 300;
+			display: block;
+			color: #aaaab2;
+			opacity: 1;
+			margin-top: 30px;
+
+			> div {
+				padding: 0;
+				width: 100%;
+
+				li a, a {
+					color: #aaaab2;
+					font-size: 1.6rem;
+					display: block;
+					padding: 10px 18px;
+				  line-height: initial;
+				}
+
+				> a {
+					text-transform: uppercase;
+					font-size: 1.4rem;
+					font-weight: 400;
+					color: #fff;
+					border-bottom: 1px solid #aaaab2;
+				}
+
+				li {
+					font-size: 1.6rem;
+				}
+			}
+		}
+
+		#pt-login,
+		#pt-createaccount {
+			font-size: 1.6rem;
+			display: block;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+
+			> a {
+				display: block;
+				font-size: 1.6rem;
+				color: #aaaab2;
+				padding: 10px 18px;
+			}
+		}
+	}
+	
+	// Hide personal bar item icons for mobile users.
+	#p-personal {
+		#personal-bar-flyout div > a,
+		#pt-mycontris-flyout a,
+		#pt-newmessages-flyout a,
+		#pt-mytalk-flyout a,
+		#pt-watchlist-flyout a,
+		#pt-preferences a,
+		#pt-betafeatures-flyout a {
+			background: none;
+		}
+	}
+}
+
+#pcgw-header-logo {
+	display: none;
+
+	@media all and (max-width: 800px) {
+		position: absolute;
+		width: 70px;
+		height: 45px;
+		display: block;
+		left: ~"calc(50% - 35px)";
+		top: 0;
+
+		a {
+			display: block;
+			padding: 2px 15px;
+		}
+	}
+}
