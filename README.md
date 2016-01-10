@@ -1,7 +1,7 @@
 Overclocked
 ========
 
-Overclocked is a skin for [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) built by the [PCGamingWiki](http://pcgamingwiki.com) development team. It supports MediaWiki v1.25 and above. Note that support for specific extensions used by PCGamingWiki is hard-coded into the skin, and if you are not using those extensions, you may experience problems.
+Overclocked is a skin for [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) built by the [PCGamingWiki](http://pcgamingwiki.com) development team. It supports MediaWiki v1.25 and above. Note that support for specific extensions used by PCGamingWiki are hard-coded into the skin. If you are not using these extensions, you may experience problems as a result.
 
 
 ### Notable features
