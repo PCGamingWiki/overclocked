@@ -1,0 +1,316 @@
+@import "mediawiki.mixins";
+
+.background-icon(@name) {
+	.background-image("icons/@{name}.svg");
+}
+
+
+/*
+ * Generic SVG classes
+ */
+
+.svg-icon {
+	display: inline-block;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+
+	> a {
+		width: 100%;
+		height: 100%;
+		display: block;
+		text-decoration: none;
+	}
+}
+
+.svg-16 {
+	width: 16px;
+	height: 16px;
+	vertical-align: bottom;
+	margin-right: 3px;
+}
+
+.svg-18 {
+	width: 18px;
+	height: 18px;
+}
+
+.svg-25 {
+	width: 25px;
+	height: 25px;
+}
+
+.svg-35 {
+	width: 35px;
+	height: 35px;
+}
+
+.svg-75 {
+	width: 75px;
+	height: 75px;
+}
+
+
+/*
+ * Bulletpoints
+ */
+
+.thumbs-up {
+	.background-icon("bullet-thumbs-up");
+}
+
+.thumbs-down {
+	.background-icon("bullet-thumbs-down");
+}
+
+.info-icon {
+	.background-icon("bullet-info");
+}
+
+.more-info {
+	.background-icon("bullet-document");
+}
+
+
+/*
+ * Infobox
+ */
+
+.template-infobox-icon {
+	overflow: hidden;
+	height: 18px;
+	width: 18px;
+	margin-left: 2px;
+}
+
+.infobox-wikipedia {
+	.background-icon("infobox-wikipedia");
+}
+
+.infobox-steamdb {
+	.background-icon("infobox-steamdb");
+}
+
+.infobox-cooptimus {
+	background-image: url("icons/infobox-cooptimus.png");
+}
+
+.infobox-winehq {
+	.background-icon("infobox-winehq");
+}
+
+
+/*
+ * Fixbox
+ */
+
+.fixbox-icon {
+	.background-icon("misc-fixbox");
+}
+
+
+/*
+ * Notices
+ */
+
+.notice-icon-stub {
+	.background-icon("notice-stub");
+}
+
+.notice-icon-cleanup {
+	.background-icon("notice-cleanup");
+}
+
+.notice-icon-alpha {
+	.background-icon("notice-alpha");
+}
+
+.notice-icon-beta {
+	.background-icon("notice-beta");
+}
+
+
+/*
+ * ID/DRM
+ */
+
+.store-steam {
+	.background-icon("store-steam");
+}
+
+.store-uplay {
+	.background-icon("store-uplay");
+}
+
+.store-desura {
+	.background-icon("store-desura");
+}
+
+.store-origin {
+	.background-icon("store-origin");
+}
+
+.store-gfwl {
+	.background-icon("store-gfwl");
+}
+
+.store-gogcom {
+	.background-icon("store-gogcom");
+}
+
+.store-gamersgate {
+	.background-icon("store-gamersgate");
+}
+
+.store-mas {
+	.background-icon("store-mas");
+}
+
+.store-battlenet {
+	.background-icon("store-battlenet");
+}
+
+.store-humble {
+	.background-icon("store-humble");
+}
+
+.drm-drmfree {
+	.background-icon("drm-drm-free");
+}
+
+.drm-cdkey {
+	.background-icon("drm-cd-key");
+}
+
+.drm-download {
+	.background-icon("drm-download");
+}
+
+.drm-alwaysonline {
+	.background-icon("drm-always-online");
+}
+
+.drm-disc {
+	.background-icon("drm-disc");
+}
+
+.drm-account {
+	.background-icon("drm-account");
+}
+
+.drm-unknown {
+	.background-icon("drm-unknown");
+}
+
+
+/*
+ * OS
+ */
+
+.os-windows {
+	.background-icon("os-windows");
+}
+
+.os-osx {
+	.background-icon("os-osx");
+}
+
+.os-linux {
+	.background-icon("os-linux");
+}
+
+
+/*
+ * True/false
+ */
+
+.tickcross-true {
+	.background-icon("tc-true");
+	display: block;
+}
+
+.tickcross-false {
+	.background-icon("tc-false");
+	display: block;
+}
+
+.tickcross-hackable {
+	.background-icon("tc-hackable");
+	display: block;
+}
+
+.tickcross-unknown {
+	.background-icon("tc-unknown");
+	display: block;
+}
+
+.tickcross-not-applicable {
+	.background-icon("tc-not-applicable");
+	display: block;
+}
+
+
+/*
+ * Input settings
+ */
+
+.input-dualshock {
+	.background-icon("input-dualshock");
+}
+
+.input-xbox {
+	.background-icon("input-xbox");
+}
+
+.input-nintendo {
+	.background-icon("input-nintendo");
+}
+
+
+/*
+ * WSGF/GG3D
+ */
+
+.text-gg3d {
+	.background-icon("text-gg3d");
+}
+
+.text-wsgf-4k {
+	.background-icon("text-wsgf-4k");
+}
+.text-wsgf-mm {
+	.background-icon("text-wsgf-mm");
+}
+.text-wsgf-uw {
+	.background-icon("text-wsgf-uw");
+}
+.text-wsgf-ws {
+	.background-icon("text-wsgf-ws");
+}
+
+.circle-bronze {
+	.background-icon("circle-bronze");
+}
+
+.circle-silver {
+	.background-icon("circle-silver");
+}
+
+.circle-gold {
+	.background-icon("circle-gold");
+}
+
+.circle-platinum {
+	.background-icon("circle-platinum");
+}
+
+/*
+ * Project icons
+ */
+
+.project-gog {
+	.background-icon("project-gog");
+}
+
+.project-local-multiplayer {
+	.background-icon("project-local-multiplayer");
+}

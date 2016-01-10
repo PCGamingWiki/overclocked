@@ -1,0 +1,68 @@
+@import "variables.less";
+
+.page-normaltable {
+	text-align: center;
+	max-width: 850px;
+	height: auto;
+}
+
+.page-normaltable tr:first-of-type th {
+	border-bottom: 2px solid @pcgw-color;
+	padding: 10px 2px;
+	color: #fff;
+	background-color: @pcgw-color;
+	font-weight: 600;
+
+	a {
+		color: #fff;
+		font-weight: 600;
+	}
+}
+
+.page-normaltable td {
+	padding: 6px 4px;
+	border-left: 1px solid rgba(170, 170, 178, 0.3);
+}
+
+.page-normaltable tr:nth-child(odd) {
+	background-color: darken(#fff,4%);
+}
+
+/* ==============================================
+    Progress bar for GOG.com project page
+   ============================================== */
+
+.progress-bar-container {
+	margin: auto;
+	width: 100%;
+	max-width: 800px;
+	position: relative;
+}
+
+.progress-bar {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  height: 20px;
+  margin: 4px auto 5px;
+  width: 100%;
+
+	span.meter {
+	  background-color: #556db3;
+	  border-radius: 10px;
+	  display: block;
+	  height: 20px;
+	}
+}
+
+.progress-value {
+	text-align: left;
+	display: inline-block;
+}
+
+.progress-percent {
+	text-align: right;
+	display: inline-block;
+	position: absolute;
+	right: 5px;
+	font-weight: 600;
+}
