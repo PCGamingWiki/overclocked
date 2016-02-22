@@ -58,7 +58,7 @@ class SkinOverclocked extends SkinTemplate {
 }
 
 /**
- * BaseTemplate class for Foo Bar skin
+ * BaseTemplate class for Overclocked skin
  *
  * @ingroup Skins
  */
@@ -391,6 +391,7 @@ class OverclockedTemplate extends BaseTemplate {
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About#Advertising">Advertising</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Privacy_policy">Privacy policy</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:General_disclaimer">General disclaimer</a>
+					<li><a href="https://github.com/PCGamingWiki">Open source</a>
 				</ul>
 
 				<ul>
