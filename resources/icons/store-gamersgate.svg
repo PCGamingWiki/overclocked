@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><rect fill="#377CBD" width="25" height="25"/><polygon fill="#70D0E4" points="5,5 5,20 20,20 20,11 10,11 10,14 17,14 17,17 8,17 8,8 20,8 20,5"/></svg>
+<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><rect fill="#377cbd" width="25" height="25"/><path fill="#70d0e4" d="M5,5V20H20V11H10V14H17V17H8V8H20V5"/></svg>
