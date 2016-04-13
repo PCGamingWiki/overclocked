@@ -5,31 +5,6 @@ function iconAnimations() {
 	});
 }
 
-function stickyTableOfContents() {
-	$("#toc").addClass('absolute');
-
-	// Removes "display: none" style property from TOC.
-	$("#toc > ul").attr('style', '');
-
-	$(".article-title").waypoint(function(direction) {
-		if (direction === 'down') {
-			$("#toc").attr('class', 'fixed');
-		}
-		else if (direction === 'up') {
-			$("#toc").attr('class', 'absolute');
-		}
-	});
-
-	$("#toc").click(function() {
-		$(this).toggleClass('expanded');
-
-		$(this).bind('clickoutside', function(event) {
-			$(this).removeClass('expanded');
-			$(this).unbind('clickoutside');
-		});
-	});
-}
-
 function mobileTableOfContents() {
 	$("#toctitle").click(function() {
 		$("#toc").toggleClass('active');

@@ -46,11 +46,6 @@ function wfPrefHook( $user, &$preferences ) {
 		'label-message' => 'tog-ads',
 		'section' => 'rendering/skin',
 	);
-	$preferences['overclocked-floating-toc'] = array(
-		'type' => 'toggle',
-		'label-message' => 'tog-floating-toc',
-		'section' => 'rendering/skin',
-	);
 
 	return true;
 }
