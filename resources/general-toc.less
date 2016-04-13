@@ -1,6 +1,10 @@
 @import "mediawiki.mixins";
 @import "variables.less";
 
+.background-icon(@name) {
+	.background-image("images/@{name}.svg");
+}
+
 // Default MediaWiki styling for the Table of Contents.
 #toc,
 .toc {
@@ -37,6 +41,107 @@
 	// Hide section numbers in Table of Contents
 	.tocnumber {
 	  display: none;
+	}
+}
+
+/* If user has JavaScript, has floating TOC enabled, and is on desktop, render floating Table of Contents. */
+@media all and (min-width: 800px) {
+	html.client-js #masthead.floating-toc-enabled #toc {
+		display: none;
+		padding: 10px;
+		z-index: 999;
+		width: 25px;
+		min-height: 25px;
+		max-height: 25px;
+		overflow: hidden;
+		background-color: #f2f2f2;
+		border: none;
+		box-shadow: 3px 3px 5px rgba(0,0,0,0.15);
+		cursor: pointer;
+		background-size: 20px;
+		background-position: 2px 2px;
+		background-repeat: no-repeat;
+		.background-icon("toc-icon");
+
+		transition: width 200ms 400ms, max-height 400ms, background-color 0 400ms;
+
+		a {
+			color: #333;
+		}
+
+		#toctitle {
+			width: 100%;
+			text-transform: uppercase;
+			text-align: center;
+			background-color: @pcgw-color;
+			position: absolute;
+			left: 0;
+			top: 0;
+			padding: 6px;
+			height: 30px;
+			cursor: pointer;
+
+			opacity: 0;
+			transition: opacity 0 400ms;
+
+			h2 {
+				color: #fff;
+			}
+		}
+
+		> ul {
+			visibility: hidden;
+		}
+
+		&.expanded {
+			display: inline-block;
+			box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
+			width: 300px;
+			max-height: 80vh;
+			height: auto;
+			overflow-y: auto;
+			background-color: #fff;
+			padding-top: 30px;
+			border: 1px solid #aaa;
+			cursor: auto;
+			background-image: none;
+
+			transition: width 200ms, max-height 400ms 200ms;
+
+			#toctitle {
+				opacity: 1;
+				transition: opacity 0;
+			}
+
+			> ul {
+				visibility: visible;
+			}
+		}
+
+		&.absolute {
+			display: inline-block;
+			position: absolute;
+			left: -10px;
+			top: 100px;
+		}
+
+		&.absolute-bottom {
+			display: inline-block;
+			position: absolute;
+			left: -10px;
+			bottom: 80px;
+		}
+
+		&.fixed {
+			display: inline-block;
+			position: fixed;
+			left: 165px;
+			top: 40px;
+		}
+
+		.toctoggle {
+			display: none;
+		}
 	}
 }
 

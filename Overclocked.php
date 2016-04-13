@@ -46,15 +46,19 @@ function wfPrefHook( $user, &$preferences ) {
 		'label-message' => 'tog-ads',
 		'section' => 'rendering/skin',
 	);
+	$preferences['overclocked-floating-toc'] = array(
+		'type' => 'toggle',
+		'label-message' => 'tog-floating-toc',
+		'section' => 'rendering/skin',
+	);
 
 	return true;
 }
 
 $GLOBALS['wgDefaultUserOptions']['overclocked-ads'] = 0;
-$GLOBALS['wgDefaultUserOptions']['overclocked-floating-toc'] = 1;
+$GLOBALS['wgDefaultUserOptions']['overclocked-floating-toc'] = 0;
 
 $GLOBALS['wgResourceModules']['skins.overclocked.styles'] = array(
-	'position' => 'top',
 	'styles' => array(
 		'resources/general-header.less',
 		'resources/general-footer.less',
@@ -78,8 +82,7 @@ $GLOBALS['wgResourceModules']['skins.overclocked.styles'] = array(
 );
 
 $GLOBALS['wgResourceModules']['skins.overclocked.js'] = array(
-	'position' => 'top',
-	'scripts' => array(
+-	'scripts' => array(
 		'resources/jquery/jquery.waypoints.min.js',
 		'resources/jquery/jquery.ba-outside-events.min.js',
 		'resources/pcgw.js',

@@ -76,6 +76,7 @@ class OverclockedTemplate extends BaseTemplate {
 		if( !$this->data['loggedin'] ) {
 			$personalLogin = $personalTools;
 			$toggleGoogleAds = true;
+			$toggleFloatingTOC = false;
 			$loggedIn = false;
 		}
 		else {
@@ -121,6 +122,7 @@ class OverclockedTemplate extends BaseTemplate {
 			 */
 			$user = $this->getSkin()->getUser();
 			$toggleGoogleAds = $user->getOption( 'overclocked-ads' );
+			$toggleFloatingTOC = $user->getOption( 'overclocked-floating-toc' );
 		}
 
 		global $wgSkinOverclockedAds;
@@ -206,7 +208,7 @@ class OverclockedTemplate extends BaseTemplate {
 		</div>
 	</header>
 
-	<div id="masthead">
+	<div id="masthead" <?php if ( $toggleFloatingTOC ) { ?> class="floating-toc-enabled" <?php } ?>>
 		<div id="sidebar">
 			<div id="pcgw-logo">
 				<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
