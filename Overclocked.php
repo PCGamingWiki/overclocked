@@ -82,7 +82,7 @@ $GLOBALS['wgResourceModules']['skins.overclocked.styles'] = array(
 );
 
 $GLOBALS['wgResourceModules']['skins.overclocked.js'] = array(
--	'scripts' => array(
+	'scripts' => array(
 		'resources/jquery/jquery.waypoints.min.js',
 		'resources/jquery/jquery.ba-outside-events.min.js',
 		'resources/pcgw.js',
