@@ -77,9 +77,14 @@
 
 .template-infobox-icon {
 	overflow: hidden;
-	height: 18px;
-	width: 18px;
+	height: 20px;
+	width: 20px;
 	margin-left: 2px;
+
+	@media all and (max-width: 800px) {
+		height: 25px;
+		width: 25px;
+	}
 }
 
 /* Solution to doubling effect */
@@ -106,6 +111,7 @@
 .infobox-strategywiki {
 	.background-icon("infobox-strategywiki")
 }
+
 
 /*
  * Fixbox
