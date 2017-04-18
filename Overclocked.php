@@ -24,13 +24,13 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 $GLOBALS['wgExtensionCredits']['skin'][] = array(
-	'path'				=> __FILE__,
-	'name'				=> 'Overclocked',
-	'namemsg'			=> 'skinname-overclocked',
-	'descriptionmsg'	=> 'overclocked-desc',
-	'author'			=> 'PCGamingWiki Team',
-	'url'				=> "https://github.com/PCGamingWiki/Overclocked",
-	'license-name'		=> 'GPL-2.0+',
+	'path'           => __FILE__,
+	'name'           => 'Overclocked',
+	'namemsg'        => 'skinname-overclocked',
+	'descriptionmsg' => 'overclocked-desc',
+	'author'         => 'PCGamingWiki Team',
+	'url'            => "https://github.com/PCGamingWiki/Overclocked",
+	'license-name'   => 'GPL-2.0+',
 );
 
 $GLOBALS['wgAutoloadClasses']['SkinOverclocked'] = __DIR__ . '/Overclocked.skin.php';
@@ -102,21 +102,22 @@ $GLOBALS['wgResourceModuleSkinStyles']['overclocked'] = array(
  * header - banner above article body
  * sidebar - in sidebar (not visible on mobile)
  * footer - above footer, below content
- * infobox - intended for square ad aboe infobox
+ * infobox - intended for a square ad above infobox
  */
 $GLOBALS['wgSkinOverclockedAds'] = array(
-	'header' => '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- PCGamingWiki 2.0 Responsive Header -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0027458528988311" 
-data-ad-slot="4173069078" data-ad-format="auto"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>',
-	'sidebar' => '<iframe width="160" scrolling="no" height="600" frameborder="0"src="https://uk.gpaf.net/b/sky?ref=pcgw&amp;utm_content=160x600&amp;utm_medium=skyscraper"></iframe>',
-	'footer' => '<!-- PCGamingWiki 2.0 Footer -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0027458528988311" 
-data-ad-slot="7126535474" data-ad-format="auto"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>',
-	'infobox' => '<!-- PCGamingWiki 2.0 Responsive Infobox -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0027458528988311" 
-data-ad-slot="5649802273" data-ad-format="rectangle"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>',
+	'tag'     => '<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':
+new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=
+\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,\'script\',\'dataLayer\',\'GTM-NS78ZTB\');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-NS78ZTB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->',
+	'header'  => '<div id="nn_bb1"></div>',
+	'sidebar' => '<div id="nn_ws"></div>',
+	'footer'  => '<div id="nn_bb2"></div>',
+	'infobox' => '<div id="nn_mpu1"></div>',
 );

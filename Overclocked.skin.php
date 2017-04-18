@@ -139,6 +139,11 @@ class OverclockedTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' ); ?>
 
+	<?php if( $toggleGoogleAds == true ) { ?>
+	<!-- ad tag manager -->
+		<?php echo $wgSkinOverclockedAds['tag']; ?>
+	<?php } ?>
+
 	<header id="pcgw-header">
 		<div id="pcgw-header-sidebar-toggle"></div>
 
