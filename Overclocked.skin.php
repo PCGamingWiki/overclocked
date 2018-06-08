@@ -83,7 +83,8 @@ class OverclockedTemplate extends BaseTemplate {
 			$loggedIn = true;
 			$personalBar[0] = $personalTools['watchlist'];
 			$personalBar[1] = $personalTools['mytalk'];
-			$personalBar[2] = $personalTools['notifications'];
+			$personalBar[2] = $personalTools['notifications-alert'];
+			$personalBar[3] = $personalTools['notifications-notice'];
 
 			$personalFlyout[0] = $personalTools['mycontris'];
 			$personalFlyout[4] = $personalTools['preferences'];
@@ -373,12 +374,12 @@ class OverclockedTemplate extends BaseTemplate {
 				</a>
 
 				<!-- YouTube Icon -->
-				<a href="https://www.youtube.com/user/PCGamingWikiTV">
+				<a href="//www.youtube.com/user/PCGamingWikiTV">
 					<div class="icon-container footer-youtube icon"></div>
 				</a>
 
 				<!-- Steam Icon -->
-				<a href="http://steamcommunity.com/groups/pcgamingwiki">
+				<a href="//steamcommunity.com/groups/pcgamingwiki">
 					<div class="icon-container footer-steam icon"></div>
 				</a>
 			</div>
@@ -437,8 +438,8 @@ class OverclockedTemplate extends BaseTemplate {
 	"@context": "http://schema.org",
 	"@type": "Organization",
  	"name": "PCGamingWiki",
- 	"url": "http://pcgamingwiki.com",
-	"logo": "http://pcgamingwiki.com/images/d/d8/PCGamingWiki.svg",
+ 	"url": "//pcgamingwiki.com",
+	"logo": "//pcgamingwiki.com/images/d/d8/PCGamingWiki.svg",
 	"sameAs": [ "https://www.facebook.com/PCGamingWiki",
 		"https://twitter.com/PCGamingWiki",
 		"https://plus.google.com/+PCGamingWiki" ]
