@@ -105,61 +105,61 @@ $GLOBALS['wgResourceModuleSkinStyles']['overclocked'] = array(
  * infobox - intended for a square ad above infobox
  */
 $GLOBALS['wgSkinOverclockedAds'] = array(
-	'tag'     => '<script src="https://s.nitropay.com/ads-51.js"></script>',
-	'header'  => '<div id="header"></div>
-<script type="text/javascript">
+	'tag'     => '&lt;script src=&quot;https://s.nitropay.com/ads-51.js&quot;&gt;&lt;/script&gt;',
+	'header'  => '&lt;div id=&quot;header&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
 nads.createAd('header', {
-  "floor": 0.05,
-  "refreshLimit": 10,
-  "refreshTime": 90,
-  "adsenseSlot": "4173069078",
-  "report": {
-    "enabled": true,
-    "wording": "Report Ad",
-    "position": "fixed-bottom-right"
+  &quot;floor&quot;: 0.05,
+  &quot;refreshLimit&quot;: 10,
+  &quot;refreshTime&quot;: 90,
+  &quot;adsenseSlot&quot;: &quot;4173069078&quot;,
+  &quot;report&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;wording&quot;: &quot;Report Ad&quot;,
+    &quot;position&quot;: &quot;fixed-bottom-right&quot;
   }
 });
-</script>',
-	'sidebar' => '<div id="sidebar"></div>
-<script type="text/javascript">
+&lt;/script&gt;',
+	'sidebar' =&gt; '&lt;div id=&quot;sidebar&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
 nads.createAd('sidebar', {
-  "floor": 0.05,
-  "refreshLimit": 10,
-  "refreshTime": 90,
-  "adsenseSlot": "3696108217",
-  "report": {
-    "enabled": true,
-    "wording": "Report Ad",
-    "position": "fixed-bottom-right"
+  &quot;floor&quot;: 0.05,
+  &quot;refreshLimit&quot;: 10,
+  &quot;refreshTime&quot;: 90,
+  &quot;adsenseSlot&quot;: &quot;3696108217&quot;,
+  &quot;report&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;wording&quot;: &quot;Report Ad&quot;,
+    &quot;position&quot;: &quot;fixed-bottom-right&quot;
   }
 });
-</script>',
-	'footer'  => '<div id="footer"></div>
-<script type="text/javascript">
+&lt;/script&gt;',
+	'footer'  => '&lt;div id=&quot;footer&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
 nads.createAd('footer', {
-  "floor": 0.05,
-  "refreshLimit": 10,
-  "refreshTime": 90,
-  "adsenseSlot": "7126535474",
-  "report": {
-    "enabled": true,
-    "wording": "Report Ad",
-    "position": "fixed-bottom-right"
+  &quot;floor&quot;: 0.05,
+  &quot;refreshLimit&quot;: 10,
+  &quot;refreshTime&quot;: 90,
+  &quot;adsenseSlot&quot;: &quot;7126535474&quot;,
+  &quot;report&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;wording&quot;: &quot;Report Ad&quot;,
+    &quot;position&quot;: &quot;fixed-bottom-right&quot;
   }
 });
-</script>',
-	'infobox' => '<div id="infobox"></div>
-<script type="text/javascript">
+&lt;/script&gt;',
+	'infobox' => '&lt;div id=&quot;infobox&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
 nads.createAd('infobox', {
-  "floor": 0.05,
-  "refreshLimit": 10,
-  "refreshTime": 90,
-  "adsenseSlot": "5649802273",
-  "report": {
-    "enabled": true,
-    "wording": "Report Ad",
-    "position": "fixed-bottom-right"
+  &quot;floor&quot;: 0.05,
+  &quot;refreshLimit&quot;: 10,
+  &quot;refreshTime&quot;: 90,
+  &quot;adsenseSlot&quot;: &quot;5649802273&quot;,
+  &quot;report&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;wording&quot;: &quot;Report Ad&quot;,
+    &quot;position&quot;: &quot;fixed-bottom-right&quot;
   }
 });
-</script>',
+&lt;/script&gt;',
 );
