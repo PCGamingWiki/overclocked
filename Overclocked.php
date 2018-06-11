@@ -106,9 +106,9 @@ $GLOBALS['wgResourceModuleSkinStyles']['overclocked'] = array(
  */
 $GLOBALS['wgSkinOverclockedAds'] = array(
 	'tag'     => '<script src="https://s.nitropay.com/ads-51.js"></script>',
-	'header'  => '<div id="header"></div>
+	'header'  => '<div id="nitro-header"></div>
 <script type="text/javascript">
-nads.createAd(\'header\', {
+nads.createAd(\'nitro-header\', {
   "floor": 0.05,
   "refreshLimit": 10,
   "refreshTime": 90,
@@ -120,9 +120,9 @@ nads.createAd(\'header\', {
   }
 });
 </script>',
-	'sidebar' => '<div id="sidebar"></div>
+	'sidebar' => '<div id="nitro-sidebar"></div>
 <script type="text/javascript">
-nads.createAd(\'sidebar\', {
+nads.createAd(\'nitro-sidebar\', {
   "floor": 0.05,
   "refreshLimit": 10,
   "refreshTime": 90,
@@ -134,9 +134,9 @@ nads.createAd(\'sidebar\', {
   }
 });
 </script>',
-	'footer'  => '<div id="footer"></div>
+	'footer'  => '<div id="nitro-footer"></div>
 <script type="text/javascript">
-nads.createAd(\'footer\', {
+nads.createAd(\'nitro-footer\', {
   "floor": 0.05,
   "refreshLimit": 10,
   "refreshTime": 90,
@@ -148,9 +148,9 @@ nads.createAd(\'footer\', {
   }
 });
 </script>',
-	'infobox' => '<div id="infobox"></div>
+	'infobox' => '<div id="nitro-infobox"></div>
 <script type="text/javascript">
-nads.createAd(\'infobox\', {
+nads.createAd(\'nitro-infobox\', {
   "floor": 0.05,
   "refreshLimit": 10,
   "refreshTime": 90,
