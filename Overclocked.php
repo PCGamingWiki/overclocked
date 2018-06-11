@@ -105,61 +105,19 @@ $GLOBALS['wgResourceModuleSkinStyles']['overclocked'] = array(
  * infobox - intended for a square ad above infobox
  */
 $GLOBALS['wgSkinOverclockedAds'] = array(
-	'tag'     => '&lt;script src=&quot;https://s.nitropay.com/ads-51.js&quot;&gt;&lt;/script&gt;',
-	'header'  => '&lt;div id=&quot;header&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-nads.createAd('header', {
-  &quot;floor&quot;: 0.05,
-  &quot;refreshLimit&quot;: 10,
-  &quot;refreshTime&quot;: 90,
-  &quot;adsenseSlot&quot;: &quot;4173069078&quot;,
-  &quot;report&quot;: {
-    &quot;enabled&quot;: true,
-    &quot;wording&quot;: &quot;Report Ad&quot;,
-    &quot;position&quot;: &quot;fixed-bottom-right&quot;
-  }
-});
-&lt;/script&gt;',
-	'sidebar' =&gt; '&lt;div id=&quot;sidebar&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-nads.createAd('sidebar', {
-  &quot;floor&quot;: 0.05,
-  &quot;refreshLimit&quot;: 10,
-  &quot;refreshTime&quot;: 90,
-  &quot;adsenseSlot&quot;: &quot;3696108217&quot;,
-  &quot;report&quot;: {
-    &quot;enabled&quot;: true,
-    &quot;wording&quot;: &quot;Report Ad&quot;,
-    &quot;position&quot;: &quot;fixed-bottom-right&quot;
-  }
-});
-&lt;/script&gt;',
-	'footer'  => '&lt;div id=&quot;footer&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-nads.createAd('footer', {
-  &quot;floor&quot;: 0.05,
-  &quot;refreshLimit&quot;: 10,
-  &quot;refreshTime&quot;: 90,
-  &quot;adsenseSlot&quot;: &quot;7126535474&quot;,
-  &quot;report&quot;: {
-    &quot;enabled&quot;: true,
-    &quot;wording&quot;: &quot;Report Ad&quot;,
-    &quot;position&quot;: &quot;fixed-bottom-right&quot;
-  }
-});
-&lt;/script&gt;',
-	'infobox' => '&lt;div id=&quot;infobox&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-nads.createAd('infobox', {
-  &quot;floor&quot;: 0.05,
-  &quot;refreshLimit&quot;: 10,
-  &quot;refreshTime&quot;: 90,
-  &quot;adsenseSlot&quot;: &quot;5649802273&quot;,
-  &quot;report&quot;: {
-    &quot;enabled&quot;: true,
-    &quot;wording&quot;: &quot;Report Ad&quot;,
-    &quot;position&quot;: &quot;fixed-bottom-right&quot;
-  }
-});
-&lt;/script&gt;',
+	'tag'     => '<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':
+new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=
+\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,\'script\',\'dataLayer\',\'GTM-PJRR5BG\');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-PJRR5BG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->',
+	'header'  => '<div id="nn_bb1"></div>',
+	'sidebar' => '<div id="nn_ws"></div>',
+	'footer'  => '<div id="nn_bb2"></div>',
+	'infobox' => '<div id="nn_mpu1"></div>',
 );
