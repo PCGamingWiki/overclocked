@@ -171,7 +171,7 @@ class OverclockedTemplate extends BaseTemplate {
 				<li class="header-item no-mobile"><a href="//community.pcgamingwiki.com/blog">Blog</a>
 				<li class="header-item no-mobile"><a href="//community.pcgamingwiki.com/index">Forums</a>
 				<li class="header-item no-mobile"><a href="//community.pcgamingwiki.com/files/">Files</a>
-				<li class="header-item no-mobile"><a href="//community.pcgamingwiki.com/page/irc">IRC</a>
+				<li class="header-item no-mobile"><a href="/wiki/PCGamingWiki:Discord">Discord</a>
 				<li class="header-item no-mobile"><a href="/wiki/PCGamingWiki:Extension">Extension</a>
 				<li class="header-item"><a href="/wiki/PCGamingWiki:Donate">Donate</a>
 				<li class="header-item mobile-only"><a href="/wiki/Special:RecentChanges">Recent changes</a>
