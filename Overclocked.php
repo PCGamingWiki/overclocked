@@ -106,59 +106,59 @@ $GLOBALS['wgResourceModuleSkinStyles']['overclocked'] = array(
  */
 $GLOBALS['wgSkinOverclockedAds'] = array(
 	'tag'     => '<script src="https://s.nitropay.com/ads-51.js"></script>',
-	'header'  => '<div id=\"header\"></div>
-<script type=\"text/javascript\">
+	'header'  => '<div id="header"></div>
+<script type="text/javascript">
 nads.createAd(\'header\', {
-  \"floor\": 0.05,
-  \"refreshLimit\": 10,
-  \"refreshTime\": 90,
-  \"adsenseSlot\": \"4173069078\",
-  \"report\": {
-    \"enabled\": true,
-    \"wording\": \"Report Ad\",
-    \"position\": \"fixed-bottom-right\"
+  "floor": 0.05,
+  "refreshLimit": 10,
+  "refreshTime": 90,
+  "adsenseSlot": "4173069078",
+  "report": {
+    "enabled": true,
+    "wording": "Report Ad",
+    "position": "fixed-bottom-right"
   }
 });
 </script>',
-	'sidebar' => '<div id=\"sidebar\"></div>
-<script type=\"text/javascript\">
+	'sidebar' => '<div id="sidebar"></div>
+<script type="text/javascript">
 nads.createAd(\'sidebar\', {
-  \"floor\": 0.05,
-  \"refreshLimit\": 10,
-  \"refreshTime\": 90,
-  \"adsenseSlot\": \"3696108217\",
-  \"report\": {
-    \"enabled\": true,
-    \"wording\": \"Report Ad\",
-    \"position\": \"fixed-bottom-right\"
+  "floor": 0.05,
+  "refreshLimit": 10,
+  "refreshTime": 90,
+  "adsenseSlot": "3696108217",
+  "report": {
+    "enabled": true,
+    "wording": "Report Ad",
+    "position": "fixed-bottom-right"
   }
 });
 </script>',
-	'footer'  => '<div id=\"footer\"></div>
-<script type=\"text/javascript\">
+	'footer'  => '<div id="footer"></div>
+<script type="text/javascript">
 nads.createAd(\'footer\', {
-  \"floor\": 0.05,
-  \"refreshLimit\": 10,
-  \"refreshTime\": 90,
-  \"adsenseSlot\": \"7126535474\",
-  \"report\": {
-    \"enabled\": true,
-    \"wording\": \"Report Ad\",
-    \"position\": \"fixed-bottom-right\"
+  "floor": 0.05,
+  "refreshLimit": 10,
+  "refreshTime": 90,
+  "adsenseSlot": "7126535474",
+  "report": {
+    "enabled": true,
+    "wording": "Report Ad",
+    "position": "fixed-bottom-right"
   }
 });
 </script>',
-	'infobox' => '<div id=\"infobox\"></div>
-<script type=\"text/javascript\">
+	'infobox' => '<div id="infobox"></div>
+<script type="text/javascript">
 nads.createAd(\'infobox\', {
-  \"floor\": 0.05,
-  \"refreshLimit\": 10,
-  \"refreshTime\": 90,
-  \"adsenseSlot\": \"5649802273\",
-  \"report\": {
-    \"enabled\": true,
-    \"wording\": \"Report Ad\",
-    \"position\": \"fixed-bottom-right\"
+  "floor": 0.05,
+  "refreshLimit": 10,
+  "refreshTime": 90,
+  "adsenseSlot": "5649802273",
+  "report": {
+    "enabled": true,
+    "wording": "Report Ad",
+    "position": "fixed-bottom-right"
   }
 });
 </script>',
