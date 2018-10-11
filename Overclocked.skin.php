@@ -92,7 +92,6 @@ class OverclockedTemplate extends BaseTemplate {
 			foreach ( $personalFlyout as $key => $item ) {
 				$personalFlyout[$key]['class'] = "group-start";
 			}
-			$personalFlyout[1] = $personalTools['newmessages'];
 			$personalFlyout[1] = $personalTools['mytalk'];
 			$personalFlyout[3] = $personalTools['watchlist'];
 			if ( isset( $personalTools['adminlinks'] ) ) {
