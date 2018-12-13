@@ -390,7 +390,7 @@ class OverclockedTemplate extends BaseTemplate {
 				<ul>
 					<li>PCGamingWiki
 					<li><a href="/">Wiki</a>
-					<li><a href="//community.pcgamingwiki.com/index">Forums</a>
+					<li><a href="//community.pcgamingwiki.com">Forums</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About">About us</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About#Contact">Contact us</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About#Advertising">Advertising</a>
