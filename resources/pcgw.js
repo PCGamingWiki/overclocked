@@ -31,7 +31,7 @@ function stickyTableOfContents() {
 }
 
 function mobileTableOfContents() {
-	$("#toctitle").click(function() {
+	$(".toctitle").click(function() {
 		$("#toc").toggleClass('active');
 	});
 }
