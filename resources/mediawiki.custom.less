@@ -459,9 +459,7 @@ dl {
 		References
 	 ============================================== */
 
-// Fixes references sometimes causing horizontal scrolling on mobile devices.
 ol.references {
-	overflow-x: hidden;
 	margin-left: 0;
   padding-left: 45px;
 
@@ -472,6 +470,11 @@ ol.references {
 
   .mw-cite-backlink {
 	  position: relative;
+	}
+
+	// Fixes references sometimes causing horizontal scrolling on mobile devices.
+	@media all and (max-width: 800px) {
+		overflow-x: hidden;
 	}
 }
 
