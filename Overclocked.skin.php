@@ -261,6 +261,20 @@ class OverclockedTemplate extends BaseTemplate {
 				<div class="ad-header-container">
 					<?php echo $wgSkinOverclockedAds['header'];?>
 				</div>
+				<div id="nitro-mobile-anchor"></div>
+				<script type="text/javascript">
+				window['nitroAds'].createAd('nitro-mobile-anchor', {
+				  "floor": 0.05,
+				  "refreshLimit": 10,
+				  "refreshTime": 90,
+				  "sizes": [],
+				  "report": {
+				    "enabled": true,
+				    "wording": "Report Ad",
+				    "position": "bottom-right"
+				  }
+				});
+				</script>
 			<?php } ?>
 
 			<?php if ( $this->data['sitenotice'] ) { ?>
