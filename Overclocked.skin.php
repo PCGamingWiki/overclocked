@@ -167,7 +167,6 @@ class OverclockedTemplate extends BaseTemplate {
 		<div id="pcgw-header-sidebar">
 			<ul class="header-item-left-container">
 				<li class="header-item current"><a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">Wiki</a>
-				<li class="header-item no-mobile"><a href="//community.pcgamingwiki.com/blog">Blog</a>
 				<li class="header-item"><a href="//community.pcgamingwiki.com">Forums</a>
 				<li class="header-item no-mobile"><a href="//community.pcgamingwiki.com/files">Files</a>
 				<li class="header-item no-mobile"><a href="/wiki/PCGamingWiki:Discord">Discord</a>
@@ -261,9 +260,9 @@ class OverclockedTemplate extends BaseTemplate {
 				<div class="ad-header-container">
 					<?php echo $wgSkinOverclockedAds['header'];?>
 				</div>
-				<div id="nitro-mobile-anchor"></div>
+				<div id="nitro-mobile"></div>
 				<script type="text/javascript">
-				window['nitroAds'].createAd('nitro-mobile-anchor', {
+				window['nitroAds'].createAd('nitro-mobile', {
 				  "floor": 0.05,
 				  "refreshLimit": 10,
 				  "refreshTime": 90,
@@ -376,11 +375,6 @@ class OverclockedTemplate extends BaseTemplate {
 					<div class="icon-container footer-facebook icon"></div>
 				</a>
 
-				<!-- Google+ Icon -->
-				<a href="https://www.google.com/+PCGamingWiki">
-					<div class="icon-container footer-google icon"></div>
-				</a>
-
 				<!-- Twitter Icon -->
 				<a href="https://www.twitter.com/PCGamingWiki">
 					<div class="icon-container footer-twitter icon"></div>
@@ -403,14 +397,12 @@ class OverclockedTemplate extends BaseTemplate {
 			<div id="footer-links-container">
 				<ul>
 					<li>PCGamingWiki
-					<li><a href="/">Wiki</a>
-					<li><a href="//community.pcgamingwiki.com">Forums</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About">About us</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About#Contact">Contact us</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About#Advertising">Advertising</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Privacy_policy">Privacy policy</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:General_disclaimer">General disclaimer</a>
-					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Code_of_conduct">Code of conduct</a>
+					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:API">API</a>
 					<li><a href="https://github.com/PCGamingWiki">Open source</a>
 				</ul>
 
