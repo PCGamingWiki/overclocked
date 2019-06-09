@@ -168,9 +168,9 @@ class OverclockedTemplate extends BaseTemplate {
 			<ul class="header-item-left-container">
 				<li class="header-item current"><a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">Wiki</a>
 				<li class="header-item"><a href="//community.pcgamingwiki.com">Forums</a>
+				<li class="header-item"><a href="https://community.pcgamingwiki.com/forum/69-news/">News</a>
 				<li class="header-item no-mobile"><a href="//community.pcgamingwiki.com/files">Files</a>
 				<li class="header-item no-mobile"><a href="/wiki/PCGamingWiki:Discord">Discord</a>
-				<li class="header-item no-mobile"><a href="/wiki/PCGamingWiki:Extension">Extension</a>
 				<li class="header-item"><a href="/wiki/PCGamingWiki:Donate">Donate</a>
 				<li class="header-item mobile-only"><a href="/wiki/Special:RecentChanges">Recent changes</a>
 				<li class="header-item mobile-only"><a href="/wiki/Special:Random">Random article</a>
