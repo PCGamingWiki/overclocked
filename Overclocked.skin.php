@@ -399,26 +399,26 @@ class OverclockedTemplate extends BaseTemplate {
 					<li>PCGamingWiki
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About">About us</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About#Contact">Contact us</a>
+					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Partnerships">Partnerships</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About#Advertising">Advertising</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Privacy_policy">Privacy policy</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:General_disclaimer">General disclaimer</a>
-					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:API">API</a>
-					<li><a href="https://github.com/PCGamingWiki">Open source</a>
 				</ul>
 
 				<ul>
-					<li>Network
-					<li><a href="//ftlwiki.com/wiki/FTL:_Faster_Than_Light_Wiki">FTL Wiki</a>
-					<li><a href="//gunpointwiki.net/wiki/Gunpoint_Wiki">Gunpoint Wiki</a>
-					<li><a href="//prisonarchitectwiki.com/wiki/Home">Prison Architect Wiki</a>
-					<li><a href="//siryouarebeinghuntedwiki.com/wiki/Home">Sir, You Are Being Hunted Wiki</a>
-					<li><a href="//www.cheapshark.com/">CheapShark</a>
+					<li>Friends
+					<li><a href="https://www.gog.com/game/cyberpunk_2077?pp=708a77db476d737e54b8bf4663fc79b346d696d2">GOG.com</a>
+					<li><a href="https://gamesplanet.com/game/3904-1?ref=pcgwiki">Gamesplanet</a>
+					<li><a href="https://www.cheapshark.com">CheapShark</a>
 				</ul>
 
 				<ul>
 					<li>Powered by
 					<li><a href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a>
-					<li><a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a>
+					<li><a href="https://www.mediawiki.org/wiki/Extension:Cargo">Cargo</a>
+					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Extension">Extension</a>
+					<li><a href="https://github.com/PCGamingWiki">Open source</a>
+					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:API">API</a>
 					<li><a href="https://www.patreon.com/PCGamingWiki">Our generous patrons</a>
 					<li>and You &lt;3
 				</ul>
