@@ -260,13 +260,12 @@ class OverclockedTemplate extends BaseTemplate {
 				<div class="ad-header-container">
 					<?php echo $wgSkinOverclockedAds['header'];?>
 				</div>
-				<div id="nitro-mobile"></div>
 				<script type="text/javascript">
 				window['nitroAds'].createAd('nitro-mobile', {
 				  "floor": 0.05,
 				  "refreshLimit": 10,
 				  "refreshTime": 90,
-				  "sizes": [],
+				  "format": "anchor",
 				  "report": {
 				    "enabled": true,
 				    "wording": "Report Ad",
@@ -399,7 +398,6 @@ class OverclockedTemplate extends BaseTemplate {
 					<li>PCGamingWiki
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About">About us</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About#Contact">Contact us</a>
-					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Partnerships">Partnerships</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:About#Advertising">Advertising</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Privacy_policy">Privacy policy</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:General_disclaimer">General disclaimer</a>
@@ -407,6 +405,9 @@ class OverclockedTemplate extends BaseTemplate {
 
 				<ul>
 					<li>Friends
+					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Partnerships">Partnerships</a>
+					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Extension">Extension</a>
+					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:API">API</a>
 					<li><a href="https://www.gog.com/game/cyberpunk_2077?pp=708a77db476d737e54b8bf4663fc79b346d696d2">GOG.com</a>
 					<li><a href="https://gamesplanet.com/game/3904-1?ref=pcgwiki">Gamesplanet</a>
 					<li><a href="https://www.cheapshark.com">CheapShark</a>
@@ -415,11 +416,10 @@ class OverclockedTemplate extends BaseTemplate {
 				<ul>
 					<li>Powered by
 					<li><a href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a>
+					<li><a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a>
 					<li><a href="https://www.mediawiki.org/wiki/Extension:Cargo">Cargo</a>
-					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Extension">Extension</a>
 					<li><a href="https://github.com/PCGamingWiki">Open source</a>
-					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:API">API</a>
-					<li><a href="https://www.patreon.com/PCGamingWiki">Our generous patrons</a>
+					<li><a href="https://www.patreon.com/PCGamingWiki">Patrons</a>
 					<li>and You &lt;3
 				</ul>
 			</div>
