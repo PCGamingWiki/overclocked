@@ -168,7 +168,7 @@ class OverclockedTemplate extends BaseTemplate {
 			<ul class="header-item-left-container">
 				<li class="header-item current"><a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">Wiki</a>
 				<li class="header-item"><a href="//community.pcgamingwiki.com">Forums</a>
-				<li class="header-item"><a href="https://community.pcgamingwiki.com/forum/69-news/">News</a>
+				<li class="header-item"><a href="https://community.pcgamingwiki.com/forum/6-a">News</a>
 				<li class="header-item no-mobile"><a href="//community.pcgamingwiki.com/files">Files</a>
 				<li class="header-item no-mobile"><a href="/wiki/PCGamingWiki:Discord">Discord</a>
 				<li class="header-item"><a href="/wiki/PCGamingWiki:Donate">Donate</a>
@@ -408,8 +408,8 @@ class OverclockedTemplate extends BaseTemplate {
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Partnerships">Partnerships</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Extension">Extension</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:API">API</a>
-					<li><a href="https://www.gog.com/game/cyberpunk_2077?pp=708a77db476d737e54b8bf4663fc79b346d696d2">GOG.com</a>
-					<li><a href="https://gamesplanet.com/game/3904-1?ref=pcgwiki">Gamesplanet</a>
+					<li><a href="https://www.gog.com?pp=708a77db476d737e54b8bf4663fc79b346d696d2">GOG.com</a>
+					<li><a href="https://gamesplanet.com?ref=pcgwiki">Gamesplanet</a>
 					<li><a href="https://www.cheapshark.com">CheapShark</a>
 				</ul>
 
