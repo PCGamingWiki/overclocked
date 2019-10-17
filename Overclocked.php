@@ -86,6 +86,7 @@ $GLOBALS['wgResourceModules']['skins.overclocked.js'] = array(
 		'resources/jquery/jquery.waypoints.min.js',
 		'resources/jquery/jquery.ba-outside-events.min.js',
 		'resources/pcgw.js',
+		'resources/network-n.min.js',
 	),
 	'remoteSkinPath' => 'overclocked',
 	'localBasePath' => __DIR__,
