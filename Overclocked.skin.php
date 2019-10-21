@@ -212,9 +212,9 @@ class OverclockedTemplate extends BaseTemplate {
 		</div>
 	</header>
 
-	<div id="nn_skinl"></div>
-
 	<div id="masthead" <?php if ( $toggleFloatingTOC ) { ?> class="floating-toc-enabled" <?php } ?>>
+		<div id="nn_skinl"></div>
+		
 		<div id="sidebar">
 			<div id="pcgw-logo">
 				<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
@@ -350,9 +350,10 @@ class OverclockedTemplate extends BaseTemplate {
 				</div>
 			<?php } ?>
 		</div>
-	</div>
 			
-	<div id="nn_skinr"></div>
+		<div id="nn_skinr"></div>
+			
+	</div>
 
 	<!-- Footer -->
 	<footer id="pcgw-footer" class="pcgw-footer">
