@@ -121,8 +121,8 @@ e=o.getElementsByTagName("script")[0],c.async=!0,c.src=("https:"==o.location.pro
 <!-- End ComScore Tag -->
 <script src="/dist/pcgamingwiki.min.js" async>
 </script>',
-	'header'  => '<div id="nn_lb1"></div>',
+	'header'  => '<div id="nn_lb1"></div><div id="nn_mobile_mpu1"></div>',
 	'sidebar' => '<div id="nn_sky1"></div>',
-	'footer'  => '',
-	'infobox' => '<div id="nn_mpu1"></div>',
+	'footer'  => '<div id="nn_mobile_lb1_sticky"></div><div id="nn_mobile_mpu3"></div>',
+	'infobox' => '<div id="nn_mpu1"></div><div id="nn_mobile_mpu2"></div>',
 );
