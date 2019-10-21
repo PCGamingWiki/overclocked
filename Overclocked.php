@@ -86,6 +86,7 @@ $GLOBALS['wgResourceModules']['skins.overclocked.js'] = array(
 		'resources/jquery/jquery.waypoints.min.js',
 		'resources/jquery/jquery.ba-outside-events.min.js',
 		'resources/pcgw.js',
+		'resources/network-n.min.js',
 	),
 	'remoteSkinPath' => 'overclocked',
 	'localBasePath' => __DIR__,
@@ -118,8 +119,6 @@ e=o.getElementsByTagName("script")[0],c.async=!0,c.src=("https:"==o.location.pro
 </script>
 <noscript><img src="https://sb.scorecardresearch.com/p?c1=2&c2=25110922&cv=2.0&cj=1" /></noscript>
 <!-- End ComScore Tag -->
-<script src="/resources/network-n.min.js" async>
-
 </script>',
 	'header'  => '<div id="celtra-reveal-wrapper" style="position:fixed; height: auto; width: 100%"><div id="nn_1by1"></div></div><div id="nn_mobile_mpu1"></div>',
 	'sidebar' => '<div id="nn_sky1"></div>',
