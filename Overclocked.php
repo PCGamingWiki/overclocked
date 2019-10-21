@@ -119,11 +119,10 @@ e=o.getElementsByTagName("script")[0],c.async=!0,c.src=("https:"==o.location.pro
 <noscript><img src="https://sb.scorecardresearch.com/p?c1=2&c2=25110922&cv=2.0&cj=1" /></noscript>
 <!-- End ComScore Tag -->
 <script src="/resources/network-n.min.js" async>
-<script src="https://os.network-n.com/dist/pcgamingwiki.min.js" async>
 
 </script>',
-	'header'  => '<div id="nn_lb1"></div><div id="nn_mobile_mpu1"></div>',
+	'header'  => '<div id="celtra-reveal-wrapper" style="position:fixed; height: auto; width: 100%"><div id="nn_1by1"></div></div><div id="nn_mobile_mpu1"></div>',
 	'sidebar' => '<div id="nn_sky1"></div>',
-	'footer'  => '<div id="nn_mobile_lb1_sticky"></div><div id="nn_mobile_mpu3"></div>',
+	'footer'  => '<div id="nn_1by1"></div><div id="nn_mobile_lb1_sticky"></div><div id="nn_mobile_mpu3"></div>',
 	'infobox' => '<div id="nn_mpu1"></div><div id="nn_mobile_mpu2"></div>',
 );
