@@ -144,6 +144,8 @@ class OverclockedTemplate extends BaseTemplate {
 		<?php echo $wgSkinOverclockedAds['tag']; ?>
 	<?php } ?>
 
+	<script src="https://static.pcgamingwiki.com/scripts/network-n-wiki.min.js" async></script>
+
 	<header id="pcgw-header">
 		<div id="pcgw-header-sidebar-toggle"></div>
 
