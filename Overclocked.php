@@ -106,6 +106,22 @@ $GLOBALS['wgResourceModuleSkinStyles']['overclocked'] = array(
  */
 $GLOBALS['wgSkinOverclockedAds'] = array(
 	'tag'     => '
+<!-- NetworkN CMP Tool -->
+<script>!function(t,n){if(function(e){"string"==typeof e&&(e=[e]);for(var a=0;a<e.length;a++)n.cookie=e[a]+
+"=;max-age=-1;domain=."+n.domain+";path=/"}(["euconsent","eupubconsent","googlepersonalization"]),
+!t.__cmp){t.__cmp=function(){(t.attachEvent||t.addEventListener)("message",function(e){t.__cmp.receiveMessage(e)}
+,!1),function e(){if(!t.frames.__cmpLocator)if(n.body){var a=n.createElement("iframe");a.style.display="none",
+a.name="__cmpLocator",n.body.appendChild(a)}else setTimeout(e,5)}();var o=[],e=function(e,a,n){"ping"===e?n&&n({
+gdprAppliesGlobally:!!(t.__cmp&&t.__cmp.config&&t.__cmp.config.storeConsentGlobally),cmpLoaded:!1}):
+o.push({command:e,parameter:a,callback:n})};return e.commandQueue=o,e.receiveMessage=function(e){
+var a=e&&e.data&&e.data.__cmpCall;a&&o.push({callId:a.callId,command:a.command,parameter:a.parameter,
+event:e})},e.config=t.cmpConfig||{},e}()}}(window,document);
+</script>
+<script src="//cmp.network-n.com/js/cmp.complete.bundle.js" defer></script>
+
+<!-- NetworkN Ad script -->
+<script src="https://static.pcgamingwiki.com/scripts/network-n-wiki.min.js" async></script>
+
 <script>
 !function(o,n){if(o._localCS={consent:null,loaded:!1,tx:null},o._comscore=o._comscore||[],o.__cmp){
 o.__cmp("getVendorConsents",[77],function(o,c){function e(o){return"object"==typeof o}c&&(_localCS.consent=e(o)
@@ -119,25 +135,9 @@ e=o.getElementsByTagName("script")[0],c.async=!0,c.src=("https:"==o.location.pro
 <noscript><img src="https://sb.scorecardresearch.com/p?c1=2&c2=25110922&cv=2.0&cj=1" /></noscript>
 <!-- End ComScore Tag -->
 </script>
-
-<!-- NetworkN Ad script -->
-<script src="https://static.pcgamingwiki.com/scripts/network-n-wiki.min.js" async></script>
-
-<!-- NetworkN CMP Tool -->
-<script>!function(t,n){if(function(e){"string"==typeof e&&(e=[e]);for(var a=0;a<e.length;a++)n.cookie=e[a]+
-"=;max-age=-1;domain=."+n.domain+";path=/"}(["euconsent","eupubconsent","googlepersonalization"]),
-!t.__cmp){t.__cmp=function(){(t.attachEvent||t.addEventListener)("message",function(e){t.__cmp.receiveMessage(e)}
-,!1),function e(){if(!t.frames.__cmpLocator)if(n.body){var a=n.createElement("iframe");a.style.display="none",
-a.name="__cmpLocator",n.body.appendChild(a)}else setTimeout(e,5)}();var o=[],e=function(e,a,n){"ping"===e?n&&n({
-gdprAppliesGlobally:!!(t.__cmp&&t.__cmp.config&&t.__cmp.config.storeConsentGlobally),cmpLoaded:!1}):
-o.push({command:e,parameter:a,callback:n})};return e.commandQueue=o,e.receiveMessage=function(e){
-var a=e&&e.data&&e.data.__cmpCall;a&&o.push({callId:a.callId,command:a.command,parameter:a.parameter,
-event:e})},e.config=t.cmpConfig||{},e}()}}(window,document);
-</script>
-<script src="//cmp.network-n.com/js/cmp.complete.bundle.js" defer></script>
 ',
-	'header'  => '<div id="nn_lb1"></div><div id="nn_mobile_mpu1"></div>',
+	'header'  => '<div id="nn_lb1"></div><div id="nn_mobile_mpu1"></div><div id="nn_mobile_mpu2"></div>',
 	'sidebar' => '<div id="nn_sky1"></div>',
 	'footer'  => '<div id="celtra-reveal-wrapper" style="position:fixed; height: auto; width: 100%"><div id="nn_1by1"></div></div><div id="nn_mobile_lb1_sticky"></div><div id="nn_mobile_mpu3"></div>',
-	'infobox' => '<div id="nn_mpu1"></div><div id="nn_mobile_mpu2"></div>',
+	'infobox' => '<div id="nn_mpu1"></div>',
 );
