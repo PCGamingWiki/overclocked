@@ -121,6 +121,9 @@ e=o.getElementsByTagName("script")[0],c.async=!0,c.src=("https:"==o.location.pro
 <!-- End ComScore Tag -->
 </script>
 
+<!-- NetworkN Ad script -->
+<script src="https://static.pcgamingwiki.com/scripts/network-n-wiki.min.js" async></script>
+
 <!-- NetworkN CMP Tool -->
 <script>!function(t,n){if(function(e){"string"==typeof e&&(e=[e]);for(var a=0;a<e.length;a++)n.cookie=e[a]+
 "=;max-age=-1;domain=."+n.domain+";path=/"}(["euconsent","eupubconsent","googlepersonalization"]),
