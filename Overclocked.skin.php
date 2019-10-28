@@ -213,8 +213,6 @@ class OverclockedTemplate extends BaseTemplate {
 	</header>
 
 	<div id="masthead" <?php if ( $toggleFloatingTOC ) { ?> class="floating-toc-enabled" <?php } ?>>
-		<div id="nn_skinl"></div>
-		
 		<div id="sidebar">
 			<div id="pcgw-logo">
 				<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
@@ -262,7 +260,20 @@ class OverclockedTemplate extends BaseTemplate {
 				<div class="ad-header-container">
 					<?php echo $wgSkinOverclockedAds['header'];?>
 				</div>
-					<?php } ?>
+				<script type="text/javascript">
+				window['nitroAds'].createAd('nitro-mobile', {
+				  "floor": 0.05,
+				  "refreshLimit": 10,
+				  "refreshTime": 90,
+				  "format": "anchor",
+				  "report": {
+				    "enabled": true,
+				    "wording": "Report Ad",
+				    "position": "bottom-right"
+				  }
+				});
+				</script>
+			<?php } ?>
 
 			<?php if ( $this->data['sitenotice'] ) { ?>
 				<div id="site-notice"><?php $this->html( 'sitenotice' ); ?></div>
@@ -350,9 +361,6 @@ class OverclockedTemplate extends BaseTemplate {
 				</div>
 			<?php } ?>
 		</div>
-			
-		<div id="nn_skinr"></div>
-			
 	</div>
 
 	<!-- Footer -->
