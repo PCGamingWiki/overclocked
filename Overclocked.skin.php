@@ -349,6 +349,15 @@ class OverclockedTemplate extends BaseTemplate {
 
 					<?php $this->html( 'bodytext' ); ?>
 
+					<?php if( $toggleGoogleAds == true ) { ?>
+						<div id="nitro-anyclip"></div>
+						<script type="text/javascript">
+						window['nitroAds'].createAd('nitro-anyclip', {
+						  "format": "video-ac"
+						});
+						</script>
+					<?php } ?>
+						
 					<?php $this->html( 'catlinks' ); ?>
 					<?php $this->html( 'dataAfterContent' ); ?>
 				</div>
