@@ -113,6 +113,28 @@ nads.createAd(\'nitro-header\', {
   "refreshLimit": 10,
   "refreshTime": 90,
   "adsenseSlot": "4173069078",
+  "sizes": [
+    [
+      300,
+      250
+    ],
+    [
+      728,
+      90
+    ],
+    [
+      320,
+      50
+    ],
+    [
+      970,
+      90
+    ],
+    [
+      970,
+      250
+    ]
+  ],
   "report": {
     "enabled": true,
     "wording": "Report Ad",
