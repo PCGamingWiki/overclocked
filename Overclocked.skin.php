@@ -143,6 +143,11 @@ class OverclockedTemplate extends BaseTemplate {
 	<!-- ad tag manager -->
 		<?php echo $wgSkinOverclockedAds['tag']; ?>
 	<?php } ?>
+	
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4F5J99"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 
 	<header id="pcgw-header">
 		<div id="pcgw-header-sidebar-toggle"></div>
