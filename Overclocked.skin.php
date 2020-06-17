@@ -148,6 +148,10 @@ class OverclockedTemplate extends BaseTemplate {
 		<!-- End Google Tag Manager (noscript) -->
 	<?php } ?>
 
+	<!-- Venatus Ad Manager - Install in <HEAD> of page -->
+	<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="5ee882ebb519801b8a4d573b" data-mode="scan" async></script>
+	<!-- / Venatus Ad Manager -->
+
 	<header id="pcgw-header">
 		<div id="pcgw-header-sidebar-toggle"></div>
 
@@ -253,7 +257,9 @@ class OverclockedTemplate extends BaseTemplate {
 			<?php if( $toggleGoogleAds == true ) { ?>
 				<!-- sidebar ad -->
 				<div class="ad-sidebar-container">
-					<?php echo $wgSkinOverclockedAds['sidebar']; ?>
+					<!-- PCGamingWiki - 300x250 Dynamic (5ee8e34ab519801b8a4d57fd) - 300x250, 300x600, 160x600 - Place in <BODY> of page where ad should appear -->
+					<div class="vm-placement" data-id="5ee8e34ab519801b8a4d57fd"></div>
+					<!-- / PCGamingWiki - 300x250 Dynamic (5ee8e34ab519801b8a4d57fd) -->
 				</div>
 			<?php } ?>
 		</div>
@@ -262,21 +268,10 @@ class OverclockedTemplate extends BaseTemplate {
 			<?php if( $toggleGoogleAds == true ) { ?>
 				<!-- horizontal header ad -->
 				<div class="ad-header-container">
-					<?php echo $wgSkinOverclockedAds['header'];?>
+					<!-- PCGamingWiki - 728x90 Dynamic (5ee8e359b519801b8a4d57ff) - 728x90, 970x250, 970x90 - Place in <BODY> of page where ad should appear -->
+					<div class="vm-placement" data-id="5ee8e359b519801b8a4d57ff"></div>
+					<!-- / PCGamingWiki - 728x90 Dynamic (5ee8e359b519801b8a4d57ff) -->
 				</div>
-				<script type="text/javascript">
-				window['nitroAds'].createAd('nitro-mobile', {
-				  "floor": 0.05,
-				  "refreshLimit": 10,
-				  "refreshTime": 90,
-				  "format": "anchor",
-				  "report": {
-				    "enabled": true,
-				    "wording": "Report Ad",
-				    "position": "bottom-right"
-				  }
-				});
-				</script>
 			<?php } ?>
 
 			<?php if ( $this->data['sitenotice'] ) { ?>
@@ -347,7 +342,9 @@ class OverclockedTemplate extends BaseTemplate {
 					<div id="body-content" class="mw-body mw-body-with-ads">
 					<!-- mpu ad -->
 						<div id="mpu">
-							<?php echo $wgSkinOverclockedAds['infobox'];?>
+							<!-- PCGamingWiki - 300x250 Static (5ee8e351a624ae2e7125852e) - 300x250 - Place in <BODY> of page where ad should appear -->
+							<div class="vm-placement" data-id="5ee8e351a624ae2e7125852e"></div>
+							<!-- / PCGamingWiki - 300x250 Static (5ee8e351a624ae2e7125852e) -->
 						</div>
 				<?php } ?>
 
@@ -370,7 +367,9 @@ class OverclockedTemplate extends BaseTemplate {
 			<?php if( $toggleGoogleAds == true ) { ?>
 				<!-- footer ad -->
 				<div class="ad-footer-container">
-					<?php echo $wgSkinOverclockedAds['footer'];?>
+					<!-- PCGamingWiki - 728x90 Dynamic (5ee8e359b519801b8a4d57ff) - 728x90, 970x250, 970x90 - Place in <BODY> of page where ad should appear -->
+					<div class="vm-placement" data-id="5ee8e359b519801b8a4d57ff"></div>
+					<!-- / PCGamingWiki - 728x90 Dynamic (5ee8e359b519801b8a4d57ff) -->
 				</div>
 			<?php } ?>
 		</div>
