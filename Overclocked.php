@@ -105,89 +105,9 @@ $GLOBALS['wgResourceModuleSkinStyles']['overclocked'] = array(
  * infobox - intended for a square ad above infobox
  */
 $GLOBALS['wgSkinOverclockedAds'] = array(
-	'tag'     => '<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-M4F5J99');</script>
-	<!-- End Google Tag Manager -->',
-	'header'  => '<div id="nitro-header"></div>
-<script type="text/javascript">
-nads.createAd(\'nitro-header\', {
-  "floor": 0.05,
-  "refreshLimit": 10,
-  "refreshTime": 90,
-  "adsenseSlot": "4173069078",
-  "sizes": [
-    [
-      300,
-      250
-    ],
-    [
-      728,
-      90
-    ],
-    [
-      320,
-      50
-    ],
-    [
-      970,
-      90
-    ],
-    [
-      970,
-      250
-    ]
-  ],
-  "report": {
-    "enabled": true,
-    "wording": "Report Ad",
-    "position": "fixed-bottom-right"
-  }
-});
-</script>',
-	'sidebar' => '<div id="nitro-sidebar"></div>
-<script type="text/javascript">
-nads.createAd(\'nitro-sidebar\', {
-  "floor": 0.05,
-  "refreshLimit": 10,
-  "refreshTime": 90,
-  "adsenseSlot": "3696108217",
-  "report": {
-    "enabled": true,
-    "wording": "Report Ad",
-    "position": "fixed-bottom-right"
-  }
-});
-</script>',
-	'footer'  => '<div id="nitro-footer"></div>
-<script type="text/javascript">
-nads.createAd(\'nitro-footer\', {
-  "floor": 0.05,
-  "refreshLimit": 10,
-  "refreshTime": 90,
-  "adsenseSlot": "7126535474",
-  "report": {
-    "enabled": true,
-    "wording": "Report Ad",
-    "position": "fixed-bottom-right"
-  }
-});
-</script>',
-	'infobox' => '<div id="nitro-infobox"></div>
-<script type="text/javascript">
-nads.createAd(\'nitro-infobox\', {
-  "floor": 0.05,
-  "refreshLimit": 10,
-  "refreshTime": 90,
-  "adsenseSlot": "5649802273",
-  "report": {
-    "enabled": true,
-    "wording": "Report Ad",
-    "position": "fixed-bottom-right"
-  }
-});
-</script>',
+	'tag'     => '',
+	'header'  => '',
+	'sidebar' => '',
+	'footer'  => '',
+	'infobox' => '',
 );
