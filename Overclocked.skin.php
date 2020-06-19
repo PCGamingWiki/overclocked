@@ -140,17 +140,11 @@ class OverclockedTemplate extends BaseTemplate {
 		$this->html( 'headelement' ); ?>
 
 	<?php if( $toggleGoogleAds == true ) { ?>
-	<!-- ad tag manager -->
 		<?php echo $wgSkinOverclockedAds['tag']; ?>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4F5J99"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
+		<!-- Venatus Ad Manager - Install in <HEAD> of page -->
+		<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="5ee882ebb519801b8a4d573b" data-mode="scan" async></script>
+		<!-- / Venatus Ad Manager -->
 	<?php } ?>
-
-	<!-- Venatus Ad Manager - Install in <HEAD> of page -->
-	<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="5ee882ebb519801b8a4d573b" data-mode="scan" async></script>
-	<!-- / Venatus Ad Manager -->
 
 	<header id="pcgw-header">
 		<div id="pcgw-header-sidebar-toggle"></div>
