@@ -230,6 +230,7 @@ class OverclockedTemplate extends BaseTemplate {
 				<?php
 					if ( is_array( $box['content'] ) ) { ?>
 					<ul>
+						
 						<li><?php echo htmlspecialchars( $box['header'] ); ?></li>
 						<?php
 						foreach ( $box['content'] as $key => $item ) {
@@ -342,12 +343,9 @@ class OverclockedTemplate extends BaseTemplate {
 					<?php $this->html( 'bodytext' ); ?>
 
 					<?php if( $toggleGoogleAds == true ) { ?>
-						<div id="nitro-anyclip"></div>
-						<script type="text/javascript">
-						window['nitroAds'].createAd('nitro-anyclip', {
-						  "format": "video-ac"
-						});
-						</script>
+						<!-- PCGamingWiki - Rich Media (5ee8e341a624ae2e7125852c) - 1x1 - Place in <BODY> of page where ad should appear -->
+						<div class="vm-placement" data-id="5ee8e341a624ae2e7125852c" style="display:none"></div>
+						<!-- / PCGamingWiki - Rich Media (5ee8e341a624ae2e7125852c) -->
 					<?php } ?>
 						
 					<?php $this->html( 'catlinks' ); ?>
