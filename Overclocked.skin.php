@@ -260,9 +260,16 @@ class OverclockedTemplate extends BaseTemplate {
 			<?php if( $toggleGoogleAds == true ) { ?>
 				<!-- horizontal header ad -->
 				<div class="ad-header-container">
-					<!-- PCGamingWiki - 728x90 Dynamic (5ee8e359b519801b8a4d57ff) - 728x90, 970x250, 970x90 - Place in <BODY> of page where ad should appear -->
-					<div class="vm-placement" data-id="5ee8e359b519801b8a4d57ff"></div>
-					<!-- / PCGamingWiki - 728x90 Dynamic (5ee8e359b519801b8a4d57ff) -->
+					<!-- PCGamingWiki - dynamic ad unit -->
+					<script>
+					    window.isMobile = (/android|ipad|iphone|ipod|samsung/i).test(navigator.userAgent);
+					    console.log(isMobile);
+					</script>
+					<script>
+					    var id = window.isMobile ? '5ee8e36fa624ae2e71258530' : '5ee8e359b519801b8a4d57ff';
+					    document.write('<div class="vm-placement" data-id="' + id + '"></div>');
+					</script>
+					<!-- / PCGamingWiki - dynamic ad unit -->
 				</div>
 			<?php } ?>
 
