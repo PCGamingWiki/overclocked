@@ -74,7 +74,9 @@ class OverclockedTemplate extends BaseTemplate {
 		 */
 		$personalTools = $this->getPersonalTools();
 		$pageNav = $this->data['content_navigation'];
-
+		
+		global $toggleGoogleAds;
+		
 		if( !$this->data['loggedin'] ) {
 			$personalLogin = $personalTools;
 			$toggleGoogleAds = true;
