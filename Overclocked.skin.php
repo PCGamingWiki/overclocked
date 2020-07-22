@@ -39,12 +39,18 @@ class SkinOverclocked extends SkinTemplate {
 		/* Theme meta tag for "brand" coloring in certain browsers.
 		   Off-black to match the fixed header. */
 		$out->addMeta( 'theme-color', '#333' );
-		if( !$this->data['loggedin'] ) {
+		if( !$out->getUser()->isLoggedIn() ) {
 		    $toggleGoogleAds = true;
 		}
 		else {
+		    $user = $out->getUser();
 		    $toggleGoogleAds = $user->getOption( 'overclocked-ads' );
 		}
+
+		/**
+		 * Disable Google Ads on certain namespaces
+		 */
+
 		global $wgTitle;
 		$namespace = $wgTitle->getNamespace();
 		if ( $namespace == -1 || $namespace == 4 ) {
