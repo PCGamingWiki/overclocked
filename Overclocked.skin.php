@@ -39,6 +39,17 @@ class SkinOverclocked extends SkinTemplate {
 		/* Theme meta tag for "brand" coloring in certain browsers.
 		   Off-black to match the fixed header. */
 		$out->addMeta( 'theme-color', '#333' );
+		if( !$this->data['loggedin'] ) {
+		    $toggleGoogleAds = true;
+		}
+		else {
+		    $toggleGoogleAds = $user->getOption( 'overclocked-ads' );
+		}
+		global $wgTitle;
+		$namespace = $wgTitle->getNamespace();
+		if ( $namespace == -1 || $namespace == 4 ) {
+		    $toggleGoogleAds = false;
+		}
 		if( $toggleGoogleAds ) {
 		    $out->addHeadItem('pcgw-admanager', '<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="5ee882ebb519801b8a4d573b" data-mode="scan" async></script>');
 		}
