@@ -160,122 +160,73 @@ class OverclockedTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' ); ?>
 
-	<?php if( $toggleGoogleAds == true ) { ?>
-		<?php echo $wgSkinOverclockedAds['tag']; ?>
-	<?php } ?>
+		<?php if( $toggleGoogleAds == true ) { ?>
+			<?php echo $wgSkinOverclockedAds['tag']; ?>
+		<?php } ?>
 
-	<header id="pcgw-header">
-		<div id="pcgw-header-sidebar-toggle"></div>
-
-		<div id="pcgw-header-search-toggle"></div>
-
-		<div id="pcgw-header-logo">
-			<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
-				<img src="//pcgamingwiki.com/images/0/04/PCGamingWiki_notext.svg" alt="<?php $this->text( 'sitename' ) ?>" width="40px" height="40px"/>
-			</a>
-		</div>
-
-		<div id="header-search">
-			<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform">
-				<?php
-				echo $this->makeSearchInput( array( 'id' => 'searchInput' ) );
-				echo Html::hidden( 'title', $this->get( 'searchtitle' ) );
-				?>
-			</form>
-		</div>
-
-		<div id="pcgw-header-sidebar">
-			<ul class="header-item-left-container">
-				<li class="header-item current"><a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">Wiki</a>
-				<li class="header-item"><a href="//community.pcgamingwiki.com">Forums</a>
-				<li class="header-item"><a href="https://community.pcgamingwiki.com/forum/6-a">News</a>
-				<li class="header-item no-mobile"><a href="//community.pcgamingwiki.com/files">Files</a>
-				<li class="header-item no-mobile"><a href="/wiki/PCGamingWiki:Discord">Discord</a>
-				<li class="header-item"><a href="/wiki/PCGamingWiki:Donate">Donate</a>
-				<li class="header-item mobile-only"><a href="/wiki/Special:RecentChanges">Recent changes</a>
-				<li class="header-item mobile-only"><a href="/wiki/Special:Random">Random article</a>
-			</ul>
-
-			<ul id="p-personal">
-				<?php
-				if( $loggedIn == false ) {
-					foreach ( $personalLogin as $key => $item ) {
-						echo $this->makeListItem( $key, $item );
-					}
-				}
-				else {
-					?>
-					<div id="p-personal-logged-in">
-						<?php
-						foreach ( $personalBar as $key => $item ) {
-							echo $this->makeListItem( $key, $item );
-						}
-						?>
-						
-						<div id="personal-bar-flyout">
-							<div>
-								<a href="<?php echo $personalTools['userpage']['links'][0]['href']; ?>"><?php echo $personalTools['userpage']['links'][0]['text']; ?></a>
-								<ul>
-									<?php
-									foreach ( $personalFlyout as $key => $item ) {
-										echo $this->makeListItem( $key, $item );
-									}
-									?>
-								</ul>
-							</div>
-						</div>
+		<nav class="top-bar" data-topbar role="navigation" data-options="back_text: <?php echo wfMessage( 'foreground-menunavback' )->text(); ?>">
+			<ul class="title-area">
+				<li class="name">
+					<div class="title-name">
+					<a href="<?php echo $this->data['nav_urls']['mainpage']['href']; ?>">
+					<?php if ($wgForegroundFeatures['navbarIcon'] != '0') { ?>
+						<img alt="<?php echo $this->text('sitename'); ?>" class="top-bar-logo" src="<?php echo $this->text('logopath') ?>">
+					<?php } ?>					
+					<div class="title-name" style="display: inline-block;"><?php echo $wgForegroundFeatures['wikiName']; ?></div>
+					</a>
 					</div>
-				<?php
-				}
-				?>
+				</li>
+				<li class="toggle-topbar menu-icon">
+					<a href="#"><span><?php echo wfMessage( 'foreground-menutitle' )->text(); ?></span></a>
+				</li>
 			</ul>
-		</div>
-	</header>
 
-	<div id="masthead" <?php if ( $toggleFloatingTOC ) { ?> class="floating-toc-enabled" <?php } ?>>
-		<div id="sidebar">
-			<div id="pcgw-logo">
-				<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
-					<img src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" width="145px" height="88px"/>
-				</a>
-			</div>
+		<section class="top-bar-section">
 
-			<nav class="sidebar-nav">
-				<?php
-				$sidebar = $this->getSidebar();
-				if ( isset( $sidebar["TOOLBOX"]["content"]["print"] ) ) {
-					unset( $sidebar["TOOLBOX"]["content"]["print"] );
-				}
-				foreach ( $sidebar as $boxName => $box ) { ?>
-				<div id="<?php echo Sanitizer::escapeId( $box['id'] ) ?>"<?php echo Linker::tooltip( $box['id'] ) ?>>
-				<?php
-					if ( is_array( $box['content'] ) ) { ?>
-					<ul>
-						
-						<li><?php echo htmlspecialchars( $box['header'] ); ?></li>
-						<?php
-						foreach ( $box['content'] as $key => $item ) {
-							echo $this->makeListItem( $key, $item );
-						}
-						?>
+			<ul id="top-bar-left" class="left">
+				<li class="divider show-for-small"></li>
+				<?php foreach ( $this->getSidebar() as $boxName => $box ) { if ( ($box['header'] != wfMessage( 'toolbox' )->text())  ) { ?>
+					<li class="has-dropdown active"  id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
+						<a href="#"><?php echo htmlspecialchars( $box['header'] ); ?></a>
+						<?php if ( is_array( $box['content'] ) ) { ?>
+							<ul class="dropdown">
+								<?php foreach ( $box['content'] as $key => $item ) { echo $this->makeListItem( $key, $item ); } ?>
+							</ul>
+						<?php } ?>
+					</li>
+				<?php } } ?>
+			</ul>
+
+			<ul id="top-bar-right" class="right">
+				<li class="has-form">
+					<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
+						<div class="row collapse">
+						<div class="small-12 columns">
+							<?php echo $this->makeSearchInput(array('placeholder' => wfMessage('searchsuggest-search')->text(), 'id' => 'searchInput') ); ?>
+							<button type="submit" class="button search"><?php echo wfMessage( 'search' )->text() ?></button>
+						</div>
+						</div>
+					</form>
+				</li>
+				<li class="divider show-for-small"></li>
+
+				<li class="has-dropdown active"><a href="#"><i class="fa fa-cogs"></i></a>
+					<ul id="toolbox-dropdown" class="dropdown">
+						<?php foreach ( $this->getToolbox() as $key => $item ) { echo $this->makeListItem($key, $item); } ?>
+						<?php if ($wgForegroundFeatures['showRecentChangesUnderTools']): ?><li id="n-recentchanges"><?php echo Linker::specialLink('Recentchanges') ?></li><?php endif; ?>
+						<?php if ($wgForegroundFeatures['showHelpUnderTools']): ?><li id="n-help" <?php echo Linker::tooltip('help') ?>><a href="<?php echo Skin::makeInternalOrExternalUrl( wfMessage( 'helppage' )->inContentLanguage()->text() )?>"><?php echo wfMessage( 'help' )->text() ?></a></li><?php endif; ?>
 					</ul>
-				<?php
-					}
-					else {
-						echo $box['content'];
-					}
-				} ?>
-			</nav>
+				</li>
 
-			<?php if( $toggleGoogleAds == true ) { ?>
-				<!-- sidebar ad -->
-				<div class="ad-sidebar-container">
-					<!-- PCGamingWiki - 300x250 Dynamic (5ee8e34ab519801b8a4d57fd) - 300x250, 300x600, 160x600 - Place in <BODY> of page where ad should appear -->
-					<div class="vm-placement" data-id="5ee8e34ab519801b8a4d57fd"></div>
-					<!-- / PCGamingWiki - 300x250 Dynamic (5ee8e34ab519801b8a4d57fd) -->
-				</div>
-			<?php } ?>
-		</div>
+				<li id="personal-tools-dropdown" class="has-dropdown active"><a href="#"><i class="fa fa-user"></i></a>
+					<ul class="dropdown">
+						<?php foreach ( $this->getPersonalTools() as $key => $item ) { echo $this->makeListItem($key, $item); } ?>
+					</ul>
+				</li>
+
+			</ul>
+		</section>
+		</nav>
 
 		<div id="main-column">
 			<?php if( $toggleGoogleAds == true ) { ?>
