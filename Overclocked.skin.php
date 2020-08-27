@@ -206,8 +206,6 @@ class OverclockedTemplate extends BaseTemplate {
 								?><li class="header-item dropdown-toggle"><span><?php echo htmlspecialchars( $box['header'] ); ?></span>
 								<div class="dropdown-menu"><?php
 									foreach ( $box['content'] as $key => $item ) {
-										echo 
-										<li></li>
 										echo $this->makeListItem( $key, $item );
 										
 									}
