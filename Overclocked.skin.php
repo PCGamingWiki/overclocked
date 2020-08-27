@@ -205,7 +205,7 @@ class OverclockedTemplate extends BaseTemplate {
 			<ul id="top-bar-right" class="right">
 				<li class="divider show-for-small"></li>
 
-				<li class="has-dropdown active">Tools	</a>
+				<li class="has-dropdown active"><a href="#">Tools</a>
 					<ul id="toolbox-dropdown" class="dropdown">
 						<?php foreach ( $this->getToolbox() as $key => $item ) { echo $this->makeListItem($key, $item); } ?>
 						<?php if ($wgForegroundFeatures['showRecentChangesUnderTools']): ?><li id="n-recentchanges"><?php echo Linker::specialLink('Recentchanges') ?></li><?php endif; ?>
