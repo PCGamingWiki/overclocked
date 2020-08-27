@@ -185,37 +185,34 @@ class OverclockedTemplate extends BaseTemplate {
 				?>
 			</form>
 		</div>
-
-		
-
-
 		<div id="pcgw-header-sidebar">
-		<ul class="header-item-left-container">
-			<?php 
-				$sidebar = $this->getSidebar();
-				if(isset($sidebar["TOOLBOX"]["content"]["print"])) {
-					unset($sidebar["TOOLBOX"]["content"]["print"]);
-				}
-				
-				foreach($sidebar as $boxName => $box) {
-					?>
-					
-					<?php
-						if(!is_array($box['content'])) {
+			<ul class="header-item-left-container">
+				<?php 
+					$sidebar = $this->getSidebar();
+					if(isset($sidebar["TOOLBOX"]["content"]["print"])) {
+						unset($sidebar["TOOLBOX"]["content"]["print"]);
+					}
+					foreach($sidebar as $boxName => $box) {
+
+
+							if(!is_array($box['content'])) {
+								?><li class="header-item dropdown-toggle">
+									<span>Menu</span>
+									<?php echo $box['content']; ?>
+								</li><?php
+							}
+							else {
+								?><li class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></li>
+								<div class="dropdown-menu"><?php
+									foreach ( $box['content'] as $key => $item ) {
+										echo $this->makeListItem( $key, $item );
+									}
+								?></div><?php
+							}
 							?>
-							<li class="header-item dropdown-toggle">Menu</li>
-							<?php
-						}
-						else {
-							?>
-							<li class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></li>
-							<?php
-						}
-						?>
-					<?php
-				}
-			
-			?>
+						<?php
+					}
+				?>
 			</ul>
 
 			<ul id="p-personal">
