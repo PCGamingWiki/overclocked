@@ -183,62 +183,27 @@ class OverclockedTemplate extends BaseTemplate {
 				?>
 			</form>
 		</div>
-
-		<div id="pcgw-header-sidebar">
-			<ul id="top-bar-left" class="left">
-				<li class="divider show-for-small"></li>
-				<?php foreach ( $this->getSidebar() as $boxName => $box ) { if ( ($box['header'] != wfMessage( 'toolbox' )->text())  ) { ?>
-					<li class="has-dropdown active"  id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
-						<a href="#"><?php echo htmlspecialchars( $box['header'] ); ?></a>
-						<?php if ( is_array( $box['content'] ) ) { ?>
-							<ul class="dropdown">
-								<?php foreach ( $box['content'] as $key => $item ) { echo $this->makeListItem( $key, $item ); } ?>
-							</ul>
-						<?php } ?>
-					</li>
-				<?php } } ?>
+		
+		<ul id="top-bar-left" class="left">
+			<li class="divider show-for-small"></li>
+			<?php foreach ( $this->getSidebar() as $boxName => $box ) { if ( ($box['header'] != wfMessage( 'toolbox' )->text())  ) { ?>
+				<li class="has-dropdown active"  id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
+					<a href="#"><?php echo htmlspecialchars( $box['header'] ); ?></a>
+					<?php if ( is_array( $box['content'] ) ) { ?>
+						<ul class="dropdown">
+							<?php foreach ( $box['content'] as $key => $item ) { echo $this->makeListItem( $key, $item ); } ?>
+						</ul>
+					<?php } ?>
+				</li>
+			<?php } } ?>
+		</ul>
+		<li class="has-dropdown active"><a href="#"><i class="fa fa-cogs"></i></a>
+			<ul id="toolbox-dropdown" class="dropdown">
+				<?php foreach ( $this->getToolbox() as $key => $item ) { echo $this->makeListItem($key, $item); } ?>
+				<?php if ($wgForegroundFeatures['showRecentChangesUnderTools']): ?><li id="n-recentchanges"><?php echo Linker::specialLink('Recentchanges') ?></li><?php endif; ?>
+				<?php if ($wgForegroundFeatures['showHelpUnderTools']): ?><li id="n-help" <?php echo Linker::tooltip('help') ?>><a href="<?php echo Skin::makeInternalOrExternalUrl( wfMessage( 'helppage' )->inContentLanguage()->text() )?>"><?php echo wfMessage( 'help' )->text() ?></a></li><?php endif; ?>
 			</ul>
-			<li class="has-dropdown active"><a href="#"><i class="fa fa-cogs"></i></a>
-				<ul id="toolbox-dropdown" class="dropdown">
-					<?php foreach ( $this->getToolbox() as $key => $item ) { echo $this->makeListItem($key, $item); } ?>
-					<?php if ($wgForegroundFeatures['showRecentChangesUnderTools']): ?><li id="n-recentchanges"><?php echo Linker::specialLink('Recentchanges') ?></li><?php endif; ?>
-					<?php if ($wgForegroundFeatures['showHelpUnderTools']): ?><li id="n-help" <?php echo Linker::tooltip('help') ?>><a href="<?php echo Skin::makeInternalOrExternalUrl( wfMessage( 'helppage' )->inContentLanguage()->text() )?>"><?php echo wfMessage( 'help' )->text() ?></a></li><?php endif; ?>
-				</ul>
-			</li>
-			<ul id="p-personal">
-				<?php
-				if( $loggedIn == false ) {
-					foreach ( $personalLogin as $key => $item ) {
-						echo $this->makeListItem( $key, $item );
-					}
-				}
-				else {
-					?>
-					<div id="p-personal-logged-in">
-						<?php
-						foreach ( $personalBar as $key => $item ) {
-							echo $this->makeListItem( $key, $item );
-						}
-						?>
-						
-						<div id="personal-bar-flyout">
-							<div>
-								<a href="<?php echo $personalTools['userpage']['links'][0]['href']; ?>"><?php echo $personalTools['userpage']['links'][0]['text']; ?></a>
-								<ul>
-									<?php
-									foreach ( $personalFlyout as $key => $item ) {
-										echo $this->makeListItem( $key, $item );
-									}
-									?>
-								</ul>
-							</div>
-						</div>
-					</div>
-				<?php
-				}
-				?>
-			</ul>
-		</div>
+		</li>
 	</header>
 
 	<div id="masthead" <?php if ( $toggleFloatingTOC ) { ?> class="floating-toc-enabled" <?php } ?>>
