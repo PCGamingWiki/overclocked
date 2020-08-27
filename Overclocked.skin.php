@@ -190,6 +190,7 @@ class OverclockedTemplate extends BaseTemplate {
 
 
 		<div id="pcgw-header-sidebar">
+		<ul class="header-item-left-container">
 			<?php 
 				$sidebar = $this->getSidebar();
 				if(isset($sidebar["TOOLBOX"]["content"]["print"])) {
@@ -198,7 +199,7 @@ class OverclockedTemplate extends BaseTemplate {
 				
 				foreach($sidebar as $boxName => $box) {
 					?>
-					<ul class="header-item-left-container">
+					
 					<?php
 						if(!is_array($box['content'])) {
 							?>
@@ -211,10 +212,11 @@ class OverclockedTemplate extends BaseTemplate {
 							<?php
 						}
 						?>
-					</ul><?php
+					<?php
 				}
 			
 			?>
+			</ul>
 
 			<ul id="p-personal">
 				<?php
