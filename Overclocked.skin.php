@@ -186,9 +186,9 @@ class OverclockedTemplate extends BaseTemplate {
 			</form>
 		</div>
 		<div id="pcgw-header-sidebar">
-			<div id="pcgw-logo">
+			<div id="pcgw-header-logo">
 				<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
-					<img src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" width="45" height="20"/>
+					<img src="//pcgamingwiki.com/images/0/04/PCGamingWiki_notext.svg" alt="<?php $this->text( 'sitename' ) ?>" width="40px" height="40px"/>
 				</a>
 			</div>
 			<ul class="header-item-left-container">
@@ -201,7 +201,7 @@ class OverclockedTemplate extends BaseTemplate {
 				<?php
 					if ( is_array( $box['content'] ) ) { ?>
 					
-						<li class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></li>
+						<li class="header-item dropdown-toggle"><span><?php echo htmlspecialchars( $box['header'] ); ?></span>
 						<div class="dropdown-menu">
 						<?php
 						foreach ( $box['content'] as $key => $item ) {
@@ -209,7 +209,7 @@ class OverclockedTemplate extends BaseTemplate {
 						}
 						?>
 						</div>
-					
+						</li>
 				<?php
 					}
 					else {
