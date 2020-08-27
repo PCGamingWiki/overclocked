@@ -202,43 +202,17 @@ class OverclockedTemplate extends BaseTemplate {
 					?>
 					<li class="header-item dropdown-toggle">
 						<span><?php echo htmlspecialchars($box['header']); ?></span>
-						<div class="dropdown-menu">
-							<?php 
+							<?php echo "<div class='dropdown-menu'>";
 								foreach($box['content'] as $key => $item){
 									?>
 										<li class="dropdown-item"><a href="#"><?php echo htmlspecialchars($item[$key]['text']); ?></a></li>
 									<?php
 								}
+								echo "</div>";
 							?>
-						</div>
+						
 					</li>
 					<?php
-					echo $box['content'];
-				}
-
-				
-
-
-				foreach ( $sidebar as $boxName => $box ) { ?>
-
-
-				<?php
-					if ( is_array( $box['content'] ) ) { ?>
-					
-						<li class="header-item dropdown-toggle"><span><?php echo htmlspecialchars( $box['header'] ); ?></span>
-						<div class="dropdown-menu">
-						<?php
-						foreach ( $box['content'] as $key => $item ) {
-							echo htmlspecialchars($this->makeListItem( $key, $item ));
-						}
-						?>
-						</div>
-						</li>
-				<?php
-					}
-					else {
-						echo $box['content'];
-					}
 				} ?>
 			</ul>
 
