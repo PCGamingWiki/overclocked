@@ -186,22 +186,6 @@ class OverclockedTemplate extends BaseTemplate {
 
 		<div id="pcgw-header-sidebar">
 
-			<ul class="title-area">
-				<li class="name">
-					<div class="title-name">
-					<a href="<?php echo $this->data['nav_urls']['mainpage']['href']; ?>">
-					<?php if ($wgForegroundFeatures['navbarIcon'] != '0') { ?>
-						<img alt="<?php echo $this->text('sitename'); ?>" class="top-bar-logo" src="<?php echo $this->text('logopath') ?>">
-					<?php } ?>					
-					<div class="title-name" style="display: inline-block;"><?php echo $wgForegroundFeatures['wikiName']; ?></div>
-					</a>
-					</div>
-				</li>
-				<li class="toggle-topbar menu-icon">
-					<a href="#"><span><?php echo wfMessage( 'foreground-menutitle' )->text(); ?></span></a>
-				</li>
-			</ul>
-
 		<section class="top-bar-section">
 
 			<ul id="top-bar-left" class="left">
@@ -219,16 +203,6 @@ class OverclockedTemplate extends BaseTemplate {
 			</ul>
 
 			<ul id="top-bar-right" class="right">
-				<li class="has-form">
-					<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
-						<div class="row collapse">
-						<div class="small-12 columns">
-							<?php echo $this->makeSearchInput(array('placeholder' => wfMessage('searchsuggest-search')->text(), 'id' => 'searchInput') ); ?>
-							<button type="submit" class="button search"><?php echo wfMessage( 'search' )->text() ?></button>
-						</div>
-						</div>
-					</form>
-				</li>
 				<li class="divider show-for-small"></li>
 
 				<li class="has-dropdown active"><a href="#"><i class="fa fa-cogs"></i></a>
