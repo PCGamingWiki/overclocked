@@ -183,27 +183,99 @@ class OverclockedTemplate extends BaseTemplate {
 				?>
 			</form>
 		</div>
-		
-		<ul id="top-bar-left" class="left">
-			<li class="divider show-for-small"></li>
-			<?php foreach ( $this->getSidebar() as $boxName => $box ) { if ( ($box['header'] != wfMessage( 'toolbox' )->text())  ) { ?>
-				<li class="has-dropdown active"  id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
-					<a href="#"><?php echo htmlspecialchars( $box['header'] ); ?></a>
-					<?php if ( is_array( $box['content'] ) ) { ?>
-						<ul class="dropdown">
-							<?php foreach ( $box['content'] as $key => $item ) { echo $this->makeListItem( $key, $item ); } ?>
-						</ul>
-					<?php } ?>
+
+		<div id="pcgw-header-sidebar">
+
+			<ul class="title-area">
+				<li class="name">
+					<div class="title-name">
+					<a href="<?php echo $this->data['nav_urls']['mainpage']['href']; ?>">
+					<?php if ($wgForegroundFeatures['navbarIcon'] != '0') { ?>
+						<img alt="<?php echo $this->text('sitename'); ?>" class="top-bar-logo" src="<?php echo $this->text('logopath') ?>">
+					<?php } ?>					
+					<div class="title-name" style="display: inline-block;"><?php echo $wgForegroundFeatures['wikiName']; ?></div>
+					</a>
+					</div>
 				</li>
-			<?php } } ?>
-		</ul>
-		<li class="has-dropdown active"><a href="#"><i class="fa fa-cogs"></i></a>
-			<ul id="toolbox-dropdown" class="dropdown">
-				<?php foreach ( $this->getToolbox() as $key => $item ) { echo $this->makeListItem($key, $item); } ?>
-				<?php if ($wgForegroundFeatures['showRecentChangesUnderTools']): ?><li id="n-recentchanges"><?php echo Linker::specialLink('Recentchanges') ?></li><?php endif; ?>
-				<?php if ($wgForegroundFeatures['showHelpUnderTools']): ?><li id="n-help" <?php echo Linker::tooltip('help') ?>><a href="<?php echo Skin::makeInternalOrExternalUrl( wfMessage( 'helppage' )->inContentLanguage()->text() )?>"><?php echo wfMessage( 'help' )->text() ?></a></li><?php endif; ?>
+				<li class="toggle-topbar menu-icon">
+					<a href="#"><span><?php echo wfMessage( 'foreground-menutitle' )->text(); ?></span></a>
+				</li>
 			</ul>
-		</li>
+
+		<section class="top-bar-section">
+
+			<ul id="top-bar-left" class="left">
+				<li class="divider show-for-small"></li>
+				<?php foreach ( $this->getSidebar() as $boxName => $box ) { if ( ($box['header'] != wfMessage( 'toolbox' )->text())  ) { ?>
+					<li class="has-dropdown active"  id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
+						<a href="#"><?php echo htmlspecialchars( $box['header'] ); ?></a>
+						<?php if ( is_array( $box['content'] ) ) { ?>
+							<ul class="dropdown">
+								<?php foreach ( $box['content'] as $key => $item ) { echo $this->makeListItem( $key, $item ); } ?>
+							</ul>
+						<?php } ?>
+					</li>
+				<?php } } ?>
+			</ul>
+
+			<ul id="top-bar-right" class="right">
+				<li class="has-form">
+					<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
+						<div class="row collapse">
+						<div class="small-12 columns">
+							<?php echo $this->makeSearchInput(array('placeholder' => wfMessage('searchsuggest-search')->text(), 'id' => 'searchInput') ); ?>
+							<button type="submit" class="button search"><?php echo wfMessage( 'search' )->text() ?></button>
+						</div>
+						</div>
+					</form>
+				</li>
+				<li class="divider show-for-small"></li>
+
+				<li class="has-dropdown active"><a href="#"><i class="fa fa-cogs"></i></a>
+					<ul id="toolbox-dropdown" class="dropdown">
+						<?php foreach ( $this->getToolbox() as $key => $item ) { echo $this->makeListItem($key, $item); } ?>
+						<?php if ($wgForegroundFeatures['showRecentChangesUnderTools']): ?><li id="n-recentchanges"><?php echo Linker::specialLink('Recentchanges') ?></li><?php endif; ?>
+						<?php if ($wgForegroundFeatures['showHelpUnderTools']): ?><li id="n-help" <?php echo Linker::tooltip('help') ?>><a href="<?php echo Skin::makeInternalOrExternalUrl( wfMessage( 'helppage' )->inContentLanguage()->text() )?>"><?php echo wfMessage( 'help' )->text() ?></a></li><?php endif; ?>
+					</ul>
+				</li>
+
+			</ul>
+		</section>
+			
+			<ul id="p-personal">
+				<?php
+				if( $loggedIn == false ) {
+					foreach ( $personalLogin as $key => $item ) {
+						echo $this->makeListItem( $key, $item );
+					}
+				}
+				else {
+					?>
+					<div id="p-personal-logged-in">
+						<?php
+						foreach ( $personalBar as $key => $item ) {
+							echo $this->makeListItem( $key, $item );
+						}
+						?>
+						
+						<div id="personal-bar-flyout">
+							<div>
+								<a href="<?php echo $personalTools['userpage']['links'][0]['href']; ?>"><?php echo $personalTools['userpage']['links'][0]['text']; ?></a>
+								<ul>
+									<?php
+									foreach ( $personalFlyout as $key => $item ) {
+										echo $this->makeListItem( $key, $item );
+									}
+									?>
+								</ul>
+							</div>
+						</div>
+					</div>
+				<?php
+				}
+				?>
+			</ul>
+		</div>
 	</header>
 
 	<div id="masthead" <?php if ( $toggleFloatingTOC ) { ?> class="floating-toc-enabled" <?php } ?>>
