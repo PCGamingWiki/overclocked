@@ -207,49 +207,6 @@ class OverclockedTemplate extends BaseTemplate {
 	</header>
 
 	<div id="masthead" <?php if ( $toggleFloatingTOC ) { ?> class="floating-toc-enabled" <?php } ?>>
-		<div id="sidebar">
-			<div id="pcgw-logo">
-				<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
-					<img src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" width="145px" height="88px"/>
-				</a>
-			</div>
-
-			<nav class="sidebar-nav">
-				<?php
-				$sidebar = $this->getSidebar();
-				if ( isset( $sidebar["TOOLBOX"]["content"]["print"] ) ) {
-					unset( $sidebar["TOOLBOX"]["content"]["print"] );
-				}
-				foreach ( $sidebar as $boxName => $box ) { ?>
-				<div id="<?php echo Sanitizer::escapeId( $box['id'] ) ?>"<?php echo Linker::tooltip( $box['id'] ) ?>>
-				<?php
-					if ( is_array( $box['content'] ) ) { ?>
-					<ul>
-						
-						<li><?php echo htmlspecialchars( $box['header'] ); ?></li>
-						<?php
-						foreach ( $box['content'] as $key => $item ) {
-							echo $this->makeListItem( $key, $item );
-						}
-						?>
-					</ul>
-				<?php
-					}
-					else {
-						echo $box['content'];
-					}
-				} ?>
-			</nav>
-
-			<?php if( $toggleGoogleAds == true ) { ?>
-				<!-- sidebar ad -->
-				<div class="ad-sidebar-container">
-					<!-- PCGamingWiki - 300x250 Dynamic (5ee8e34ab519801b8a4d57fd) - 300x250, 300x600, 160x600 - Place in <BODY> of page where ad should appear -->
-					<div class="vm-placement" data-id="5ee8e34ab519801b8a4d57fd"></div>
-					<!-- / PCGamingWiki - 300x250 Dynamic (5ee8e34ab519801b8a4d57fd) -->
-				</div>
-			<?php } ?>
-		</div>
 
 		<div id="main-column">
 			<?php if( $toggleGoogleAds == true ) { ?>
