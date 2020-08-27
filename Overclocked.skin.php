@@ -185,30 +185,6 @@ class OverclockedTemplate extends BaseTemplate {
 		</div>
 
 		<div id="pcgw-header-sidebar">
-		<?php 
-			$sidebar = $this->getSidebar();
-			if(isset($sidebar["TOOLBOX"]["content"]["print"])) {
-			    unset($sidebar["TOOLBOX"]["content"]["print"])
-			}
-
-			foreach($sidebar as $boxName => $box) {
-			    ?>
-			    <ul class="header-item-left-container">
-			    <?php
-				if(!is_array($box['content'])) {
-				    ?>
-				    <li class="header-item dropdown-toggle">Menu</li>
-				    <?php
-				}
-				else {
-				    ?>
-				    <li class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></li>
-				    <?php
-				}
-				?>
-			    </ul><?php
-			}
-            	?>
 			
 			<ul id="p-personal">
 				<?php
