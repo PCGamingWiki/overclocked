@@ -193,7 +193,7 @@ class OverclockedTemplate extends BaseTemplate {
 						unset($sidebar["TOOLBOX"]["content"]["print"]);
 					}
 					foreach($sidebar as $boxName => $box) {
-						echo "<script>console.log('" . json_encode($box) . "');</script>";
+						echo "<script>console.log(JSON.parse('" . json_encode($box) . "'));</script>";
 
 							if(!is_array($box['content'])) {
 								?><li class="header-item dropdown-toggle">
