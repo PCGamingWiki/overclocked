@@ -186,27 +186,36 @@ class OverclockedTemplate extends BaseTemplate {
 			</form>
 		</div>
 		<div id="pcgw-header-sidebar">
+			<div id="pcgw-logo">
+				<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
+					<img src="<?php $this->text( 'logopath' ); ?>" alt="<?php $this->text( 'sitename' ) ?>" width="45" height="20"/>
+				</a>
+			</div>
 			<ul class="header-item-left-container">
-				<?php 
-					$sidebar = $this->getSidebar();
-					if(isset($sidebar["TOOLBOX"]["content"]["print"])) {
-						unset($sidebar["TOOLBOX"]["content"]["print"]);
-					}
-					foreach($sidebar as $boxName => $box) {
-
-						if(!is_array($box['content'])) {
-							echo "<li class='header-item dropdown-toggle'><span>Menu</span><div class='dropdown-menu'>".$box['content']."</div></li>";
+			<?php
+				$sidebar = $this->getSidebar();
+				if ( isset( $sidebar["TOOLBOX"]["content"]["print"] ) ) {
+					unset( $sidebar["TOOLBOX"]["content"]["print"] );
+				}
+				foreach ( $sidebar as $boxName => $box ) { ?>
+				<?php
+					if ( is_array( $box['content'] ) ) { ?>
+					
+						<li class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></li>
+						<div class="dropdown-menu">
+						<?php
+						foreach ( $box['content'] as $key => $item ) {
+							echo $this->makeListItem( $key, $item );
 						}
-						else {
-							echo "<li class='header-item dropdown-toggle'><span>".htmlspecialchars($box['header'])."</span><div class='dropdown-menu'>";
-							foreach ( $box['content'] as $key => $item ) {
-								echo "<script>console.log(".$item.")</script>";
-								echo "<li class='dropdown-item'><a href='#'>".$item['info']."</a></li>";
-							}
-							echo "</div></li>";
-						}
+						?>
+						</div>
+					
+				<?php
 					}
-				?>
+					else {
+						echo $box['content'];
+					}
+				} ?>
 			</ul>
 
 			<ul id="p-personal">
