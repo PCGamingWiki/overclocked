@@ -193,6 +193,7 @@ class OverclockedTemplate extends BaseTemplate {
 						unset($sidebar["TOOLBOX"]["content"]["print"]);
 					}
 					foreach($sidebar as $boxName => $box) {
+						echo "<script>console.log('" . json_encode($box) . "');</script>";
 
 							if(!is_array($box['content'])) {
 								?><li class="header-item dropdown-toggle">
@@ -205,9 +206,10 @@ class OverclockedTemplate extends BaseTemplate {
 								?><li class="header-item dropdown-toggle"><span><?php echo htmlspecialchars( $box['header'] ); ?></span>
 								<div class="dropdown-menu"><?php
 									foreach ( $box['content'] as $key => $item ) {
+										echo 
+										<li></li>
 										echo $this->makeListItem( $key, $item );
-										echo "<script>console.log(".$item.")</script>";
-										echo "<script>console.log(".$key.")</script>";
+										
 									}
 								?></div></li><?php
 							}
