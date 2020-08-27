@@ -37,11 +37,10 @@ function mobileTableOfContents() {
 }
 
 function mobileHeader() {
-	var windowwidth = $(window).width();
 
 	$("#pcgw-header-sidebar-toggle").click(function() {
 		// Only run on mobile.
-		if (windowwidth < '800') {
+		if($(window).width() < '800') {
 			$("#pcgw-header-sidebar-toggle").toggleClass('active');
 			$("#pcgw-header-sidebar").toggleClass('active');
 			$("body").toggleClass('no-scroll');
