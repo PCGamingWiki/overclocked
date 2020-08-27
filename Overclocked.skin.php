@@ -201,14 +201,13 @@ class OverclockedTemplate extends BaseTemplate {
 				
 
 				foreach($sidebar as $boxName => $box) {
-					echo "<script>console.log(".print_r($box['content']).")</script>"
 					?>
 					<li class="header-item dropdown-toggle">
 						<span><?php echo htmlspecialchars($box['header']); ?></span>
 							<div class='dropdown-menu'><?php
 								foreach($box['content'] as $key => $item){
 									?>
-										<li class="dropdown-item"><a href="#"><?php echo htmlspecialchars($item[$key]['header']); ?></a></li>
+										<li class="dropdown-item"><a href="#"><?php echo htmlspecialchars($item[$key]['header']['text']); ?></a></li>
 									<?php
 								}
 								
