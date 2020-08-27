@@ -201,7 +201,7 @@ class OverclockedTemplate extends BaseTemplate {
 				
 
 				foreach($sidebar as $boxName => $box) {
-					echo "<div style='display: none'>".print_r($box)."</div>"
+					echo "<script>console.log(".print_r($box['content']).")</script>"
 					?>
 					<li class="header-item dropdown-toggle">
 						<span><?php echo htmlspecialchars($box['header']); ?></span>
