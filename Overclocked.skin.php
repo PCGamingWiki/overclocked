@@ -185,36 +185,30 @@ class OverclockedTemplate extends BaseTemplate {
 		</div>
 
 		<div id="pcgw-header-sidebar">
+		<?php 
+			$sidebar = $this->getSidebar();
+			if(isset($sidebar["TOOLBOX"]["content"]["print"])) {
+			    unset($sidebar["TOOLBOX"]["content"]["print"])
+			}
 
-		<section class="top-bar-section">
-
-			<ul id="top-bar-left" class="left">
-				<li class="divider show-for-small"></li>
-				<?php foreach ( $this->getSidebar() as $boxName => $box ) { if ( ($box['header'] != wfMessage( 'toolbox' )->text())  ) { ?>
-					<li class="has-dropdown active"  id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
-						<a href="#"><?php echo htmlspecialchars( $box['header'] ); ?></a>
-						<?php if ( is_array( $box['content'] ) ) { ?>
-							<ul class="dropdown">
-								<?php foreach ( $box['content'] as $key => $item ) { echo $this->makeListItem( $key, $item ); } ?>
-							</ul>
-						<?php } ?>
-					</li>
-				<?php } } ?>
-			</ul>
-
-			<ul id="top-bar-right" class="right">
-				<li class="divider show-for-small"></li>
-
-				<li class="has-dropdown active"><a href="#">Tools</a>
-					<ul id="toolbox-dropdown" class="dropdown">
-						<?php foreach ( $this->getToolbox() as $key => $item ) { echo $this->makeListItem($key, $item); } ?>
-						<?php if ($wgForegroundFeatures['showRecentChangesUnderTools']): ?><li id="n-recentchanges"><?php echo Linker::specialLink('Recentchanges') ?></li><?php endif; ?>
-						<?php if ($wgForegroundFeatures['showHelpUnderTools']): ?><li id="n-help" <?php echo Linker::tooltip('help') ?>><a href="<?php echo Skin::makeInternalOrExternalUrl( wfMessage( 'helppage' )->inContentLanguage()->text() )?>"><?php echo wfMessage( 'help' )->text() ?></a></li><?php endif; ?>
-					</ul>
-				</li>
-
-			</ul>
-		</section>
+			foreach($sidebar as $boxName => $box) {
+			    ?>
+			    <ul class="header-item-left-container">
+			    <?php
+				if(!is_array($box['content'])) {
+				    ?>
+				    <li class="header-item dropdown-toggle">Menu</li>
+				    <?php
+				}
+				else {
+				    ?>
+				    <li class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></li>
+				    <?php
+				}
+				?>
+			    </ul><?php
+			}
+            	?>
 			
 			<ul id="p-personal">
 				<?php
