@@ -194,12 +194,11 @@ class OverclockedTemplate extends BaseTemplate {
 					}
 					foreach($sidebar as $boxName => $box) {
 
-
 							if(!is_array($box['content'])) {
 								?><li class="header-item dropdown-toggle">
 									<span>Menu</span>
-									<?php echo $box['content']; ?>
-									<?php echo "<script>console.log(".$box['content'].")</script>" ?>
+									<div class="dropdown-menu">
+									<?php echo $box['content']; ?></div>
 								</li><?php
 							}
 							else {
