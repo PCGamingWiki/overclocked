@@ -206,8 +206,8 @@ class OverclockedTemplate extends BaseTemplate {
 								<div class="dropdown-menu"><?php
 									foreach ( $box['content'] as $key => $item ) {
 										echo $this->makeListItem( $key, $item );
-										echo "<script>console.log(".$item")</script>"
-										echo "<script>console.log(".$key")</script>"
+										echo "<script>console.log(".$item")</script>";
+										echo "<script>console.log(".$key")</script>";
 									}
 								?></div></li><?php
 							}
