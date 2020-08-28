@@ -197,11 +197,11 @@ class OverclockedTemplate extends BaseTemplate {
 
 				foreach($sidebar as $boxName => $box) {
 					?>
-					<li class="header-item dropdown-toggle"  id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
-						<span><?php echo htmlspecialchars( $box['header'] ); ?></span>
+					<li   id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
+						<span class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></span>
 						<?php
 							if(is_array($box['content'])) { ?>
-								<ul class="dropdown-list">
+								<ul class="dropdown-menu">
 									<?php foreach($box['content'] as $key => $item) {
 										echo $this->makeListItem($key, $item);
 									} ?>
