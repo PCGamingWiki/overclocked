@@ -167,89 +167,91 @@ class OverclockedTemplate extends BaseTemplate {
     <!-- NEW NAV -->
 
 	<header id="pcgw-header">
-		<div id="pcgw-header-sidebar-toggle"></div>
+		<div class="pcgw-header_limit">
+			<div id="pcgw-header-sidebar-toggle"></div>
 
-		<div id="pcgw-header-search-toggle"></div>
+			<div id="pcgw-header-search-toggle"></div>
 
-		<!-- LOGO -->
-		<div id="pcgw-header-logo">
-			<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
-				<img src="//pcgamingwiki.com/images/0/04/PCGamingWiki_notext.svg" alt="<?php $this->text( 'sitename' ) ?>" width="40px" height="40px"/>
-			</a>
-		</div>
+			<!-- LOGO -->
+			<div id="pcgw-header-logo">
+				<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
+					<img src="//pcgamingwiki.com/images/0/04/PCGamingWiki_notext.svg" alt="<?php $this->text( 'sitename' ) ?>" width="40px" height="40px"/>
+				</a>
+			</div>
 
-		<div style="display: flex; align-items: center; justify-content: space-between; flex: 1;">
-			<!-- MENU -->
-			<div id="pcgw-header-sidebar">
-				<ul class="header-item-left-container">
-				<?php
-					$sidebar = $this->getSidebar();
+			<div style="display: flex; align-items: center; justify-content: space-between; flex: 1;">
+				<!-- MENU -->
+				<div id="pcgw-header-sidebar">
+					<ul class="header-item-left-container">
+					<?php
+						$sidebar = $this->getSidebar();
 
-					foreach($sidebar as $boxName => $box) {
-						?>
-						<li   id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
-							<span class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></span>
-							<?php
-								if(is_array($box['content'])) { ?>
-									<ul class="dropdown-menu">
-										<?php foreach($box['content'] as $key => $item) {
-											echo $this->makeListItem($key, $item);
-										} ?>
-									</ul>
-							<?php
-								}
+						foreach($sidebar as $boxName => $box) {
 							?>
-						</li>
-						<?php
-					} ?>
-				</ul>
-			</div>
-
-			<!-- SEARCH -->
-			<div id="header-search">
-				<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform">
-					<?php
-					echo $this->makeSearchInput( array( 'id' => 'searchInput' ) );
-					echo Html::hidden( 'title', $this->get( 'searchtitle' ) );
-					?>
-				</form>
-			</div>
-
-			<!-- LOGIN -->
-			<div>
-				<ul id="p-personal">
-					<?php
-					if( $loggedIn == false ) {
-						foreach ( $personalLogin as $key => $item ) {
-							echo $this->makeListItem( $key, $item );
-						}
-					}
-					else {
-						?>
-						<div id="p-personal-logged-in">
+							<li   id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
+								<span class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></span>
+								<?php
+									if(is_array($box['content'])) { ?>
+										<ul class="dropdown-menu">
+											<?php foreach($box['content'] as $key => $item) {
+												echo $this->makeListItem($key, $item);
+											} ?>
+										</ul>
+								<?php
+									}
+								?>
+							</li>
 							<?php
-							foreach ( $personalBar as $key => $item ) {
+						} ?>
+					</ul>
+				</div>
+
+				<!-- SEARCH -->
+				<div id="header-search">
+					<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform">
+						<?php
+						echo $this->makeSearchInput( array( 'id' => 'searchInput' ) );
+						echo Html::hidden( 'title', $this->get( 'searchtitle' ) );
+						?>
+					</form>
+				</div>
+
+				<!-- LOGIN -->
+				<div>
+					<ul id="p-personal">
+						<?php
+						if( $loggedIn == false ) {
+							foreach ( $personalLogin as $key => $item ) {
 								echo $this->makeListItem( $key, $item );
 							}
+						}
+						else {
 							?>
-							
-							<div id="personal-bar-flyout">
-								<div>
-									<a href="<?php echo $personalTools['userpage']['links'][0]['href']; ?>"><?php echo $personalTools['userpage']['links'][0]['text']; ?></a>
-									<ul>
-										<?php
-										foreach ( $personalFlyout as $key => $item ) {
-											echo $this->makeListItem( $key, $item );
-										}
-										?>
-									</ul>
+							<div id="p-personal-logged-in">
+								<?php
+								foreach ( $personalBar as $key => $item ) {
+									echo $this->makeListItem( $key, $item );
+								}
+								?>
+								
+								<div id="personal-bar-flyout">
+									<div>
+										<a href="<?php echo $personalTools['userpage']['links'][0]['href']; ?>"><?php echo $personalTools['userpage']['links'][0]['text']; ?></a>
+										<ul>
+											<?php
+											foreach ( $personalFlyout as $key => $item ) {
+												echo $this->makeListItem( $key, $item );
+											}
+											?>
+										</ul>
+									</div>
 								</div>
 							</div>
-						</div>
-					<?php
-					}
-					?>
-				</ul>
+						<?php
+						}
+						?>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</header>
