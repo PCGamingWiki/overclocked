@@ -204,20 +204,18 @@ class OverclockedTemplate extends BaseTemplate {
 							<?php
 						} ?>
 					</ul>
-				</div>
-
-				<!-- SEARCH -->
-				<div id="header-search">
-					<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform">
-						<?php
-						echo $this->makeSearchInput( array( 'id' => 'searchInput' ) );
-						echo Html::hidden( 'title', $this->get( 'searchtitle' ) );
-						?>
-					</form>
-				</div>
-
-				<!-- LOGIN -->
-				<div>
+				</div>				
+				<div class="rightside-wrap">
+                    <!-- SEARCH -->
+                    <div id="header-search">
+                        <form action="<?php $this->text( 'wgScript' ); ?>" id="searchform">
+                            <?php
+                            echo $this->makeSearchInput( array( 'id' => 'searchInput' ) );
+                            echo Html::hidden( 'title', $this->get( 'searchtitle' ) );
+                            ?>
+                        </form>
+                    </div>
+                    <!-- LOGIN -->
 					<ul id="p-personal">
 						<?php
 						if( $loggedIn == false ) {
