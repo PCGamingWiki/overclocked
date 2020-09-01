@@ -30,6 +30,10 @@ function stickyTableOfContents() {
 	});
 }
 
+$("#pcgw-header-logo .dropdown-menu li a").hover(function () {
+    $(this).parents(".dropdown-toggle").css("color", "white");
+  });
+
 function mobileTableOfContents() {
 	$(".toctitle").click(function() {
 		$("#toc").toggleClass('active');
