@@ -30,16 +30,14 @@ function stickyTableOfContents() {
 	});
 }
 
-$('.dropdown-menu').hover(function() {
-    $(this).prev().css({
-      'color': 'white'
-    });
+$(".dropdown-menu").hover(
+  function () {
+    $(this).prev().addClass("white-text");
   },
-  function() {
-    $(this).prev().css({
-      'color': '#aaaab2'
-    })
-  });
+  function () {
+    $(this).prev().removeClass("white-text");
+  }
+);
 
 function mobileTableOfContents() {
 	$(".toctitle").click(function() {
