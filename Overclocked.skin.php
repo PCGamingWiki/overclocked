@@ -204,39 +204,6 @@ class OverclockedTemplate extends BaseTemplate {
 							<?php
 						} ?>
 					</ul>
-                    <ul id="p-personal-mobile">
-				<?php
-				if( $loggedIn == false ) {
-					foreach ( $personalLogin as $key => $item ) {
-						echo $this->makeListItem( $key, $item );
-					}
-				}
-				else {
-					?>
-					<div id="p-personal-logged-in">
-						<?php
-						foreach ( $personalBar as $key => $item ) {
-							echo $this->makeListItem( $key, $item );
-						}
-						?>
-						
-						<div id="personal-bar-flyout">
-							<div>
-								<a href="<?php echo $personalTools['userpage']['links'][0]['href']; ?>"><?php echo $personalTools['userpage']['links'][0]['text']; ?></a>
-								<ul>
-									<?php
-									foreach ( $personalFlyout as $key => $item ) {
-										echo $this->makeListItem( $key, $item );
-									}
-									?>
-								</ul>
-							</div>
-						</div>
-					</div>
-				<?php
-				}
-				?>
-			</ul>
 				</div>				
 				<div class="rightside-wrap">
                     <!-- SEARCH -->
@@ -284,6 +251,33 @@ class OverclockedTemplate extends BaseTemplate {
 					</ul>
 				</div>
             </div>
+            <ul id="p-personal-mobile">
+				<?php
+				if( $loggedIn == false ) {
+					foreach ( $personalLogin as $key => $item ) {
+						echo $this->makeListItem( $key, $item );
+					}
+				}
+				else {
+					?>
+					<div id="p-personal-logged-in">						
+						<div id="personal-bar-flyout">
+							<div>
+								<a href="<?php echo $personalTools['userpage']['links'][0]['href']; ?>"><?php echo $personalTools['userpage']['links'][0]['text']; ?></a>
+								<ul>
+									<?php
+									foreach ( $personalFlyout as $key => $item ) {
+										echo $this->makeListItem( $key, $item );
+									}
+									?>
+								</ul>
+							</div>
+						</div>
+					</div>
+				<?php
+				}
+				?>
+			</ul>
 		</div>
 	</header>
 
