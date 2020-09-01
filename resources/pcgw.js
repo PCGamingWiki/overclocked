@@ -43,6 +43,9 @@ function mobileTableOfContents() {
 	$(".toctitle").click(function() {
 		$("#toc").toggleClass('active');
 	});
+	$('.dropdown-toggle').click(function() {
+        $(this).next().toggleClass('display-block');
+});
 }
 
 function mobileHeader() {
