@@ -8,6 +8,15 @@ function iconAnimations() {
 function stickyTableOfContents() {
   $("#toc").addClass("absolute");
 
+  $(".dropdown-menu").hover(
+    function () {
+      $(this).prev().addClass("white-text");
+    },
+    function () {
+      $(this).prev().removeClass("white-text");
+    }
+  );  
+  
   // Removes "display: none" style property from TOC.
   $("#toc > ul").attr("style", "");
 
@@ -28,15 +37,6 @@ function stickyTableOfContents() {
     });
   });
 }
-
-$(".dropdown-menu").hover(
-  function () {
-    $(this).prev().addClass("white-text");
-  },
-  function () {
-    $(this).prev().removeClass("white-text");
-  }
-);
 
 function mobileTableOfContents() {
   $(".toctitle").click(function () {
