@@ -8,14 +8,13 @@ function iconAnimations() {
 function stickyTableOfContents() {
   $("#toc").addClass("absolute");
 
-  $(".dropdown-menu").hover(
-    function () {
+  $(".dropdown-menu").hover(function () {
+    if ($(window).width() > "800") {
       $(this).prev().addClass("white-text");
-    },
-    function () {
+    } else {
       $(this).prev().removeClass("white-text");
     }
-  );
+  });
 
   // Removes "display: none" style property from TOC.
   $("#toc > ul").attr("style", "");
