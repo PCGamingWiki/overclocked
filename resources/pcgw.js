@@ -72,17 +72,15 @@ function mobileHeader() {
 var load = function () {
   iconAnimations();
 
-  
-
   // Only run if the browser window size doesn't suggest the browser is a mobile device.
   if ($(window).width() < "800") {
     stickyTableOfContents();
   } else {
     mobileTableOfContents();
+    mobileToggleMenuItems();
   }
 
   mobileHeader();
-  mobileToggleMenuItems();
 };
 
 $(document).on("load", load());
