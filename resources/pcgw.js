@@ -15,8 +15,8 @@ function stickyTableOfContents() {
     function () {
       $(this).prev().removeClass("white-text");
     }
-  );  
-  
+  );
+
   // Removes "display: none" style property from TOC.
   $("#toc > ul").attr("style", "");
 
@@ -72,10 +72,10 @@ function mobileHeader() {
 var load = function () {
   iconAnimations();
 
-  var windowwidth = $(window).width();
+  
 
   // Only run if the browser window size doesn't suggest the browser is a mobile device.
-  if (windowwidth > "800") {
+  if ($(window).width() < "800") {
     stickyTableOfContents();
   } else {
     mobileTableOfContents();
