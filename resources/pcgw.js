@@ -8,14 +8,6 @@ function iconAnimations() {
 function stickyTableOfContents() {
   $("#toc").addClass("absolute");
 
-  $(".dropdown-menu").hover(function () {
-    if ($(window).width() > "800") {
-      $(this).prev().addClass("white-text");
-    } else {
-      $(this).prev().removeClass("white-text");
-    }
-  });
-
   // Removes "display: none" style property from TOC.
   $("#toc > ul").attr("style", "");
 
@@ -70,12 +62,26 @@ function mobileHeader() {
   });
 }
 
+function desktopNavHover() {
+  if ($(window).width() > "800") {
+    $(".dropdown-menu").hover(
+      function () {
+        $(this).prev().addClass("white-text");
+      },
+      function () {
+        $(this).prev().removeClass("white-text");
+      }
+    );
+  }
+}
+
 var load = function () {
   iconAnimations();
 
   // Only run if the browser window size doesn't suggest the browser is a mobile device.
   if ($(window).width() > "800") {
     stickyTableOfContents();
+    desktopNavHover();
   } else {
     mobileTableOfContents();
   }
