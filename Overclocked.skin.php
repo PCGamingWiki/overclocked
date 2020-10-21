@@ -106,25 +106,23 @@ class OverclockedTemplate extends BaseTemplate {
 			$personalBar[3] = $personalTools['notifications-notice'];
 
 			$personalFlyout[0] = $personalTools['watchlist'];
-			$personalFlyout[1] = $personalTools['notifications-alert'];
-			$personalFlyout[2] = $personalTools['notifications-notice'];
-			$personalFlyout[3] = $personalTools['mytalk'];
-			$personalFlyout[4] = $personalTools['mycontris'];
-			$personalFlyout[5] = $personalTools['preferences'];
-			$personalFlyout[7] = $personalTools['logout'];
+			$personalFlyout[1] = $personalTools['mytalk'];
+			$personalFlyout[2] = $personalTools['mycontris'];
+			$personalFlyout[3] = $personalTools['preferences'];
+			$personalFlyout[5] = $personalTools['logout'];
 			
 			foreach ( $personalFlyout as $key => $item ) {
 				$personalFlyout[$key]['class'] = "group-start";
 			}
 			
 			if ( isset( $personalTools['adminlinks'] ) ) {
-				$personalFlyout[6] = $personalTools['adminlinks'];
+				$personalFlyout[4] = $personalTools['adminlinks'];
 			}
 			foreach ( $personalFlyout as $key => $item ) {
 				$personalFlyout[$key]['id'] = rtrim( $personalFlyout[$key]['id'] . '-flyout' );
 			}
 			/* Work around for Echo preferences. */
-			$personalFlyout[5]['id'] = 'pt-preferences';
+			$personalFlyout[3]['id'] = 'pt-preferences';
 
 			ksort( $personalFlyout );
 
