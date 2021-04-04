@@ -449,6 +449,7 @@ class OverclockedTemplate extends BaseTemplate {
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Partnerships">Partnerships</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:Extension">Extension</a>
 					<li><a href="//pcgamingwiki.com/wiki/PCGamingWiki:API">API</a>
+					<li><a href="https://www.applegamingwiki.com">AppleGamingWiki</a>
 					<li><a href="https://www.gog.com?pp=708a77db476d737e54b8bf4663fc79b346d696d2">GOG.com</a>
 					<li><a href="https://gamesplanet.com?ref=pcgwiki">Gamesplanet</a>
 					<li><a href="https://www.cheapshark.com">CheapShark</a>
