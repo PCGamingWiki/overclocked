@@ -429,6 +429,11 @@ class OverclockedTemplate extends BaseTemplate {
 				<a href="//steamcommunity.com/groups/pcgamingwiki">
 					<div class="icon-container footer-steam icon"></div>
 				</a>
+				
+				<!-- Discord Icon -->
+				<a href="https://discord.gg/SU27ykMcsD">
+					<div class="icon-container footer-discord icon"></div>
+				</a>
 			</div>
 		</div>
 
