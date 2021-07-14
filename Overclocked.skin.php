@@ -60,16 +60,6 @@ class SkinOverclocked extends SkinTemplate {
 		    $out->addHeadItem('pcgw-admanager', '<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="5ee882ebb519801b8a4d573b" data-mode="scan" async></script>');
 		}
 		$out->addModules( array( 'skins.overclocked.js' ) );
-	}
-
-	/**
-	 * Add CSS via ResourceLoader
-	 *
-	 * @param $out OutputPage
-	 */
-	function setupSkinUserCss( OutputPage $out ) {
-		parent::setupSkinUserCss( $out );
-
 		$out->addModuleStyles( array(
 			'mediawiki.skinning.elements', 'skins.overclocked.styles'
 		) );
@@ -188,7 +178,7 @@ class OverclockedTemplate extends BaseTemplate {
 
 						foreach($sidebar as $boxName => $box) {
 							?>
-							<li   id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
+							<li   id='<?php echo Sanitizer::escapeIdForAttribute( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
 								<span class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></span>
 								<?php
 									if(is_array($box['content'])) { ?>
