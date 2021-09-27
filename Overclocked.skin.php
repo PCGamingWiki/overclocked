@@ -502,6 +502,10 @@ class OverclockedTemplate extends BaseTemplate {
 <link rel="stylesheet" media="screen" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600">
 
 <?php $this->printTrail(); ?>
+
+<!-- GOG Affiliate Link Tag -->
+<script type="text/javascript" src="https://cdn.adt598.com/atag.js?as=1649876489" charset="UTF-8"></script>
+		
 </body>
 </html><?php
 	}
