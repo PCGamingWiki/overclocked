@@ -164,6 +164,16 @@ class OverclockedTemplate extends BaseTemplate {
 		<?php echo $wgSkinOverclockedAds['tag']; ?>
 	<?php } ?>
 
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-10XTTXMB7R"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-10XTTXMB7R');
+	</script>
+
     <!-- NEW NAV -->
 
 	<header id="pcgw-header">
