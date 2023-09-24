@@ -1,0 +1,69 @@
+{
+	"name": "Overclocked",
+	"version": "1.0",
+	"author": [
+		"PCGamingWiki Team"
+	],
+	"url": "https://github.com/PCGamingWiki/overclocked",
+	"descriptionmsg": "overclocked-desc",
+	"namemsg": "skinname-overclocked",
+	"license-name": "GPL-2.0+",
+	"type": "skin",
+	"manifest_version": 2,
+	"ValidSkinNames": {
+		"overclocked": {
+			"class": "SkinOverclocked",
+			"args": [
+				{
+					"name": "overclocked"
+				}
+			]
+		}
+	},
+	"MessagesDirs": {
+		"ModernSkylight": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"SkinOverclocked": "Overclocked.skin.php"
+	},
+	"ResourceModules": {
+		"skins.overclocked.styles": {
+			"styles": [
+				"resources/general-header.less",
+				"resources/general-footer.less",
+				"resources/general-personalbar.less",
+				"resources/general-toc.less",
+				"resources/general-inputfields.less",
+				"resources/general-specialpages.less",
+				"resources/pcgw.less",
+				"resources/pcgw-templates.less",
+				"resources/pcgw-icons.less",
+				"resources/mediawiki.custom.less",
+				"resources/mediawiki.mediaviewer.overrides.less",
+				"resources/page-home.less",
+				"resources/page-extension.less",
+				"resources/page-donate.less",
+				"resources/page-editing-guide.less",
+				"resources/other.less"
+			]
+		},
+		"skins.overclocked.js": {
+			"scripts": [
+				"resources/jquery/jquery.waypoints.min.js",
+				"resources/jquery/jquery.ba-outside-events.min.js",
+				"resources/pcgw.js"
+			]
+		}
+	},
+	"ResourceModuleSkinStyles": {
+		"mediawiki.special.preferences": [
+			"resources/mediawiki.special.preferences.less"
+		]
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "Overclocked"
+	}
+}
