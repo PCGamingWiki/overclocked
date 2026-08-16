@@ -59,6 +59,13 @@ $GLOBALS['wgDefaultUserOptions']['overclocked-ads'] = 0;
 $GLOBALS['wgDefaultUserOptions']['overclocked-floating-toc'] = 0;
 
 $GLOBALS['wgResourceModules']['skins.overclocked.styles'] = array(
+	// 1.43: SkinModule provides base content styles via features (plain file module gave none)
+	'class' => 'MediaWiki\\ResourceLoader\\SkinModule',
+	'features' => array(
+		'normalize', 'elements', 'content-media', 'content-links',
+		'content-tables', 'interface', 'interface-category',
+		'i18n-ordered-lists', 'i18n-headings',
+	),
 	'styles' => array(
 		'resources/general-header.less',
 		'resources/general-footer.less',

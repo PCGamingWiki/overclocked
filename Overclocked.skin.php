@@ -39,12 +39,14 @@ class SkinOverclocked extends SkinTemplate {
 		/* Theme meta tag for "brand" coloring in certain browsers.
 		   Off-black to match the fixed header. */
 		$out->addMeta( 'theme-color', '#333' );
-		if( !$out->getUser()->isLoggedIn() ) {
+		if( !$out->getUser()->isRegistered() ) {  // 1.43: was isLoggedIn
 		    $toggleGoogleAds = true;
 		}
 		else {
 		    $user = $out->getUser();
-		    $toggleGoogleAds = $user->getOption( 'overclocked-ads' );
+		    // 1.43: was getOption
+		    $toggleGoogleAds = MediaWiki\MediaWikiServices::getInstance()
+		        ->getUserOptionsLookup()->getOption( $user, 'overclocked-ads' );
 		}
 
 		/**
@@ -60,19 +62,8 @@ class SkinOverclocked extends SkinTemplate {
 		    $out->addHeadItem('pcgw-admanager', '<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="5ee882ebb519801b8a4d573b" data-mode="scan" async></script>');
 		}
 		$out->addModules( array( 'skins.overclocked.js' ) );
-	}
-
-	/**
-	 * Add CSS via ResourceLoader
-	 *
-	 * @param $out OutputPage
-	 */
-	function setupSkinUserCss( OutputPage $out ) {
-		parent::setupSkinUserCss( $out );
-
-		$out->addModuleStyles( array(
-			'mediawiki.skinning.elements', 'skins.overclocked.styles'
-		) );
+		// 1.43: was setupSkinUserCss; base styles now come from the SkinModule
+		$out->addModuleStyles( array( 'skins.overclocked.styles' ) );
 	}
 }
 
@@ -129,7 +120,9 @@ class OverclockedTemplate extends BaseTemplate {
 			/**
 			 * Replace watch button with star
 			 */
-			$watchStatus = $this->getSkin()->getUser()->isWatched( $this->getSkin()->getRelevantTitle() ) ? 'unwatch' : 'watch';
+			// 1.43: was isWatched
+			$watchStatus = MediaWiki\MediaWikiServices::getInstance()->getWatchlistManager()
+				->isWatched( $this->getSkin()->getUser(), $this->getSkin()->getRelevantTitle() ) ? 'unwatch' : 'watch';
 
 			if ( isset( $pageNav['actions'][$watchStatus] ) ) {
 				$pageNav['views'][$watchStatus] = $pageNav['actions'][$watchStatus];
@@ -142,8 +135,10 @@ class OverclockedTemplate extends BaseTemplate {
 			 * Preferences
 			 */
 			$user = $this->getSkin()->getUser();
-			$toggleGoogleAds = $user->getOption( 'overclocked-ads' );
-			$toggleFloatingTOC = $user->getOption( 'overclocked-floating-toc' );
+			// 1.43: was getOption
+			$userOptionsLookup = MediaWiki\MediaWikiServices::getInstance()->getUserOptionsLookup();
+			$toggleGoogleAds = $userOptionsLookup->getOption( $user, 'overclocked-ads' );
+			$toggleFloatingTOC = $userOptionsLookup->getOption( $user, 'overclocked-floating-toc' );
 		}
 
 		global $wgSkinOverclockedAds;
@@ -198,7 +193,7 @@ class OverclockedTemplate extends BaseTemplate {
 
 						foreach($sidebar as $boxName => $box) {
 							?>
-							<li   id='<?php echo Sanitizer::escapeId( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
+							<li   id='<?php echo Sanitizer::escapeIdForAttribute( $box['id'] ) ?>'<?php echo Linker::tooltip( $box['id'] ) ?>>
 								<span class="header-item dropdown-toggle"><?php echo htmlspecialchars( $box['header'] ); ?></span>
 								<?php
 									if(is_array($box['content'])) { ?>
@@ -492,12 +487,11 @@ class OverclockedTemplate extends BaseTemplate {
 
 			<!-- Page last modified, copyright, and disclaimer texts -->
 			<?php
-			if ( isset( $this->getFooterLinks()['info'] ) ) {
-				$footerNav = $this->getFooterLinks()['info'] ?>
-				<div id="footer-info-lastmod"><?php $this->html( $footerNav[0] ) ?></div>
-				<div id="footer-info-copyright"><?php $this->html( $footerNav[1] ) ?></div>
-			<?php
-			}
+			// 1.43: getFooterLinks()['info'] is a list of key names
+			$footerInfo = $this->getFooterLinks()['info'] ?? [];
+			foreach ( $footerInfo as $footerKey ) { ?>
+				<div id="footer-info-<?php echo $footerKey ?>"><?php $this->html( $footerKey ) ?></div>
+			<?php }
 			?>
 			<div id="footer-info-disclaimer">Some store links may include affiliate tags. Buying through these links helps support PCGamingWiki (<a href="/wiki/PCGamingWiki:About#Support_us">Learn more</a>).</div>
 		</div>
@@ -520,7 +514,11 @@ class OverclockedTemplate extends BaseTemplate {
 <!-- Open Sans font family -->
 <link rel="stylesheet" media="screen" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600">
 
-<?php $this->printTrail(); ?>
+<?php
+// 1.43: printTrail() removed
+echo $this->get( 'bottomscripts' );
+echo $this->get( 'reporttime' );
+?>
 
 <!-- GOG Affiliate Link Tag -->
 <script type="text/javascript" src="https://cdn.adt598.com/atag.js?as=1649876489" charset="UTF-8"></script>

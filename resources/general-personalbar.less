@@ -2,10 +2,10 @@
 @import "variables.less";
 
 .background-icon(@name) {
-	.background-image("images/@{name}.svg");
+	background-image: url("images/@{name}.svg");
 
 	&:hover {
-		.background-image('images/@{name}Hover.svg');
+		background-image: url('images/@{name}Hover.svg');
 	}
 }
  
@@ -55,7 +55,7 @@
 		margin-top: 6px;
 		opacity: 0.8;
 
-		.transition(background-color 200ms 100ms, opacity 200ms 100ms;);
+		transition: background-color 200ms 100ms, opacity 200ms 100ms;
 
 		@media all and (min-width: 800px) {
 			&:hover {
@@ -64,7 +64,7 @@
 
 				div > a {
 					background-position: left;
-					.background-image("images/userHover.svg");
+					background-image: url("images/userHover.svg");
 				}
 			}
 		}
@@ -73,7 +73,7 @@
 	#personal-bar-flyout > div {
 		padding: 0 .2rem;
 
-		.transition(border-color 200ms 100ms;);
+		transition: border-color 200ms 100ms;
 
 		a {
 			display: block;
@@ -128,10 +128,10 @@
 		@media all and (min-width: 800px) {
 			background: right 10px top 5px no-repeat;
 			background-size: auto 12px;
-			.background-image("images/carat1.svg");
+			background-image: url("images/carat1.svg");
 
 			&:hover {
-				.background-image("images/caratHover.svg");
+				background-image: url("images/caratHover.svg");
 			}
 
 			border: 1px solid #ccc;
@@ -145,7 +145,7 @@
 				overflow: hidden;
 				width: auto;
 
-				.transition(max-height 0s 100ms, opacity 200ms 100ms;);
+				transition: max-height 0s 100ms, opacity 200ms 100ms;
 			}
 
 			&:hover ul {
@@ -161,7 +161,7 @@
 				color: #fff;
 				padding: 6px 24px;
 
-				.transition(color 200ms 100ms;);
+				transition: color 200ms 100ms;
 			}
 
 			li a:hover {
@@ -233,19 +233,19 @@ li#pt-notifications-notice  {
 }
 
 #pt-watchlist a {
-	.background-image("images/watchlist.svg");
+	background-image: url("images/watchlist.svg");
 }
  
 #pt-mytalk a {
-	.background-image("images/talk.svg");
+	background-image: url("images/talk.svg");
 }
  
 #personal-bar-flyout div > a {
 	font-size: 1.2rem;
 	background-position: left;
-	.background-image("images/user.svg");
+	background-image: url("images/user.svg");
 
-	.transition(background-image 200ms 100ms;);
+	transition: background-image 200ms 100ms;
 }
  
 #pt-mycontris-flyout a {

@@ -2,7 +2,7 @@
 @import "variables.less";
 
 .background-icon(@name) {
-	.background-image("images/@{name}.svg");
+	background-image: url("images/@{name}.svg");
 }
 
 /* ==============================================
@@ -236,7 +236,7 @@ div.tright {
 	padding: 3px 5px 3px 5px;
 	font-weight: 300;
 
-	.transition(background-color 200ms 0);
+	transition: background-color 200ms 0;
 }
 
 #pt-notifications-notice .mw-echo-notifications-badge {
@@ -244,7 +244,7 @@ div.tright {
 	padding: 3px 5px 3px 5px;
 	font-weight: 300;
 
-	.transition(background-color 200ms 0);
+	transition: background-color 200ms 0;
 }
 
 // Fix Echo overlay text sizes.
@@ -598,12 +598,12 @@ ol.references {
 
 		background: right 10px top 8px no-repeat;
 		background-size: auto 12px;
-		.background-image("images/carat2.svg");
+		background-image: url("images/carat2.svg");
 
-		.transition(background-color 200ms 100ms, border-color 200ms 100ms;);
+		transition: background-color 200ms 100ms, border-color 200ms 100ms;
 
 		&:hover {
-			.background-image("images/caratHover.svg");
+			background-image: url("images/caratHover.svg");
 			border-color: #aaa;
 			background-color: #fff;
 		}
@@ -621,7 +621,7 @@ ol.references {
 			display: block;
 			border-top: 1px solid #ededed;
 
-			.transition(max-height 0s 100ms, opacity 200ms 100ms;);
+			transition: max-height 0s 100ms, opacity 200ms 100ms;
 		}
 
 		&:hover ul {
