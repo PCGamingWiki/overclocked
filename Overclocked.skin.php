@@ -153,7 +153,7 @@ class OverclockedTemplate extends BaseTemplate {
 			$toggleGoogleAds = false;
 		}
 
-		$this->html( 'headelement' ); ?>
+		?>
 
 	<?php if( $toggleGoogleAds == true ) { ?>
 		<?php echo $wgSkinOverclockedAds['tag']; ?>
