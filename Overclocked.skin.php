@@ -422,18 +422,22 @@ class OverclockedTemplate extends BaseTemplate {
 			</div>
 
 			<?php if( $toggleGoogleAds == true ) { ?>
-				<!-- footer ad -->
+				<!-- Ad - footer -->
 				<div class="ad-footer-container">
-					<!-- PCGamingWiki - dynamic ad unit -->
+					<div id="ad-footer" style="height:250px"></div>
+
 					<script>
-					    window.isMobile = (/android|ipad|iphone|ipod|samsung/i).test(navigator.userAgent);
-					    console.log(isMobile);
+					window['nitroAds'].createAd('ad-footer', {
+					"height": 250,
+					"delayLoading": true,
+					"report": {
+						"enabled": true,
+						"icon": true,
+						"wording": "Report Ad",
+						"position": "bottom-right"
+					}
+					});
 					</script>
-					<script>
-					    var id = window.isMobile ? '5ee8e36fa624ae2e71258530' : '5ee8e359b519801b8a4d57ff';
-					    document.write('<div class="vm-placement" data-id="' + id + '"></div>');
-					</script>
-					<!-- / PCGamingWiki - dynamic ad unit -->
 				</div>
 			<?php } ?>
 		</div>
