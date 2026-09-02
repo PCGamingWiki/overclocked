@@ -414,6 +414,25 @@ class OverclockedTemplate extends BaseTemplate {
 						"format": "interstitial"
 						});
 						</script>
+
+					<!-- Ad - anchor -->
+						<script>
+						window['nitroAds'].createAd('ad-anchor', {
+						"format": "anchor-v2",
+						"anchor": "bottom",
+						"anchorBgColor": "rgb(0 0 0 / 80%)",
+						"anchorClose": true,
+						"anchorPersistClose": false,
+						"anchorStickyOffset": 0,
+						"mediaQuery": "(min-width: 0px)",
+						"report": {
+							"enabled": true,
+							"icon": true,
+							"wording": "Report Ad",
+							"position": "top-right"
+						}
+						});
+						</script>
 					<?php } ?>
 						
 					<?php $this->html( 'catlinks' ); ?>
