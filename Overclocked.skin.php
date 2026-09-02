@@ -59,7 +59,7 @@ class SkinOverclocked extends SkinTemplate {
 		    $toggleGoogleAds = false;
 		}
 		if( $toggleGoogleAds ) {
-		    $out->addHeadItem('pcgw-admanager', '<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="5ee882ebb519801b8a4d573b" data-mode="scan" async></script>');
+		    $out->addHeadItem('pcgw-admanager', '<script data-cfasync="false">   window.nitroAds = window.nitroAds || {     createAd: function() {       return new Promise(e => { window.nitroAds.queue.push(["createAd", arguments, e]) })     },     addUserToken: function() {       window.nitroAds.queue.push(["addUserToken", arguments])     },     queue: []   }; </script><script data-cfasync="false" async src="https://s.nitropay.com/ads-51.js"></script>');
 		}
 		$out->addModules( array( 'skins.overclocked.js' ) );
 		// 1.43: was setupSkinUserCss; base styles now come from the SkinModule
@@ -289,18 +289,22 @@ class OverclockedTemplate extends BaseTemplate {
 	<div id="masthead" <?php if ( $toggleFloatingTOC ) { ?> class="floating-toc-enabled" <?php } ?>>
 		<div id="main-column">
 			<?php if( $toggleGoogleAds == true ) { ?>
-				<!-- horizontal header ad -->
+				<!-- Ad - horizontal banner -->
 				<div class="ad-header-container">
-					<!-- PCGamingWiki - dynamic ad unit -->
+					<div id="ad-header" style="height:250px"></div>
+
 					<script>
-					    window.isMobile = (/android|ipad|iphone|ipod|samsung/i).test(navigator.userAgent);
-					    console.log(isMobile);
+					window['nitroAds'].createAd('ad-header', {
+					"height": 250,
+					"delayLoading": true,
+					"report": {
+						"enabled": true,
+						"icon": true,
+						"wording": "Report Ad",
+						"position": "bottom-right"
+					}
+					});
 					</script>
-					<script>
-					    var id = window.isMobile ? '5ee8e36fa624ae2e71258530' : '5ee8e359b519801b8a4d57ff';
-					    document.write('<div class="vm-placement" data-id="' + id + '"></div>');
-					</script>
-					<!-- / PCGamingWiki - dynamic ad unit -->
 				</div>
 			<?php } ?>
 
@@ -350,12 +354,15 @@ class OverclockedTemplate extends BaseTemplate {
 				<?php } ?>
 				
 				<?php if( $toggleGoogleAds == true ) { ?>
-				<!-- instream video ad -->
-					<div id="instream">
-						<!-- Venatus video ad placement -->
-						<div class="vm-placement" id="vm-av" data-format="isvideo"></div>
-						<!-- / Venatus video ad placement -->
-					</div>
+				<!-- Ad - video -->
+					<div id="ad-video"></div>
+
+					<script>
+					window['nitroAds'].createAd('video', {
+					"format": "video-nc",
+					"video": {}
+					});
+					</script>
 				<?php } ?>
 
 				<!-- Article header -->
@@ -379,20 +386,34 @@ class OverclockedTemplate extends BaseTemplate {
 					<div id="body-content" class="mw-body">
 				<?php } else { ?>
 					<div id="body-content" class="mw-body mw-body-with-ads">
-					<!-- mpu ad -->
+					<!-- Ad - mpu -->
 						<div id="mpu">
-							<!-- PCGamingWiki - 300x250 Static (5ee8e351a624ae2e7125852e) - 300x250 - Place in <BODY> of page where ad should appear -->
-							<div class="vm-placement" data-id="5ee8e351a624ae2e7125852e"></div>
-							<!-- / PCGamingWiki - 300x250 Static (5ee8e351a624ae2e7125852e) -->
+							<div id="ad-mpu" style="height:250px"></div>
+
+							<script>
+							window['nitroAds'].createAd('ad-mpu', {
+							"height": 250,
+							"delayLoading": true,
+							"report": {
+								"enabled": true,
+								"icon": true,
+								"wording": "Report Ad",
+								"position": "bottom-right"
+							}
+							});
+							</script>
 						</div>
 				<?php } ?>
 
 					<?php $this->html( 'bodytext' ); ?>
 
 					<?php if( $toggleGoogleAds == true ) { ?>
-						<!-- PCGamingWiki - Rich Media (5ee8e341a624ae2e7125852c) - 1x1 - Place in <BODY> of page where ad should appear -->
-						<div class="vm-placement" data-id="5ee8e341a624ae2e7125852c" style="display:none"></div>
-						<!-- / PCGamingWiki - Rich Media (5ee8e341a624ae2e7125852c) -->
+					<!-- Ad - interstital -->
+						<script>
+						window['nitroAds'].createAd('ad-interstital', {
+						"format": "interstitial"
+						});
+						</script>
 					<?php } ?>
 						
 					<?php $this->html( 'catlinks' ); ?>
