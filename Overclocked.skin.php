@@ -443,10 +443,12 @@ class OverclockedTemplate extends BaseTemplate {
 						"railOffsetBottom": 0,
 						"railCollisionWhitelist": ["*"],
 						"railCloseColor": "#666666",
-						"railSpacing": 10,
-						"railStack": false,
+						"railSpacing": 0,
+						"railStack": true,
 						"railStickyTop": 0,
 						"railVerticalAlign": "center",
+						"mediaQuery": "(min-width: 1520px)",
+						"sizes: [160,600]",
 						"report": {
 							"enabled": true,
 							"icon": true,
@@ -465,10 +467,12 @@ class OverclockedTemplate extends BaseTemplate {
 						"railOffsetBottom": 0,
 						"railCollisionWhitelist": ["*"],
 						"railCloseColor": "#666666",
-						"railSpacing": 10,
-						"railStack": false,
+						"railSpacing": 0,
+						"railStack": true,
 						"railStickyTop": 0,
 						"railVerticalAlign": "center",
+						"mediaQuery": "(min-width: 1520px)"
+						"sizes: [160,600]"
 						"report": {
 							"enabled": true,
 							"icon": true,
