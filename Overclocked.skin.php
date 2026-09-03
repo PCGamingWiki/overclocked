@@ -50,7 +50,7 @@ class SkinOverclocked extends SkinTemplate {
 		}
 
 		/**
-		 * Disable Google Ads on certain namespaces
+		 * Disable Ads on certain namespaces
 		 */
 
 		global $wgTitle;
