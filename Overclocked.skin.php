@@ -289,7 +289,7 @@ class OverclockedTemplate extends BaseTemplate {
 	<div id="masthead" <?php if ( $toggleFloatingTOC ) { ?> class="floating-toc-enabled" <?php } ?>>
 		<div id="main-column">
 			<?php if( $toggleGoogleAds == true ) { ?>
-				<!-- Ad - horizontal banner -->
+				<!-- Ad - Horizontal banner -->
 				<div class="ad-header-container">
 					<div id="ad-header" style="height:250px"></div>
 
@@ -354,7 +354,7 @@ class OverclockedTemplate extends BaseTemplate {
 				<?php } ?>
 				
 				<?php if( $toggleGoogleAds == true ) { ?>
-				<!-- Ad - video -->
+				<!-- Ad - Video -->
 					<div id="ad-video"></div>
 
 					<script>
@@ -386,7 +386,7 @@ class OverclockedTemplate extends BaseTemplate {
 					<div id="body-content" class="mw-body">
 				<?php } else { ?>
 					<div id="body-content" class="mw-body mw-body-with-ads">
-					<!-- Ad - mpu -->
+					<!-- Ad - MPU -->
 						<div id="mpu">
 							<div id="ad-mpu" style="height:250px"></div>
 
@@ -408,14 +408,14 @@ class OverclockedTemplate extends BaseTemplate {
 					<?php $this->html( 'bodytext' ); ?>
 
 					<?php if( $toggleGoogleAds == true ) { ?>
-					<!-- Ad - interstital -->
+					<!-- Ad - Interstital -->
 						<script>
 						window['nitroAds'].createAd('ad-interstital', {
 						"format": "interstitial"
 						});
 						</script>
 
-					<!-- Ad - anchor -->
+					<!-- Ad - Anchor -->
 						<script>
 						window['nitroAds'].createAd('ad-anchor', {
 						"format": "anchor-v2",
@@ -433,6 +433,50 @@ class OverclockedTemplate extends BaseTemplate {
 						}
 						});
 						</script>
+
+					<!-- Ad - Sticky side rail 1 -->
+						<script>
+						window['nitroAds'].createAd('ad-stick-side-rail-1', {
+						"format": "rail",
+						"rail": "left",
+						"railOffsetTop": 0,
+						"railOffsetBottom": 0,
+						"railCollisionWhitelist": [],
+						"railCloseColor": "#666666",
+						"railSpacing": 10,
+						"railStack": false,
+						"railStickyTop": 0,
+						"railVerticalAlign": "center",
+						"report": {
+							"enabled": true,
+							"icon": true,
+							"wording": "Report Ad",
+							"position": "top-right"
+						}
+						});
+						</script>
+
+					<!-- Ad - Sticky side rail 2 -->
+						<script>
+						window['nitroAds'].createAd('ad-stick-side-rail-2', {
+						"format": "rail",
+						"rail": "right",
+						"railOffsetTop": 0,
+						"railOffsetBottom": 0,
+						"railCollisionWhitelist": [],
+						"railCloseColor": "#666666",
+						"railSpacing": 10,
+						"railStack": false,
+						"railStickyTop": 0,
+						"railVerticalAlign": "center",
+						"report": {
+							"enabled": true,
+							"icon": true,
+							"wording": "Report Ad",
+							"position": "top-right"
+						}
+						});
+						</script>
 					<?php } ?>
 						
 					<?php $this->html( 'catlinks' ); ?>
@@ -441,7 +485,7 @@ class OverclockedTemplate extends BaseTemplate {
 			</div>
 
 			<?php if( $toggleGoogleAds == true ) { ?>
-				<!-- Ad - footer -->
+				<!-- Ad - Footer -->
 				<div class="ad-footer-container">
 					<div id="ad-footer" style="height:250px"></div>
 
