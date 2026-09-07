@@ -569,7 +569,6 @@ class OverclockedTemplate extends BaseTemplate {
 				<ul>
 					<li>Powered by
 					<li><a href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a>
-					<li><a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a>
 					<li><a href="https://www.mediawiki.org/wiki/Extension:Cargo">Cargo</a>
 					<li><a href="https://github.com/PCGamingWiki">Open source</a>
 					<li><a href="https://www.patreon.com/PCGamingWiki">Patrons</a>
