@@ -435,7 +435,7 @@ class OverclockedTemplate extends BaseTemplate {
 						<script>
 						window['nitroAds'].createAd('ad-stick-side-rail-1', {
 							"format": "rail",
-							"rail": "right",
+							"rail": "left",
 							"railOffsetTop": 0,
 							"railOffsetBottom": 0,
 							"railCollisionWhitelist": ["*"],
