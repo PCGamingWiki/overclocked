@@ -355,12 +355,9 @@ class OverclockedTemplate extends BaseTemplate {
 				
 				<?php if( $toggleGoogleAds == true ) { ?>
 				<!-- Ad - Video -->
-					<div id="ad-video"></div>
-
 					<script>
-					window['nitroAds'].createAd('video', {
-					"format": "video-nc",
-					"video": {}
+					window['nitroAds'].createAd('ad-video', {
+					"format": "floating"
 					});
 					</script>
 				<?php } ?>
@@ -437,48 +434,48 @@ class OverclockedTemplate extends BaseTemplate {
 					<!-- Ad - Sticky side rail 1 -->
 						<script>
 						window['nitroAds'].createAd('ad-stick-side-rail-1', {
-						"format": "rail",
-						"rail": "left",
-						"railOffsetTop": 0,
-						"railOffsetBottom": 0,
-						"railCollisionWhitelist": ["*"],
-						"railCloseColor": "#666666",
-						"railSpacing": 0,
-						"railStack": true,
-						"railStickyTop": 0,
-						"railVerticalAlign": "center",
-						"mediaQuery": "(min-width: 1520px)",
-						"sizes: [160,600]",
-						"report": {
-							"enabled": true,
-							"icon": true,
-							"wording": "Report Ad",
-							"position": "top-right"
-						}
+							"format": "rail",
+							"rail": "right",
+							"railOffsetTop": 0,
+							"railOffsetBottom": 0,
+							"railCollisionWhitelist": ["*"],
+							"railCloseColor": "#666666",
+							"railSpacing": 0,
+							"railStack": true,
+							"railStickyTop": 0,
+							"railVerticalAlign": "center",
+							"mediaQuery": "(min-width: 1520px)",
+							"sizes": [[160, 600]],
+							"report": {
+								"enabled": true,
+								"icon": true,
+								"wording": "Report Ad",
+								"position": "top-right"
+							}
 						});
 						</script>
 
 					<!-- Ad - Sticky side rail 2 -->
 						<script>
 						window['nitroAds'].createAd('ad-stick-side-rail-2', {
-						"format": "rail",
-						"rail": "right",
-						"railOffsetTop": 0,
-						"railOffsetBottom": 0,
-						"railCollisionWhitelist": ["*"],
-						"railCloseColor": "#666666",
-						"railSpacing": 0,
-						"railStack": true,
-						"railStickyTop": 0,
-						"railVerticalAlign": "center",
-						"mediaQuery": "(min-width: 1520px)"
-						"sizes: [160,600]"
-						"report": {
-							"enabled": true,
-							"icon": true,
-							"wording": "Report Ad",
-							"position": "top-right"
-						}
+							"format": "rail",
+							"rail": "right",
+							"railOffsetTop": 0,
+							"railOffsetBottom": 0,
+							"railCollisionWhitelist": ["*"],
+							"railCloseColor": "#666666",
+							"railSpacing": 0,
+							"railStack": true,
+							"railStickyTop": 0,
+							"railVerticalAlign": "center",
+							"mediaQuery": "(min-width: 1520px)",
+							"sizes": [[160, 600]],
+							"report": {
+								"enabled": true,
+								"icon": true,
+								"wording": "Report Ad",
+								"position": "top-right"
+							}
 						});
 						</script>
 					<?php } ?>
