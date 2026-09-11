@@ -142,6 +142,7 @@ class OverclockedTemplate extends BaseTemplate {
 		}
 
 		global $wgSkinOverclockedAds;
+		global $wgGoogleAnalyticsAccount;
 		global $wgTitle;
 		$namespace = $wgTitle->getNamespace();
 
@@ -159,15 +160,17 @@ class OverclockedTemplate extends BaseTemplate {
 		<?php echo $wgSkinOverclockedAds['tag']; ?>
 	<?php } ?>
 
+	<?php if ( $wgGoogleAnalyticsAccount !== '' ) { ?>
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-10XTTXMB7R"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo htmlspecialchars( rawurlencode( $wgGoogleAnalyticsAccount ), ENT_QUOTES ); ?>"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
 
-	  gtag('config', 'G-10XTTXMB7R');
+	  gtag('config', <?php echo json_encode( $wgGoogleAnalyticsAccount ); ?>);
 	</script>
+	<?php } ?>
 
     <!-- NEW NAV -->
 
