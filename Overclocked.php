@@ -118,3 +118,8 @@ $GLOBALS['wgSkinOverclockedAds'] = array(
 	'footer'  => '',
 	'infobox' => '',
 );
+
+/**
+ * NitroPay site ID - set per wiki in LocalSettings.php. 0 omits the ad script.
+ */
+$GLOBALS['wgSkinOverclockedNitroPaySiteId'] ??= 0;
