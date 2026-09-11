@@ -58,8 +58,9 @@ class SkinOverclocked extends SkinTemplate {
 		if ( $namespace == -1 || $namespace == 4 ) {
 		    $toggleGoogleAds = false;
 		}
-		if( $toggleGoogleAds ) {
-		    $out->addHeadItem('pcgw-admanager', '<script data-cfasync="false">   window.nitroAds = window.nitroAds || {     createAd: function() {       return new Promise(e => { window.nitroAds.queue.push(["createAd", arguments, e]) })     },     addUserToken: function() {       window.nitroAds.queue.push(["addUserToken", arguments])     },     queue: []   }; </script><script data-cfasync="false" async src="https://s.nitropay.com/ads-51.js"></script>');
+		global $wgSkinOverclockedNitroPaySiteId;
+		if( $toggleGoogleAds && (int)$wgSkinOverclockedNitroPaySiteId > 0 ) {
+		    $out->addHeadItem('pcgw-admanager', '<script data-cfasync="false">   window.nitroAds = window.nitroAds || {     createAd: function() {       return new Promise(e => { window.nitroAds.queue.push(["createAd", arguments, e]) })     },     addUserToken: function() {       window.nitroAds.queue.push(["addUserToken", arguments])     },     queue: []   }; </script><script data-cfasync="false" async src="https://s.nitropay.com/ads-' . (int)$wgSkinOverclockedNitroPaySiteId . '.js"></script>');
 		}
 		$out->addModules( array( 'skins.overclocked.js' ) );
 		// 1.43: was setupSkinUserCss; base styles now come from the SkinModule
